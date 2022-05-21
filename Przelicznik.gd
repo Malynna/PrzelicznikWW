@@ -3,13 +3,14 @@ extends Node
 export (NodePath) onready var ddi = get_node(ddi)
 export (NodePath) onready var InsPer1WWLabel = get_node(InsPer1WWLabel) as RichTextLabel
 export (NodePath) onready var InsPer1WWResultLabel = get_node(InsPer1WWResultLabel) as RichTextLabel
-export (NodePath) onready var NewLine2 = get_node(NewLine2)
+export (NodePath) onready var new_line2 = get_node(new_line2)
 export (NodePath) onready var proporcja = get_node(proporcja)
 export (NodePath) onready var dzialanie = get_node(dzialanie)
 export (NodePath) onready var WWrano = get_node(WWrano)
 export (NodePath) onready var WWpopoludniu = get_node(WWpopoludniu)
 export (NodePath) onready var WWwieczore = get_node(WWwieczore)
-export (NodePath) onready var Static2Box = get_node(Static2Box)
+export (NodePath) onready var zestawienie = get_node(zestawienie)
+export (NodePath) onready var static2Box = get_node(static2Box)
 
 
 
@@ -41,7 +42,7 @@ func calculate_WW_per_1Insuline():
 	var WW_morning = stepify(WW_1i*1.5,0.01)
 	var WW_afternoon = stepify(WW_1i,0.01)
 	var WW_evening = stepify(WW_1i*1.3,0.01)
-	NewLine2.visible = true
+	new_line2.visible = true
 	proporcja.bbcode_text = "Następnie obliczamy z proporcji: \n1j -> %s WW \nx -> 1 WW" %i_1WW
 	dzialanie.bbcode_text = "x = (1WW * 1j) / %s = [b][u]%s[/u][/b] tyle jednostek insuliny należy podać na 1WW" %[i_1WW, WW_1i]
 	WWrano.bbcode_text = "[b]Rano[/b] jest największa oporność, należy podać 50% więcej insuliny więc:\n" 
@@ -51,6 +52,13 @@ func calculate_WW_per_1Insuline():
 	WWwieczore.bbcode_text = "[b]Wieczorem[/b]jest podwyższona oporność, należy podać 30% więcej insuliny więc:\n" 
 	WWwieczore.bbcode_text+= "[b]%s[/b] * 1,3 = [b][i][u]%s[/u][/i][/b] jednostki insuliny na 1 WW" %[str(WW_1i), str(WW_evening)]
 	
+	zestawienie.bbcode_text = "[table=2][cell][color=yellow]Rano[/color][/cell]" 
+	zestawienie.bbcode_text += "[cell][color=green][b]    %s[/b][/color][/cell]" %WW_morning
+	zestawienie.bbcode_text += "[cell][color=yellow]Popołudniu[/color][/cell]"
+	zestawienie.bbcode_text += "[cell][color=green][b]    %s[/b][/color][/cell]" %WW_afternoon
+	zestawienie.bbcode_text += "[cell][color=yellow]Wieczorem[/color][/cell]"
+	zestawienie.bbcode_text += "[cell][color=green][b]    %s[/b][/color][/cell][/table]" %WW_evening
+
 	
 	print(proporcja.bbcode_text + str(WW_morning))
 

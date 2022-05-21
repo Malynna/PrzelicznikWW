@@ -49,13 +49,14 @@ script = ExtResource( 1 )
 ddi = NodePath("VBoxContainer3/Static1/HBoxContainer/DDI")
 InsPer1WWLabel = NodePath("VBoxContainer3/Static1/NewLine/InsPer1WWLabel")
 InsPer1WWResultLabel = NodePath("VBoxContainer3/Static1/NewLine/InsPer1WWResultLabel")
-NewLine2 = NodePath("VBoxContainer3/Static1/NewLine2")
+new_line2 = NodePath("VBoxContainer3/Static1/NewLine2")
 proporcja = NodePath("VBoxContainer3/Static1/NewLine2/Proporcja")
 dzialanie = NodePath("VBoxContainer3/Static1/NewLine2/Działanie")
 WWrano = NodePath("VBoxContainer3/Static1/NewLine2/Rano")
 WWpopoludniu = NodePath("VBoxContainer3/Static1/NewLine2/Popołudniu")
 WWwieczore = NodePath("VBoxContainer3/Static1/NewLine2/Wieczorem")
-Static2Box = NodePath("VBoxContainer3/Static2Box")
+zestawienie = NodePath("VBoxContainer3/Static1/NewLine2/Zestawienie")
+static2Box = NodePath("VBoxContainer3/Static2Box")
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="."]
 margin_right = 40.0
@@ -203,7 +204,7 @@ __meta__ = {
 visible = false
 margin_top = 345.0
 margin_right = 1024.0
-margin_bottom = 641.0
+margin_bottom = 685.0
 
 [node name="Proporcja" type="RichTextLabel" parent="VBoxContainer3/Static1/NewLine2"]
 margin_right = 1024.0
@@ -299,6 +300,24 @@ custom_fonts/normal_font = ExtResource( 2 )
 bbcode_enabled = true
 bbcode_text = "Kliknij [b][i]<Oblicz>[/i][/b] "
 text = "Kliknij <Oblicz> "
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Zestawienie" type="RichTextLabel" parent="VBoxContainer3/Static1/NewLine2"]
+margin_top = 300.0
+margin_right = 1024.0
+margin_bottom = 340.0
+rect_min_size = Vector2( 950, 0 )
+size_flags_stretch_ratio = 0.9
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 7 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
 fit_content_height = true
 __meta__ = {
 "_editor_description_": ""
