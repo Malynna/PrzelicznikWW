@@ -1,0 +1,415 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Przelicznik.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/Normal_32.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Fonts/Bold_32.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Fonts/Ita_32.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Fonts/Bold_Ita_32.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Fonts/Mono_32.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Fonts/Bold_45_colored.tres" type="DynamicFont" id=7]
+[ext_resource path="res://DDI.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Gruppo-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+
+[sub_resource type="Theme" id=4]
+Fonts/fonts/large = SubResource( 2 )
+Fonts/fonts/normal = SubResource( 3 )
+
+[sub_resource type="Theme" id=5]
+resource_local_to_scene = true
+default_font = ExtResource( 7 )
+SpinBox/icons/updown = null
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://Gruppo-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+font_data = SubResource( 6 )
+
+[sub_resource type="DynamicFont" id=8]
+
+[sub_resource type="Theme" id=9]
+Fonts/fonts/large = SubResource( 7 )
+Fonts/fonts/normal = SubResource( 8 )
+
+[node name="Przelicznik" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1080, 1080 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.572549, 0.117647, 0.117647, 1 )
+script = ExtResource( 1 )
+ddi = NodePath("VBoxContainer3/Static1/HBoxContainer/DDI")
+InsPer1WWLabel = NodePath("VBoxContainer3/Static1/NewLine/InsPer1WWLabel")
+InsPer1WWResultLabel = NodePath("VBoxContainer3/Static1/NewLine/InsPer1WWResultLabel")
+NewLine2 = NodePath("VBoxContainer3/Static1/NewLine2")
+proporcja = NodePath("VBoxContainer3/Static1/NewLine2/Proporcja")
+dzialanie = NodePath("VBoxContainer3/Static1/NewLine2/Działanie")
+WWrano = NodePath("VBoxContainer3/Static1/NewLine2/Rano")
+WWpopoludniu = NodePath("VBoxContainer3/Static1/NewLine2/Popołudniu")
+WWwieczore = NodePath("VBoxContainer3/Static1/NewLine2/Wieczorem")
+Static2Box = NodePath("VBoxContainer3/Static2Box")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Static1" type="VBoxContainer" parent="VBoxContainer3"]
+margin_right = 1024.0
+margin_bottom = 341.0
+rect_min_size = Vector2( 1024, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TitleLabel" type="RichTextLabel" parent="VBoxContainer3/Static1"]
+margin_right = 1024.0
+margin_bottom = 40.0
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 5 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[b]Jak wyliczyć ile wziąć insuliny na 1 WW?[/b]"
+text = "Jak wyliczyć ile wziąć insuliny na 1 WW?"
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Description1Label" type="RichTextLabel" parent="VBoxContainer3/Static1"]
+margin_top = 44.0
+margin_right = 1024.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 1024, 80 )
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 5 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Jest Stała Liczba [b](450)[/b] którą dzielisz przez Twoje zapotrzebowanie insuliny na dzień [b](dzienną+nocną)[/b] zwaną [b]DDI[/b]"
+text = "Jest Stała Liczba (450) którą dzielisz przez Twoje zapotrzebowanie insuliny na dzień (dzienną+nocną) zwaną DDI"
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="EnterDDILabel" type="RichTextLabel" parent="VBoxContainer3/Static1"]
+margin_top = 128.0
+margin_right = 1024.0
+margin_bottom = 168.0
+rect_min_size = Vector2( 500, 0 )
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 5 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Wprowadź  swoje DDI:"
+text = "Wprowadź  swoje DDI:"
+fit_content_height = true
+custom_effects = [ null ]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer3/Static1"]
+margin_top = 172.0
+margin_right = 1024.0
+margin_bottom = 237.0
+rect_min_size = Vector2( 1024, 0 )
+size_flags_stretch_ratio = 10.0
+
+[node name="DDI" type="SpinBox" parent="VBoxContainer3/Static1/HBoxContainer"]
+margin_right = 146.0
+margin_bottom = 65.0
+focus_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = SubResource( 5 )
+value = 45.0
+align = 1
+script = ExtResource( 8 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CalculateButton" type="Button" parent="VBoxContainer3/Static1/HBoxContainer"]
+margin_left = 150.0
+margin_right = 300.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 2 )
+text = "Oblicz"
+
+[node name="NewLine" type="VBoxContainer" parent="VBoxContainer3/Static1"]
+margin_top = 241.0
+margin_right = 1024.0
+margin_bottom = 341.0
+rect_min_size = Vector2( 1024, 0 )
+size_flags_stretch_ratio = 10.0
+
+[node name="InsPer1WWLabel" type="RichTextLabel" parent="VBoxContainer3/Static1/NewLine"]
+margin_right = 1024.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 950, 0 )
+size_flags_stretch_ratio = 0.9
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 7 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Kliknij [b][i]<Oblicz>[/i][/b] "
+text = "Kliknij <Oblicz> "
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="InsPer1WWResultLabel" type="RichTextLabel" parent="VBoxContainer3/Static1/NewLine"]
+margin_top = 60.0
+margin_right = 1024.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 950, 0 )
+size_flags_stretch_ratio = 0.9
+theme = SubResource( 9 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 7 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "aby poznać ile Insuliny zbija 1WW"
+text = "aby poznać ile Insuliny zbija 1WW"
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="NewLine2" type="VBoxContainer" parent="VBoxContainer3/Static1"]
+visible = false
+margin_top = 345.0
+margin_right = 1024.0
+margin_bottom = 641.0
+
+[node name="Proporcja" type="RichTextLabel" parent="VBoxContainer3/Static1/NewLine2"]
+margin_right = 1024.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 950, 0 )
+size_flags_stretch_ratio = 0.9
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 7 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Kliknij [b][i]<Oblicz>[/i][/b] "
+text = "Kliknij <Oblicz> "
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Działanie" type="RichTextLabel" parent="VBoxContainer3/Static1/NewLine2"]
+margin_top = 60.0
+margin_right = 1024.0
+margin_bottom = 116.0
+rect_min_size = Vector2( 950, 0 )
+size_flags_stretch_ratio = 0.9
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 7 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Kliknij [b][i]<Oblicz>[/i][/b] "
+text = "Kliknij <Oblicz> "
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Rano" type="RichTextLabel" parent="VBoxContainer3/Static1/NewLine2"]
+margin_top = 120.0
+margin_right = 1024.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 950, 0 )
+size_flags_stretch_ratio = 0.9
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 7 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Kliknij [b][i]<Oblicz>[/i][/b] "
+text = "Kliknij <Oblicz> "
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Popołudniu" type="RichTextLabel" parent="VBoxContainer3/Static1/NewLine2"]
+margin_top = 180.0
+margin_right = 1024.0
+margin_bottom = 236.0
+rect_min_size = Vector2( 950, 0 )
+size_flags_stretch_ratio = 0.9
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 7 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Kliknij [b][i]<Oblicz>[/i][/b] "
+text = "Kliknij <Oblicz> "
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Wieczorem" type="RichTextLabel" parent="VBoxContainer3/Static1/NewLine2"]
+margin_top = 240.0
+margin_right = 1024.0
+margin_bottom = 296.0
+rect_min_size = Vector2( 950, 0 )
+size_flags_stretch_ratio = 0.9
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 7 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Kliknij [b][i]<Oblicz>[/i][/b] "
+text = "Kliknij <Oblicz> "
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Static2Box" type="VBoxContainer" parent="VBoxContainer3"]
+visible = false
+margin_top = 345.0
+margin_right = 1024.0
+margin_bottom = 641.0
+rect_min_size = Vector2( 1024, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Proporcja" type="RichTextLabel" parent="VBoxContainer3/Static2Box"]
+margin_right = 1024.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 950, 0 )
+size_flags_stretch_ratio = 0.9
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 7 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Kliknij [b][i]<Oblicz>[/i][/b] "
+text = "Kliknij <Oblicz> "
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Działanie" type="RichTextLabel" parent="VBoxContainer3/Static2Box"]
+margin_top = 60.0
+margin_right = 1024.0
+margin_bottom = 116.0
+rect_min_size = Vector2( 950, 0 )
+size_flags_stretch_ratio = 0.9
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 7 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Kliknij [b][i]<Oblicz>[/i][/b] "
+text = "Kliknij <Oblicz> "
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Rano" type="RichTextLabel" parent="VBoxContainer3/Static2Box"]
+margin_top = 120.0
+margin_right = 1024.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 950, 0 )
+size_flags_stretch_ratio = 0.9
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 7 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Kliknij [b][i]<Oblicz>[/i][/b] "
+text = "Kliknij <Oblicz> "
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Popołudniu" type="RichTextLabel" parent="VBoxContainer3/Static2Box"]
+margin_top = 180.0
+margin_right = 1024.0
+margin_bottom = 236.0
+rect_min_size = Vector2( 950, 0 )
+size_flags_stretch_ratio = 0.9
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 7 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Kliknij [b][i]<Oblicz>[/i][/b] "
+text = "Kliknij <Oblicz> "
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Wieczorem" type="RichTextLabel" parent="VBoxContainer3/Static2Box"]
+margin_top = 240.0
+margin_right = 1024.0
+margin_bottom = 296.0
+rect_min_size = Vector2( 950, 0 )
+size_flags_stretch_ratio = 0.9
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 7 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Kliknij [b][i]<Oblicz>[/i][/b] "
+text = "Kliknij <Oblicz> "
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[connection signal="pressed" from="VBoxContainer3/Static1/HBoxContainer/CalculateButton" to="." method="_on_CalculateButton_pressed"]
