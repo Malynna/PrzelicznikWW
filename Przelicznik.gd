@@ -38,11 +38,21 @@ func calculate_Insuline_per_1WW():
 
 func calculate_WW_per_1Insuline():
 	var WW_1i = stepify(1/i_1WW,0.0001)
+	var WW_morning = stepify(WW_1i*1.5,0.01)
+	var WW_afternoon = stepify(WW_1i,0.01)
+	var WW_evening = stepify(WW_1i*1.3,0.01)
 	NewLine2.visible = true
 	proporcja.bbcode_text = "Następnie obliczamy z proporcji: \n1j -> %s WW \nx -> 1 WW" %i_1WW
 	dzialanie.bbcode_text = "x = (1WW * 1j) / %s = [b][u]%s[/u][/b] tyle jednostek insuliny należy podać na 1WW" %[i_1WW, WW_1i]
-
-	print(proporcja.bbcode_text)
+	WWrano.bbcode_text = "[b]Rano[/b] jest największa oporność, należy podać 50% więcej insuliny więc:\n" 
+	WWrano.bbcode_text+= "[b]%s[/b] * 1,5 = [b][i][u]%s[/u][/i][/b] jednostki insuliny na 1 WW" %[str(WW_1i), str(WW_morning)]
+	WWpopoludniu.bbcode_text = "[b]Popołudniu[/b] jest standardowa oporność więc:\n" 
+	WWpopoludniu.bbcode_text+= "[b][i][u]%s[/u][/i][/b] jednostki insuliny na 1 WW" %[str(WW_afternoon)]
+	WWwieczore.bbcode_text = "[b]Wieczorem[/b]jest podwyższona oporność, należy podać 30% więcej insuliny więc:\n" 
+	WWwieczore.bbcode_text+= "[b]%s[/b] * 1,3 = [b][i][u]%s[/u][/i][/b] jednostki insuliny na 1 WW" %[str(WW_1i), str(WW_evening)]
+	
+	
+	print(proporcja.bbcode_text + str(WW_morning))
 
 func _on_CalculateButton_pressed():
 	calculate_Insuline_per_1WW()
