@@ -1,16 +1,16 @@
 extends Node
 
-export (NodePath) onready var ddi = get_node(ddi)
+export (NodePath) onready var ddi = get_node(ddi) as SpinBox
 export (NodePath) onready var InsPer1WWLabel = get_node(InsPer1WWLabel) as RichTextLabel
 export (NodePath) onready var InsPer1WWResultLabel = get_node(InsPer1WWResultLabel) as RichTextLabel
-export (NodePath) onready var new_line2 = get_node(new_line2)
-export (NodePath) onready var proporcja = get_node(proporcja)
-export (NodePath) onready var dzialanie = get_node(dzialanie)
-export (NodePath) onready var WWrano = get_node(WWrano)
-export (NodePath) onready var WWpopoludniu = get_node(WWpopoludniu)
-export (NodePath) onready var WWwieczore = get_node(WWwieczore)
-export (NodePath) onready var zestawienie = get_node(zestawienie)
-export (NodePath) onready var static2Box = get_node(static2Box)
+export (NodePath) onready var new_line2 = get_node(new_line2) as VBoxContainer
+export (NodePath) onready var proporcja = get_node(proporcja) as RichTextLabel
+export (NodePath) onready var dzialanie = get_node(dzialanie) as RichTextLabel
+export (NodePath) onready var WWrano = get_node(WWrano) as RichTextLabel
+export (NodePath) onready var WWpopoludniu = get_node(WWpopoludniu) as RichTextLabel
+export (NodePath) onready var WWwieczore = get_node(WWwieczore) as RichTextLabel
+export (NodePath) onready var zestawienie = get_node(zestawienie) as RichTextLabel
+export (NodePath) onready var static2Box = get_node(static2Box) as VBoxContainer
 
 
 
@@ -19,7 +19,8 @@ export (int) var static_1 = 450
 var i_1WW
 
 func _ready():
-	ddi.grab_focus()
+
+	ddi.get_line_edit().grab_focus()
 	print("----------------------")
 	print("----------------------")
 	print("----------------------")
