@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Table_1.tscn" type="PackedScene" id=1]
+
+[node name="Table_1_Insuline_per_1WW" instance=ExtResource( 1 )]
+margin_right = 845.0
+margin_bottom = 257.0
+
+[node name="GridContainer" parent="." index="0"]
+margin_right = 847.0
+margin_bottom = 252.0
+
+[node name="Cell_color1" parent="GridContainer" index="0"]
+margin_right = 421.0
+margin_bottom = 60.0
+
+[node name="Cell_color2" parent="GridContainer" index="1"]
+margin_left = 425.0
+margin_right = 846.0
+margin_bottom = 60.0
+
+[node name="Cell_color3" parent="GridContainer" index="2"]
+margin_top = 64.0
+margin_right = 421.0
+margin_bottom = 124.0
+
+[node name="Cell_color4" parent="GridContainer" index="3"]
+margin_left = 425.0
+margin_top = 64.0
+margin_right = 846.0
+margin_bottom = 124.0
+color = Color( 0.792157, 0.870588, 0.866667, 1 )
+
+[node name="Cell_color5" parent="GridContainer" index="4"]
+margin_top = 128.0
+margin_right = 421.0
+margin_bottom = 188.0
+
+[node name="Cell_color6" parent="GridContainer" index="5"]
+margin_left = 425.0
+margin_top = 128.0
+margin_right = 846.0
+margin_bottom = 188.0
+color = Color( 0.792157, 0.870588, 0.866667, 1 )
+
+[node name="Cell_color7" parent="GridContainer" index="6"]
+margin_top = 192.0
+margin_right = 421.0
+margin_bottom = 252.0
+
+[node name="Cell_color8" parent="GridContainer" index="7"]
+margin_left = 425.0
+margin_top = 192.0
+margin_right = 846.0
+margin_bottom = 252.0
+color = Color( 0.792157, 0.870588, 0.866667, 1 )
+
+[editable path="GridContainer/Cell_color1"]
+[editable path="GridContainer/Cell_color2"]
+[editable path="GridContainer/Cell_color3"]
+[editable path="GridContainer/Cell_color4"]
+[editable path="GridContainer/Cell_color5"]
+[editable path="GridContainer/Cell_color6"]
+[editable path="GridContainer/Cell_color7"]
+[editable path="GridContainer/Cell_color8"]

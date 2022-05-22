@@ -11,8 +11,10 @@ export (NodePath) onready var WWpopoludniu = get_node(WWpopoludniu) as RichTextL
 export (NodePath) onready var WWwieczore = get_node(WWwieczore) as RichTextLabel
 export (NodePath) onready var zestawienie = get_node(zestawienie) as RichTextLabel
 export (NodePath) onready var static2Box = get_node(static2Box) as VBoxContainer
-
-
+export (NodePath) onready var zestawienieBox = get_node(zestawienieBox) as Container
+export (NodePath) onready var WW_morning_cell = get_node(WW_morning_cell) as RichTextLabel
+export (NodePath) onready var WW_afternoon_cell = get_node(WW_afternoon_cell) as RichTextLabel
+export (NodePath) onready var WW_evening_cell = get_node(WW_evening_cell) as RichTextLabel
 
 export (int) var ddi_value
 export (int) var static_1 = 450
@@ -60,6 +62,7 @@ func calculate_WW_per_1Insuline():
 	zestawienie.bbcode_text += "[cell][color=yellow]Wieczorem[/color][/cell]"
 	zestawienie.bbcode_text += "[cell][color=green][b]    %s[/b][/color][/cell][/table]" %WW_evening
 
+	WW_morning_cell.bbcode_text = "[color=green][b][i]%s[/i][/b][/color]" %WW_morning
 	
 	print(proporcja.bbcode_text + str(WW_morning))
 
