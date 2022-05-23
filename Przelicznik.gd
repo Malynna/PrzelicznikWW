@@ -9,6 +9,12 @@ export (NodePath) onready var static2Box = get_node(static2Box) as VBoxContainer
 export (NodePath) onready var WW_morning_cell = get_node(WW_morning_cell) as RichTextLabel
 export (NodePath) onready var WW_afternoon_cell = get_node(WW_afternoon_cell) as RichTextLabel
 export (NodePath) onready var WW_evening_cell = get_node(WW_evening_cell) as RichTextLabel
+export (NodePath) onready var new_line3 = get_node(new_line3) as VBoxContainer
+export (NodePath) onready var weglowodany = get_node(weglowodany) as SpinBox
+export (NodePath) onready var blonnik = get_node(blonnik) as SpinBox
+export (NodePath) onready var bialko = get_node(bialko) as SpinBox
+export (NodePath) onready var tluszcz = get_node(tluszcz) as SpinBox
+export (NodePath) onready var WWandWBT = get_node(WWandWBT) as RichTextLabel
 
 #tab2
 export (NodePath) onready var WWPer1InsLabel2 = get_node(WWPer1InsLabel2) as RichTextLabel
@@ -71,10 +77,15 @@ func calculate_WW_per_1Insuline():
 	EnteredDDI.bbcode_text = "Twoje DDI: [color=yellow][b][i]%s[/i][/b][/color]" %ddi_value
 
 func calculate_WW_WBT_values():
-	pass
-
+	var WW_value = (weglowodany.value - blonnik.value)/10
+	WWandWBT.bbcode_text = "[b][i]WW = %s[/i][/b]" %WW_value
 
 func _on_CalculateButton_pressed():
 	calculate_Insuline_per_1WW()
 	calculate_WW_per_1Insuline()
 	tabContainer.set_tab_disabled(1, false)
+	new_line3.visible = true
+
+
+func _on_CalculateButton2_pressed():
+	calculate_WW_WBT_values()
