@@ -4,7 +4,7 @@ export (NodePath) onready var tabContainer = get_node(tabContainer) as TabContai
 export (NodePath) onready var ddi = get_node(ddi) as SpinBox
 export (NodePath) onready var WWPer1InsLabel1 = get_node(WWPer1InsLabel1) as RichTextLabel
 export (NodePath) onready var InsPer1WWLabel1 = get_node(InsPer1WWLabel1) as RichTextLabel
-export (NodePath) onready var new_line2 = get_node(new_line2) as VBoxContainer
+export (NodePath) onready var new_line2 = get_node(new_line2) as HBoxContainer
 export (NodePath) onready var static2Box = get_node(static2Box) as VBoxContainer
 export (NodePath) onready var WW_morning_cell = get_node(WW_morning_cell) as RichTextLabel
 export (NodePath) onready var WW_afternoon_cell = get_node(WW_afternoon_cell) as RichTextLabel
@@ -61,9 +61,9 @@ func calculate_WW_per_1Insuline():
 		
 	#tab1
 	InsPer1WWLabel1.bbcode_text = "[b][u][i]%s[/i][/u][/b]  <--  w przybliżeniu tyle jednostek insuliny należy podać na 1WW" %[WW_1i]
-	WW_morning_cell.bbcode_text = "[color=green][b][i][center]%s[/center][/i][/b][/color]" %WW_morning
-	WW_afternoon_cell.bbcode_text = "[color=green][b][i][center]%s[/center][/i][/b][/color]" %WW_afternoon
-	WW_evening_cell.bbcode_text = "[color=green][b][i][center]%s[/center][/i][/b][/color]" %WW_evening
+	WW_morning_cell.bbcode_text = "[color=#ef8522][b][i][center]%s[/center][/i][/b][/color]" %WW_morning
+	WW_afternoon_cell.bbcode_text = "[color=#ef8522][b][i][center]%s[/center][/i][/b][/color]" %WW_afternoon
+	WW_evening_cell.bbcode_text = "[color=#ef8522][b][i][center]%s[/center][/i][/b][/color]" %WW_evening
 	
 	#tab2
 	proporcja.bbcode_text = "Następnie obliczamy z proporcji: \n1j --> %s WW \nx -> 1 WW" %i_1WW
