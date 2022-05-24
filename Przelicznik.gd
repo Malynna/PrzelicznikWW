@@ -28,9 +28,12 @@ export (NodePath) onready var proporcja = get_node(proporcja) as RichTextLabel
 export (NodePath) onready var dzialanie = get_node(dzialanie) as RichTextLabel
 export (NodePath) onready var WWrano = get_node(WWrano) as RichTextLabel
 export (NodePath) onready var WWpopoludniu = get_node(WWpopoludniu) as RichTextLabel
-export (NodePath) onready var WWwieczore = get_node(WWwieczore) as RichTextLabel
+export (NodePath) onready var WWwieczorne = get_node(WWwieczorne) as RichTextLabel
 export (NodePath) onready var dzialanie2 = get_node(dzialanie2) as RichTextLabel
-
+export (NodePath) onready var JIPerGlucoseLabel2 = get_node(JIPerGlucoseLabel2) as RichTextLabel
+export (NodePath) onready var JI_morning_label = get_node(JI_morning_label) as RichTextLabel
+export (NodePath) onready var JI_afternoon_label = get_node(JI_afternoon_label) as RichTextLabel
+export (NodePath) onready var JI_evening_label = get_node(JI_evening_label) as RichTextLabel
 
 export (int) var ddi_value
 export (int) var static_1 = 450
@@ -80,8 +83,8 @@ func calculate_WW_per_1Insuline():
 	WWrano.bbcode_text+= "[b]%s[/b] * 1,5 = [color=#ef8522][b][i][u]%s[/u][/i][/b][/color] jednostki insuliny na 1 WW" %[str(WW_1i), str(WW_morning)]
 	WWpopoludniu.bbcode_text = "[b]Popołudniu[/b] jest standardowa oporność więc:\n" 
 	WWpopoludniu.bbcode_text+= "[color=#ef8522][b][i][u]%s[/u][/i][/b][/color] jednostki insuliny na 1 WW" %[str(WW_afternoon)]
-	WWwieczore.bbcode_text = "[b]Wieczorem[/b]jest podwyższona oporność, należy podać 30% więcej insuliny więc:\n" 
-	WWwieczore.bbcode_text+= "[b]%s[/b] * 1,3 = [color=#ef8522][b][i][u]%s[/u][/i][/b][/color] jednostki insuliny na 1 WW" %[str(WW_1i), str(WW_evening)]
+	WWwieczorne.bbcode_text = "[b]Wieczorem[/b]jest podwyższona oporność, należy podać 30% więcej insuliny więc:\n" 
+	WWwieczorne.bbcode_text+= "[b]%s[/b] * 1,3 = [color=#ef8522][b][i][u]%s[/u][/i][/b][/color] jednostki insuliny na 1 WW" %[str(WW_1i), str(WW_evening)]
 
 	
 func calculate_1JI_per_glucose():
@@ -96,11 +99,22 @@ func calculate_1JI_per_glucose():
 	JI_evening_cell.bbcode_text = "[color=#ef8522][b][i][center]%s[/center][/i][/b][/color]" %JI_evening
 	#tab2
 	dzialanie2.bbcode_text = "%s/%s = [b][u]%s[/u][/b]  <--  tyle cukru zbija 1JI" %[static_2, ddi_value, JI_glucose_result]
-
+	JIPerGlucoseLabel2.bbcode_text = "[b][u][i]%s[/i][/u][/b]  <--  w przybliżeniu tyle cukru zbija 1JI" %[JI_glucose_result]
+	JI_morning_label.bbcode_text = "Rano zbija o 50% mniej więc \n"
+	JI_morning_label.bbcode_text += "%s/1,5 = [color=#ef8522][b][i]%s" %[JI_glucose_result, JI_morning]
+	JI_afternoon_label.bbcode_text = "Popołudniu ormalnie więc [color=#ef8522][b][i]%s" %JI_afternoon
+	JI_evening_label.bbcode_text = "Wieczorem 30% mniej więc \n"
+	JI_evening_label.bbcode_text += "%s/1,3 = [color=#ef8522][b][i]%s" %[JI_glucose_result,JI_evening]
 func calculate_WW_WBT_values():
 	var WW_value = (weglowodany.value - blonnik.value)/10
 	var kcal_value = (weglowodany.value*4 + tluszcz.value*9 + bialko.value*4)
+	var WBT_value = (tluszcz.value*9 + bialko.value*4)/100
+	var JI_time
+	
 	WWandWBT.bbcode_text = "[b][i]WW = %s[/i][/b] \n[b][i]Kcal = %s[/i][/b]" %[WW_value, kcal_value]
+	WWandWBT.bbcode_text += "\n[b][i]WBT = %s[/i][/b]" %WBT_value
+#	WWandWBT.bbcode_text += "\nposiłek będzie rozkładał się %" JI_time
+
 
 func _on_CalculateButton_pressed():
 	calculate_Insuline_per_1WW()

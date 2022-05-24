@@ -98,8 +98,12 @@ proporcja = NodePath("MarginContainer/TabContainer/Obliczenia/VBoxContainer/Stat
 dzialanie = NodePath("MarginContainer/TabContainer/Obliczenia/VBoxContainer/Static1/NewLine2/Działanie")
 WWrano = NodePath("MarginContainer/TabContainer/Obliczenia/VBoxContainer/Static1/NewLine2/Rano")
 WWpopoludniu = NodePath("MarginContainer/TabContainer/Obliczenia/VBoxContainer/Static1/NewLine2/Popołudniu")
-WWwieczore = NodePath("MarginContainer/TabContainer/Obliczenia/VBoxContainer/Static1/NewLine2/Wieczorem")
+WWwieczorne = NodePath("MarginContainer/TabContainer/Obliczenia/VBoxContainer/Static1/NewLine2/Wieczorem")
 dzialanie2 = NodePath("MarginContainer/TabContainer/Obliczenia/VBoxContainer/Static2Box/Działanie2")
+JIPerGlucoseLabel2 = NodePath("MarginContainer/TabContainer/Obliczenia/VBoxContainer/Static2Box/JIPerGlucoseLabel2")
+JI_morning_label = NodePath("MarginContainer/TabContainer/Obliczenia/VBoxContainer/Static2Box/JI_morning_label")
+JI_afternoon_label = NodePath("MarginContainer/TabContainer/Obliczenia/VBoxContainer/Static2Box/JI_afternoon_label")
+JI_evening_label = NodePath("MarginContainer/TabContainer/Obliczenia/VBoxContainer/Static2Box/JI_evening_label")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -135,7 +139,7 @@ __meta__ = {
 
 [node name="Static1" type="VBoxContainer" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer"]
 margin_right = 1036.0
-margin_bottom = 880.0
+margin_bottom = 600.0
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1"]
 margin_right = 1036.0
@@ -306,6 +310,7 @@ __meta__ = {
 }
 
 [node name="NewLine2" type="HBoxContainer" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1"]
+visible = false
 show_behind_parent = true
 margin_top = 355.0
 margin_right = 1036.0
@@ -360,10 +365,84 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.42
 
-[node name="NewLine3" type="VBoxContainer" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1"]
-margin_top = 659.0
+[node name="NewLine4" type="HBoxContainer" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1"]
+visible = false
+show_behind_parent = true
+margin_top = 355.0
 margin_right = 1036.0
-margin_bottom = 880.0
+margin_bottom = 655.0
+rect_min_size = Vector2( 0, 300 )
+
+[node name="Node2" type="Control" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4"]
+margin_right = 39.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.42
+
+[node name="Table_1_Insuline_per_1WW" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4" instance=ExtResource( 8 )]
+show_behind_parent = true
+margin_left = 43.0
+margin_right = 992.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Text" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4/Table_1_Insuline_per_1WW/GridContainer/Cell_color_1_1" index="0"]
+bbcode_text = "[color=#d9d9d9][b][i]Pora dnia:"
+text = "Pora dnia:"
+
+[node name="Text" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4/Table_1_Insuline_per_1WW/GridContainer/Cell_color_2_1" index="0"]
+bbcode_text = "[color=#d9d9d9][b][i][center]Ile JI/1WW"
+text = "Ile JI/1WW"
+
+[node name="Text" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4/Table_1_Insuline_per_1WW/GridContainer/Cell_color_3_1" index="0"]
+bbcode_text = "[color=#d9d9d9][b][i][center]1JI/ile cukru"
+text = "1JI/ile cukru"
+
+[node name="Text" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4/Table_1_Insuline_per_1WW/GridContainer/Cell_color_1_2" index="0"]
+bbcode_text = "[color=#d9d9d9][b][i]Rano"
+text = "Rano"
+
+[node name="Text" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4/Table_1_Insuline_per_1WW/GridContainer/Cell_color_1_3" index="0"]
+bbcode_text = "[color=#d9d9d9][b][i]Popołudniu"
+text = "Popołudniu"
+
+[node name="Text" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4/Table_1_Insuline_per_1WW/GridContainer/Cell_color_1_4" index="0"]
+bbcode_text = "[color=#d9d9d9][b][i]Wieczorem"
+text = "Wieczorem"
+
+[node name="Node" type="Control" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4"]
+margin_left = 996.0
+margin_right = 1036.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.42
+
+[node name="HSeparator7" type="HSeparator" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1"]
+margin_top = 355.0
+margin_right = 1036.0
+margin_bottom = 359.0
+custom_styles/separator = ExtResource( 12 )
+
+[node name="HSeparator8" type="HSeparator" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1"]
+margin_top = 363.0
+margin_right = 1036.0
+margin_bottom = 367.0
+custom_styles/separator = ExtResource( 12 )
+
+[node name="HSeparator9" type="HSeparator" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1"]
+margin_top = 371.0
+margin_right = 1036.0
+margin_bottom = 375.0
+custom_styles/separator = ExtResource( 12 )
+
+[node name="NewLine3" type="VBoxContainer" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1"]
+margin_top = 379.0
+margin_right = 1036.0
+margin_bottom = 600.0
 
 [node name="Static2Box" type="VBoxContainer" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine3"]
 margin_right = 1036.0
@@ -621,13 +700,6 @@ margin_top = 217.0
 margin_right = 1036.0
 margin_bottom = 221.0
 custom_styles/separator = SubResource( 22 )
-
-[node name="HSeparator5" type="HSeparator" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine3"]
-visible = false
-margin_top = -241.0
-margin_right = 992.0
-margin_bottom = -237.0
-custom_styles/separator = ExtResource( 12 )
 
 [node name="Obliczenia" type="Tabs" parent="MarginContainer/TabContainer"]
 visible = false
@@ -1027,6 +1099,105 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="JIPerGlucoseLabel2" type="RichTextLabel" parent="MarginContainer/TabContainer/Obliczenia/VBoxContainer/Static2Box"]
+margin_top = 92.0
+margin_right = 992.0
+margin_bottom = 212.0
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 5 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Jest Stała Liczba [b](1500)[/b] którą dzielisz przez Twoje [b]DDI[/b] 
+(Stała liczba wynika z faktu, że 1WW powinno podnosić od 30 do 50 cukru)"
+text = "Jest Stała Liczba (1500) którą dzielisz przez Twoje DDI 
+(Stała liczba wynika z faktu, że 1WW powinno podnosić od 30 do 50 cukru)"
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/TabContainer/Obliczenia/VBoxContainer/Static2Box"]
+margin_top = 88.0
+margin_right = 992.0
+margin_bottom = 88.0
+custom_constants/separation = 0
+custom_styles/separator = ExtResource( 12 )
+
+[node name="JI_morning_label" type="RichTextLabel" parent="MarginContainer/TabContainer/Obliczenia/VBoxContainer/Static2Box"]
+margin_top = 92.0
+margin_right = 992.0
+margin_bottom = 132.0
+size_flags_stretch_ratio = 0.9
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 7 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="HSeparator8" type="HSeparator" parent="MarginContainer/TabContainer/Obliczenia/VBoxContainer/Static2Box"]
+margin_top = 136.0
+margin_right = 992.0
+margin_bottom = 136.0
+custom_constants/separation = 0
+custom_styles/separator = ExtResource( 12 )
+
+[node name="JI_afternoon_label" type="RichTextLabel" parent="MarginContainer/TabContainer/Obliczenia/VBoxContainer/Static2Box"]
+margin_top = 140.0
+margin_right = 992.0
+margin_bottom = 180.0
+size_flags_stretch_ratio = 0.9
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 7 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="HSeparator9" type="HSeparator" parent="MarginContainer/TabContainer/Obliczenia/VBoxContainer/Static2Box"]
+margin_top = 184.0
+margin_right = 992.0
+margin_bottom = 184.0
+custom_constants/separation = 0
+custom_styles/separator = ExtResource( 12 )
+
+[node name="JI_evening_label" type="RichTextLabel" parent="MarginContainer/TabContainer/Obliczenia/VBoxContainer/Static2Box"]
+margin_top = 188.0
+margin_right = 992.0
+margin_bottom = 228.0
+size_flags_stretch_ratio = 0.9
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 7 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="HSeparator10" type="HSeparator" parent="MarginContainer/TabContainer/Obliczenia/VBoxContainer/Static2Box"]
+margin_top = 232.0
+margin_right = 992.0
+margin_bottom = 232.0
+custom_constants/separation = 0
+custom_styles/separator = ExtResource( 12 )
+
 [connection signal="pressed" from="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/HBoxContainer/CalculateButton" to="." method="_on_CalculateButton_pressed"]
 [connection signal="pressed" from="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine3/Static2Box/PelnyProces/VBoxContainer5/CenterContainer/CalculateButton2" to="." method="_on_CalculateButton2_pressed"]
 
@@ -1043,3 +1214,16 @@ __meta__ = {
 [editable path="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine2/Table_1_Insuline_per_1WW/GridContainer/Cell_color_1_4"]
 [editable path="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine2/Table_1_Insuline_per_1WW/GridContainer/Cell_color_2_4"]
 [editable path="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine2/Table_1_Insuline_per_1WW/GridContainer/Cell_color_3_4"]
+[editable path="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4/Table_1_Insuline_per_1WW"]
+[editable path="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4/Table_1_Insuline_per_1WW/GridContainer/Cell_color_1_1"]
+[editable path="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4/Table_1_Insuline_per_1WW/GridContainer/Cell_color_2_1"]
+[editable path="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4/Table_1_Insuline_per_1WW/GridContainer/Cell_color_3_1"]
+[editable path="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4/Table_1_Insuline_per_1WW/GridContainer/Cell_color_1_2"]
+[editable path="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4/Table_1_Insuline_per_1WW/GridContainer/Cell_color_2_2"]
+[editable path="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4/Table_1_Insuline_per_1WW/GridContainer/Cell_color_3_2"]
+[editable path="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4/Table_1_Insuline_per_1WW/GridContainer/Cell_color_1_3"]
+[editable path="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4/Table_1_Insuline_per_1WW/GridContainer/Cell_color_2_3"]
+[editable path="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4/Table_1_Insuline_per_1WW/GridContainer/Cell_color_3_3"]
+[editable path="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4/Table_1_Insuline_per_1WW/GridContainer/Cell_color_1_4"]
+[editable path="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4/Table_1_Insuline_per_1WW/GridContainer/Cell_color_2_4"]
+[editable path="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine4/Table_1_Insuline_per_1WW/GridContainer/Cell_color_3_4"]
