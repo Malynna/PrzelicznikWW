@@ -18,7 +18,11 @@ export (NodePath) onready var weglowodany = get_node(weglowodany) as SpinBox
 export (NodePath) onready var blonnik = get_node(blonnik) as SpinBox
 export (NodePath) onready var bialko = get_node(bialko) as SpinBox
 export (NodePath) onready var tluszcz = get_node(tluszcz) as SpinBox
-export (NodePath) onready var WWandWBT = get_node(WWandWBT) as RichTextLabel
+export (NodePath) onready var WW_WBT_kcal_value_box = get_node(WW_WBT_kcal_value_box) as HBoxContainer
+export (NodePath) onready var WW_value_label = get_node(WW_value_label) as RichTextLabel
+export (NodePath) onready var WBT_value_label = get_node(WBT_value_label) as RichTextLabel
+export (NodePath) onready var kcal_value_label = get_node(kcal_value_label) as RichTextLabel
+export (NodePath) onready var JI_time_value_label = get_node(JI_time_value_label) as RichTextLabel
 
 #tab2
 export (NodePath) onready var WWPer1InsLabel2 = get_node(WWPer1InsLabel2) as RichTextLabel
@@ -111,12 +115,13 @@ func calculate_WW_WBT_values():
 	var WW_value = (weglowodany.value - blonnik.value)/10
 	var kcal_value = (weglowodany.value*4 + tluszcz.value*9 + bialko.value*4)
 	var WBT_value = (tluszcz.value*9 + bialko.value*4)/100
-	var JI_time = (stepify(WBT_value/2,0.5))+2
+	var JI_time = (stepify(WBT_value,0.5))+2
 	
-	WWandWBT.bbcode_text = "[b][i]WW = %s[/i][/b] \n[b][i]WBT = %s[/i][/b]" %[WW_value, WBT_value]
-	WWandWBT.bbcode_text += "\n[b][i]kcal = %s[/i][/b]" %kcal_value
-	WWandWBT.bbcode_text += "\n[b][i]posiłek będzie rozkładał się %s h" %JI_time
-
+	WW_WBT_kcal_value_box.visible = true
+	WW_value_label.bbcode_text = "[color=#ef8522][b][i][center]WW = %s"  %WW_value
+	WBT_value_label.bbcode_text = "[color=#ef8522][b][i][center]WBT = %s" %WBT_value
+	kcal_value_label.bbcode_text = "[color=#ef8522][b][i][center]kcal = %s" %kcal_value
+	JI_time_value_label.bbcode_text = "[color=#ef8522][b][i]posiłek będzie rozkładał się %s h" %JI_time
 
 func _on_CalculateButton_pressed():
 	calculate_Insuline_per_1WW()

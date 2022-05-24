@@ -83,7 +83,7 @@ __meta__ = {
 
 [node name="Static1" type="VBoxContainer" parent="VBoxContainer"]
 margin_right = 1072.0
-margin_bottom = 589.0
+margin_bottom = 549.0
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/Static1"]
 margin_right = 1072.0
@@ -306,11 +306,11 @@ custom_styles/separator = SubResource( 24 )
 [node name="NewLine3" type="VBoxContainer" parent="VBoxContainer/Static1"]
 margin_top = 369.0
 margin_right = 1072.0
-margin_bottom = 589.0
+margin_bottom = 549.0
 
 [node name="Static2Box" type="VBoxContainer" parent="VBoxContainer/Static1/NewLine3"]
 margin_right = 1072.0
-margin_bottom = 220.0
+margin_bottom = 180.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -356,7 +356,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 theme = SubResource( 25 )
 max_value = 1000.0
-rounded = true
+step = -2.0
 align = 1
 suffix = "g"
 __meta__ = {
@@ -402,7 +402,6 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 theme = SubResource( 25 )
 max_value = 1000.0
-rounded = true
 align = 1
 suffix = "g"
 __meta__ = {
@@ -448,7 +447,6 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 theme = SubResource( 25 )
 max_value = 1000.0
-rounded = true
 align = 1
 suffix = "g"
 __meta__ = {
@@ -495,6 +493,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 theme = SubResource( 25 )
 max_value = 1000.0
+step = -2.0
 rounded = true
 align = 1
 suffix = "g"
@@ -539,11 +538,76 @@ rect_min_size = Vector2( 150, 65 )
 custom_fonts/font = ExtResource( 3 )
 text = "Oblicz"
 
-[node name="WWandWBT" type="RichTextLabel" parent="VBoxContainer/Static1/NewLine3/Static2Box"]
+[node name="WW_WBT_kcal_value_box" type="HBoxContainer" parent="VBoxContainer/Static1/NewLine3/Static2Box"]
+visible = false
 margin_top = 113.0
 margin_right = 1072.0
-margin_bottom = 213.0
-rect_min_size = Vector2( 500, 100 )
+margin_bottom = 173.0
+
+[node name="WW_value_label" type="RichTextLabel" parent="VBoxContainer/Static1/NewLine3/Static2Box/WW_WBT_kcal_value_box"]
+margin_right = 354.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 120, 60 )
+size_flags_horizontal = 3
+theme = SubResource( 9 )
+custom_fonts/mono_font = ExtResource( 4 )
+custom_fonts/bold_italics_font = ExtResource( 3 )
+custom_fonts/italics_font = ExtResource( 5 )
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 6 )
+bbcode_enabled = true
+bbcode_text = "[b][i]WW"
+text = "WW"
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="WBT_value_label" type="RichTextLabel" parent="VBoxContainer/Static1/NewLine3/Static2Box/WW_WBT_kcal_value_box"]
+margin_left = 358.0
+margin_right = 713.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 120, 60 )
+size_flags_horizontal = 3
+theme = SubResource( 9 )
+custom_fonts/mono_font = ExtResource( 4 )
+custom_fonts/bold_italics_font = ExtResource( 3 )
+custom_fonts/italics_font = ExtResource( 5 )
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 6 )
+bbcode_enabled = true
+bbcode_text = "[b][i]WBT"
+text = "WBT"
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="kcal_value_label" type="RichTextLabel" parent="VBoxContainer/Static1/NewLine3/Static2Box/WW_WBT_kcal_value_box"]
+margin_left = 717.0
+margin_right = 1072.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 120, 60 )
+size_flags_horizontal = 3
+theme = SubResource( 9 )
+custom_fonts/mono_font = ExtResource( 4 )
+custom_fonts/bold_italics_font = ExtResource( 3 )
+custom_fonts/italics_font = ExtResource( 5 )
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 6 )
+bbcode_enabled = true
+bbcode_text = "[b][i]kcal"
+text = "kcal"
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="JI_time_value_label" type="RichTextLabel" parent="VBoxContainer/Static1/NewLine3/Static2Box"]
+margin_top = 113.0
+margin_right = 1072.0
+margin_bottom = 173.0
+rect_min_size = Vector2( 500, 60 )
 size_flags_stretch_ratio = 0.9
 theme = SubResource( 9 )
 custom_fonts/mono_font = ExtResource( 4 )
@@ -560,9 +624,9 @@ __meta__ = {
 }
 
 [node name="HSeparator6" type="HSeparator" parent="VBoxContainer/Static1/NewLine3/Static2Box"]
-margin_top = 217.0
+margin_top = 177.0
 margin_right = 1072.0
-margin_bottom = 220.0
+margin_bottom = 180.0
 custom_styles/separator = SubResource( 22 )
 
 [node name="Calculate_meal" type="VBoxContainer" parent="VBoxContainer/Static1"]
