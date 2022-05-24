@@ -9,5 +9,5 @@ content_margin_top = 0.0
 content_margin_bottom = 0.0
 color = Color( 0.431373, 0.435294, 0.447059, 1 )
 grow_begin = 0.0
-grow_end = -30.0
+grow_end = -35.0
 thickness = 3

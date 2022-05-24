@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://Themes/H_Separator.tres" type="StyleBox" id=1]
+[ext_resource path="res://Themes/H_Separator2.tres" type="StyleBox" id=1]
 [ext_resource path="res://Fonts/Bold_32.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Fonts/Bold_45_colored.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Fonts/Mono_32.tres" type="DynamicFont" id=4]
@@ -83,29 +83,29 @@ __meta__ = {
 
 [node name="Static1" type="VBoxContainer" parent="VBoxContainer"]
 margin_right = 1072.0
-margin_bottom = 600.0
+margin_bottom = 589.0
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/Static1"]
 margin_right = 1072.0
-margin_bottom = 4.0
+margin_bottom = 3.0
 custom_styles/separator = SubResource( 24 )
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Static1"]
-margin_top = 8.0
+margin_top = 7.0
 margin_right = 1072.0
-margin_bottom = 12.0
+margin_bottom = 10.0
 custom_styles/separator = SubResource( 24 )
 
 [node name="HSeparator3" type="HSeparator" parent="VBoxContainer/Static1"]
-margin_top = 16.0
+margin_top = 14.0
 margin_right = 1072.0
-margin_bottom = 20.0
+margin_bottom = 17.0
 custom_styles/separator = SubResource( 24 )
 
 [node name="TitleLabel" type="RichTextLabel" parent="VBoxContainer/Static1"]
-margin_top = 24.0
+margin_top = 21.0
 margin_right = 1072.0
-margin_bottom = 64.0
+margin_bottom = 61.0
 theme = SubResource( 4 )
 custom_fonts/mono_font = ExtResource( 4 )
 custom_fonts/bold_italics_font = ExtResource( 7 )
@@ -121,27 +121,27 @@ __meta__ = {
 }
 
 [node name="HSeparator4" type="HSeparator" parent="VBoxContainer/Static1"]
-margin_top = 68.0
+margin_top = 65.0
 margin_right = 1072.0
-margin_bottom = 72.0
+margin_bottom = 68.0
 custom_styles/separator = SubResource( 24 )
 
 [node name="HSeparator5" type="HSeparator" parent="VBoxContainer/Static1"]
-margin_top = 76.0
+margin_top = 72.0
 margin_right = 1072.0
-margin_bottom = 80.0
+margin_bottom = 75.0
 custom_styles/separator = SubResource( 24 )
 
 [node name="HSeparator6" type="HSeparator" parent="VBoxContainer/Static1"]
-margin_top = 84.0
+margin_top = 79.0
 margin_right = 1072.0
-margin_bottom = 88.0
+margin_bottom = 82.0
 custom_styles/separator = SubResource( 24 )
 
 [node name="EnterDDILabel" type="RichTextLabel" parent="VBoxContainer/Static1"]
-margin_top = 92.0
+margin_top = 86.0
 margin_right = 1072.0
-margin_bottom = 132.0
+margin_bottom = 126.0
 theme = ExtResource( 9 )
 custom_fonts/mono_font = ExtResource( 4 )
 custom_fonts/bold_italics_font = ExtResource( 7 )
@@ -158,9 +158,9 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Static1"]
-margin_top = 136.0
+margin_top = 130.0
 margin_right = 1072.0
-margin_bottom = 195.0
+margin_bottom = 189.0
 size_flags_stretch_ratio = 10.0
 
 [node name="DDI" type="SpinBox" parent="VBoxContainer/Static1/HBoxContainer"]
@@ -186,20 +186,20 @@ custom_fonts/font = ExtResource( 3 )
 text = "Oblicz"
 
 [node name="NewLine" type="VBoxContainer" parent="VBoxContainer/Static1"]
-margin_top = 199.0
+margin_top = 193.0
 margin_right = 1072.0
-margin_bottom = 351.0
+margin_bottom = 344.0
 size_flags_stretch_ratio = 10.0
 
 [node name="HSeparator4" type="HSeparator" parent="VBoxContainer/Static1/NewLine"]
 margin_right = 1072.0
-margin_bottom = 4.0
+margin_bottom = 3.0
 custom_styles/separator = SubResource( 24 )
 
 [node name="WWPer1InsLabel1" type="RichTextLabel" parent="VBoxContainer/Static1/NewLine"]
-margin_top = 8.0
+margin_top = 7.0
 margin_right = 1072.0
-margin_bottom = 64.0
+margin_bottom = 63.0
 size_flags_stretch_ratio = 0.9
 theme = SubResource( 4 )
 custom_fonts/mono_font = ExtResource( 4 )
@@ -216,9 +216,9 @@ __meta__ = {
 }
 
 [node name="InsPer1WWLabel1" type="RichTextLabel" parent="VBoxContainer/Static1/NewLine"]
-margin_top = 68.0
+margin_top = 67.0
 margin_right = 1072.0
-margin_bottom = 108.0
+margin_bottom = 107.0
 size_flags_stretch_ratio = 0.9
 theme = ExtResource( 9 )
 custom_fonts/mono_font = ExtResource( 4 )
@@ -235,9 +235,9 @@ __meta__ = {
 }
 
 [node name="JIPerGlucoseLabel1" type="RichTextLabel" parent="VBoxContainer/Static1/NewLine"]
-margin_top = 112.0
+margin_top = 111.0
 margin_right = 1072.0
-margin_bottom = 152.0
+margin_bottom = 151.0
 size_flags_stretch_ratio = 0.9
 theme = ExtResource( 9 )
 custom_fonts/mono_font = ExtResource( 4 )
@@ -286,31 +286,31 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.42
 
 [node name="HSeparator7" type="HSeparator" parent="VBoxContainer/Static1"]
-margin_top = 355.0
+margin_top = 348.0
 margin_right = 1072.0
-margin_bottom = 359.0
+margin_bottom = 351.0
 custom_styles/separator = SubResource( 24 )
 
 [node name="HSeparator8" type="HSeparator" parent="VBoxContainer/Static1"]
-margin_top = 363.0
+margin_top = 355.0
 margin_right = 1072.0
-margin_bottom = 367.0
+margin_bottom = 358.0
 custom_styles/separator = SubResource( 24 )
 
 [node name="HSeparator9" type="HSeparator" parent="VBoxContainer/Static1"]
-margin_top = 371.0
+margin_top = 362.0
 margin_right = 1072.0
-margin_bottom = 375.0
+margin_bottom = 365.0
 custom_styles/separator = SubResource( 24 )
 
 [node name="NewLine3" type="VBoxContainer" parent="VBoxContainer/Static1"]
-margin_top = 379.0
+margin_top = 369.0
 margin_right = 1072.0
-margin_bottom = 600.0
+margin_bottom = 589.0
 
 [node name="Static2Box" type="VBoxContainer" parent="VBoxContainer/Static1/NewLine3"]
 margin_right = 1072.0
-margin_bottom = 221.0
+margin_bottom = 220.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -562,7 +562,7 @@ __meta__ = {
 [node name="HSeparator6" type="HSeparator" parent="VBoxContainer/Static1/NewLine3/Static2Box"]
 margin_top = 217.0
 margin_right = 1072.0
-margin_bottom = 221.0
+margin_bottom = 220.0
 custom_styles/separator = SubResource( 22 )
 
 [node name="Calculate_meal" type="VBoxContainer" parent="VBoxContainer/Static1"]
