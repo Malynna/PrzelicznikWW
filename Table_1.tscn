@@ -7,121 +7,55 @@ margin_right = 875.0
 margin_bottom = 602.0
 
 [node name="GridContainer" type="GridContainer" parent="."]
-margin_right = 875.0
-margin_bottom = 596.0
+margin_right = 604.0
+margin_bottom = 252.0
 columns = 2
 
-[node name="Cell_color1" parent="GridContainer" instance=ExtResource( 1 )]
-margin_right = 435.0
-margin_bottom = 146.0
+[node name="Cell_color_1_1" parent="GridContainer" instance=ExtResource( 1 )]
+margin_right = 300.0
 
-[node name="Text" parent="GridContainer/Cell_color1/CenterContainer" index="0"]
-margin_top = 0.0
-margin_right = 430.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 430, 60 )
-bbcode_text = "[b][i]1[/i][/b] "
-text = "1 "
+[node name="Cell_color_2_1" parent="GridContainer" instance=ExtResource( 1 )]
+margin_left = 304.0
+margin_right = 604.0
 
-[node name="Cell_color2" parent="GridContainer" instance=ExtResource( 1 )]
-margin_left = 439.0
-margin_right = 874.0
-margin_bottom = 146.0
+[node name="Cell_color_1_2" parent="GridContainer" instance=ExtResource( 1 )]
+margin_top = 64.0
+margin_right = 300.0
+margin_bottom = 124.0
 
-[node name="Text" parent="GridContainer/Cell_color2/CenterContainer" index="0"]
-margin_top = 0.0
-margin_right = 430.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 430, 60 )
-bbcode_text = "[b][i]2[/i][/b] "
-text = "2 "
+[node name="Cell_color_2_2" parent="GridContainer" instance=ExtResource( 1 )]
+margin_left = 304.0
+margin_top = 64.0
+margin_right = 604.0
+margin_bottom = 124.0
 
-[node name="Cell_color3" parent="GridContainer" instance=ExtResource( 1 )]
-margin_top = 150.0
-margin_right = 435.0
-margin_bottom = 296.0
+[node name="Cell_color_1_3" parent="GridContainer" instance=ExtResource( 1 )]
+margin_top = 128.0
+margin_right = 300.0
+margin_bottom = 188.0
 
-[node name="Text" parent="GridContainer/Cell_color3/CenterContainer" index="0"]
-margin_top = 0.0
-margin_right = 430.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 430, 60 )
-bbcode_text = "[b][i]3[/i][/b] "
-text = "3 "
+[node name="Cell_color_2_3" parent="GridContainer" instance=ExtResource( 1 )]
+margin_left = 304.0
+margin_top = 128.0
+margin_right = 604.0
+margin_bottom = 188.0
 
-[node name="Cell_color4" parent="GridContainer" instance=ExtResource( 1 )]
-margin_left = 439.0
-margin_top = 150.0
-margin_right = 874.0
-margin_bottom = 296.0
+[node name="Cell_color_1_4" parent="GridContainer" instance=ExtResource( 1 )]
+margin_top = 192.0
+margin_right = 300.0
+margin_bottom = 252.0
 
-[node name="Text" parent="GridContainer/Cell_color4/CenterContainer" index="0"]
-margin_top = 0.0
-margin_right = 430.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 430, 60 )
-bbcode_text = "[b][i]4[/i][/b] "
-text = "4 "
+[node name="Cell_color_2_4" parent="GridContainer" instance=ExtResource( 1 )]
+margin_left = 304.0
+margin_top = 192.0
+margin_right = 604.0
+margin_bottom = 252.0
 
-[node name="Cell_color5" parent="GridContainer" instance=ExtResource( 1 )]
-margin_top = 300.0
-margin_right = 435.0
-margin_bottom = 446.0
-
-[node name="Text" parent="GridContainer/Cell_color5/CenterContainer" index="0"]
-margin_top = 0.0
-margin_right = 430.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 430, 60 )
-bbcode_text = "[b][i]5[/i][/b] "
-text = "5 "
-
-[node name="Cell_color6" parent="GridContainer" instance=ExtResource( 1 )]
-margin_left = 439.0
-margin_top = 300.0
-margin_right = 874.0
-margin_bottom = 446.0
-
-[node name="Text" parent="GridContainer/Cell_color6/CenterContainer" index="0"]
-margin_top = 0.0
-margin_right = 430.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 430, 60 )
-bbcode_text = "[b][i]6[/i][/b] "
-text = "6 "
-
-[node name="Cell_color7" parent="GridContainer" instance=ExtResource( 1 )]
-margin_top = 450.0
-margin_right = 435.0
-margin_bottom = 596.0
-
-[node name="Text" parent="GridContainer/Cell_color7/CenterContainer" index="0"]
-margin_top = 0.0
-margin_right = 430.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 430, 60 )
-bbcode_text = "[b][i]7[/i][/b] "
-text = "7 "
-
-[node name="Cell_color8" parent="GridContainer" instance=ExtResource( 1 )]
-margin_left = 439.0
-margin_top = 450.0
-margin_right = 874.0
-margin_bottom = 596.0
-
-[node name="Text" parent="GridContainer/Cell_color8/CenterContainer" index="0"]
-margin_top = 0.0
-margin_right = 430.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 430, 60 )
-bbcode_text = "[b][i]8[/i][/b] "
-text = "8 "
-
-[editable path="GridContainer/Cell_color1"]
-[editable path="GridContainer/Cell_color2"]
-[editable path="GridContainer/Cell_color3"]
-[editable path="GridContainer/Cell_color4"]
-[editable path="GridContainer/Cell_color5"]
-[editable path="GridContainer/Cell_color6"]
-[editable path="GridContainer/Cell_color7"]
-[editable path="GridContainer/Cell_color8"]
+[editable path="GridContainer/Cell_color_1_1"]
+[editable path="GridContainer/Cell_color_2_1"]
+[editable path="GridContainer/Cell_color_1_2"]
+[editable path="GridContainer/Cell_color_2_2"]
+[editable path="GridContainer/Cell_color_1_3"]
+[editable path="GridContainer/Cell_color_2_3"]
+[editable path="GridContainer/Cell_color_1_4"]
+[editable path="GridContainer/Cell_color_2_4"]

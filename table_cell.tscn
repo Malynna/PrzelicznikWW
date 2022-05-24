@@ -21,24 +21,16 @@ Fonts/fonts/normal = SubResource( 3 )
 [node name="Cell_color" type="ColorRect"]
 margin_right = 250.0
 margin_bottom = 60.0
-rect_min_size = Vector2( 250, 60 )
+rect_min_size = Vector2( 300, 60 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 0.870588, 0.792157, 0.792157, 1 )
+color = Color( 0.85098, 0.85098, 0.85098, 1 )
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-margin_right = 350.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 250, 60 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Text" type="RichTextLabel" parent="CenterContainer"]
-margin_left = 50.0
+[node name="Text" type="RichTextLabel" parent="."]
 margin_top = 2.0
 margin_right = 300.0
-margin_bottom = 58.0
-rect_min_size = Vector2( 250, 0 )
+margin_bottom = 62.0
+rect_min_size = Vector2( 300, 60 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 5 )
