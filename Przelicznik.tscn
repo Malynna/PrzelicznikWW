@@ -47,11 +47,13 @@ anchor_bottom = 1.0
 rect_min_size = Vector2( 1080, 500 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 11 )
 texture = ExtResource( 4 )
 stretch_mode = 1
 script = ExtResource( 1 )
 tabContainer = NodePath("MarginContainer/TabContainer")
 ddi = NodePath("MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/HBoxContainer/DDI")
+new_line = NodePath("MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine")
 WWPer1InsLabel1 = NodePath("MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine/WWPer1InsLabel1")
 InsPer1WWLabel1 = NodePath("MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine/InsPer1WWLabel1")
 JIPerGlucoseLabel1 = NodePath("MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine/JIPerGlucoseLabel1")
@@ -108,6 +110,7 @@ use_hidden_tabs_for_min_size = true
 
 [node name="Static1" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer" index="0"]
 margin_right = 1036.0
+margin_bottom = 454.0
 
 [node name="HSeparator" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="0"]
 margin_right = 1036.0
@@ -144,12 +147,30 @@ custom_styles/separator = SubResource( 27 )
 
 [node name="EnterDDILabel" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="7"]
 margin_right = 1036.0
+custom_effects = [ null ]
 
 [node name="HBoxContainer" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="8"]
 margin_right = 1036.0
 
-[node name="DDI" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/HBoxContainer" index="0"]
+[node name="Control" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/HBoxContainer" index="0"]
+margin_right = 240.0
+
+[node name="DDI" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/HBoxContainer" index="1"]
+margin_left = 244.0
+margin_right = 394.0
 theme = SubResource( 28 )
+
+[node name="Control2" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/HBoxContainer" index="2"]
+margin_left = 398.0
+margin_right = 638.0
+
+[node name="CalculateButton" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/HBoxContainer" index="3"]
+margin_left = 642.0
+margin_right = 792.0
+
+[node name="Control3" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/HBoxContainer" index="4"]
+margin_left = 796.0
+margin_right = 1036.0
 
 [node name="NewLine" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="9"]
 margin_right = 1036.0
@@ -194,6 +215,7 @@ margin_right = 1036.0
 
 [node name="Value1" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine3/Static2Box/PelnyProces/VBoxContainer/CenterContainer" index="0"]
 theme = SubResource( 28 )
+exp_edit = true
 
 [node name="Value2" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine3/Static2Box/PelnyProces/VBoxContainer2/CenterContainer" index="0"]
 theme = SubResource( 28 )
@@ -213,60 +235,46 @@ theme = ExtResource( 11 )
 custom_styles/separator = ExtResource( 12 )
 
 [node name="Calculate_meal" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="15"]
-margin_top = 593.0
+visible = true
+margin_top = 344.0
 margin_right = 1036.0
-margin_bottom = 697.0
+margin_bottom = 454.0
 
 [node name="HSeparator" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal" index="0"]
 margin_right = 1036.0
-margin_bottom = 3.0
 theme = ExtResource( 11 )
 custom_styles/separator = SubResource( 29 )
 
 [node name="HSeparator2" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal" index="1"]
-margin_top = 7.0
 margin_right = 1036.0
-margin_bottom = 10.0
 theme = ExtResource( 11 )
 custom_styles/separator = SubResource( 29 )
 
 [node name="HSeparator3" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal" index="2"]
-margin_top = 14.0
 margin_right = 1036.0
-margin_bottom = 17.0
 theme = ExtResource( 11 )
 custom_styles/separator = SubResource( 29 )
 
 [node name="TitleLabel" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal" index="3"]
-margin_top = 21.0
 margin_right = 1036.0
-margin_bottom = 61.0
 
 [node name="HSeparator4" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal" index="4"]
-margin_top = 65.0
 margin_right = 1036.0
-margin_bottom = 68.0
 theme = ExtResource( 11 )
 custom_styles/separator = SubResource( 29 )
 
 [node name="HSeparator5" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal" index="5"]
-margin_top = 72.0
 margin_right = 1036.0
-margin_bottom = 75.0
 theme = ExtResource( 11 )
 custom_styles/separator = SubResource( 29 )
 
 [node name="HSeparator6" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal" index="6"]
-margin_top = 79.0
 margin_right = 1036.0
-margin_bottom = 82.0
 theme = ExtResource( 11 )
 custom_styles/separator = SubResource( 29 )
 
 [node name="MenuButton" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal" index="7"]
-margin_top = 86.0
 margin_right = 1036.0
-margin_bottom = 104.0
 
 [node name="Obliczenia" parent="MarginContainer/TabContainer" instance=ExtResource( 3 )]
 visible = false
@@ -310,6 +318,7 @@ custom_styles/separator = SubResource( 30 )
 [node name="EnterDDILabel" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static1" index="7"]
 margin_top = 86.0
 margin_bottom = 126.0
+custom_effects = [ null ]
 
 [node name="Description1Label" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static1" index="8"]
 margin_top = 130.0
@@ -318,6 +327,7 @@ margin_bottom = 210.0
 [node name="EnteredDDILabel" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static1" index="9"]
 margin_top = 214.0
 margin_bottom = 254.0
+custom_effects = [ null ]
 
 [node name="HSeparator3" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static1" index="10"]
 margin_top = 258.0
@@ -428,14 +438,6 @@ margin_bottom = 438.0
 margin_top = 442.0
 margin_bottom = 442.0
 custom_styles/separator = SubResource( 30 )
-
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-margin_right = 12.0
-margin_bottom = 12.0
-
-[node name="ScrollContainer2" type="ScrollContainer" parent="."]
-margin_right = 12.0
-margin_bottom = 12.0
 
 [connection signal="pressed" from="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/HBoxContainer/CalculateButton" to="." method="_on_CalculateButton_pressed"]
 [connection signal="pressed" from="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine3/Static2Box/PelnyProces/VBoxContainer5/CenterContainer/CalculateButton2" to="." method="_on_CalculateButton2_pressed"]

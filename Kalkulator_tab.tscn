@@ -83,29 +83,29 @@ __meta__ = {
 
 [node name="Static1" type="VBoxContainer" parent="VBoxContainer"]
 margin_right = 1072.0
-margin_bottom = 549.0
+margin_bottom = 454.0
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/Static1"]
 margin_right = 1072.0
-margin_bottom = 3.0
+margin_bottom = 4.0
 custom_styles/separator = SubResource( 24 )
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Static1"]
-margin_top = 7.0
+margin_top = 8.0
 margin_right = 1072.0
-margin_bottom = 10.0
+margin_bottom = 12.0
 custom_styles/separator = SubResource( 24 )
 
 [node name="HSeparator3" type="HSeparator" parent="VBoxContainer/Static1"]
-margin_top = 14.0
+margin_top = 16.0
 margin_right = 1072.0
-margin_bottom = 17.0
+margin_bottom = 20.0
 custom_styles/separator = SubResource( 24 )
 
 [node name="TitleLabel" type="RichTextLabel" parent="VBoxContainer/Static1"]
-margin_top = 21.0
+margin_top = 24.0
 margin_right = 1072.0
-margin_bottom = 61.0
+margin_bottom = 64.0
 theme = SubResource( 4 )
 custom_fonts/mono_font = ExtResource( 4 )
 custom_fonts/bold_italics_font = ExtResource( 7 )
@@ -113,7 +113,7 @@ custom_fonts/italics_font = ExtResource( 5 )
 custom_fonts/bold_font = ExtResource( 2 )
 custom_fonts/normal_font = ExtResource( 6 )
 bbcode_enabled = true
-bbcode_text = "[b]Jak wyliczyć ile wziąć insuliny na 1 WW?[/b]"
+bbcode_text = "[b][center]Jak wyliczyć ile wziąć insuliny na 1 WW?"
 text = "Jak wyliczyć ile wziąć insuliny na 1 WW?"
 fit_content_height = true
 __meta__ = {
@@ -121,27 +121,27 @@ __meta__ = {
 }
 
 [node name="HSeparator4" type="HSeparator" parent="VBoxContainer/Static1"]
-margin_top = 65.0
+margin_top = 68.0
 margin_right = 1072.0
-margin_bottom = 68.0
+margin_bottom = 72.0
 custom_styles/separator = SubResource( 24 )
 
 [node name="HSeparator5" type="HSeparator" parent="VBoxContainer/Static1"]
-margin_top = 72.0
+margin_top = 76.0
 margin_right = 1072.0
-margin_bottom = 75.0
+margin_bottom = 80.0
 custom_styles/separator = SubResource( 24 )
 
 [node name="HSeparator6" type="HSeparator" parent="VBoxContainer/Static1"]
-margin_top = 79.0
+margin_top = 84.0
 margin_right = 1072.0
-margin_bottom = 82.0
+margin_bottom = 88.0
 custom_styles/separator = SubResource( 24 )
 
 [node name="EnterDDILabel" type="RichTextLabel" parent="VBoxContainer/Static1"]
-margin_top = 86.0
+margin_top = 92.0
 margin_right = 1072.0
-margin_bottom = 126.0
+margin_bottom = 132.0
 theme = ExtResource( 9 )
 custom_fonts/mono_font = ExtResource( 4 )
 custom_fonts/bold_italics_font = ExtResource( 7 )
@@ -149,7 +149,7 @@ custom_fonts/italics_font = ExtResource( 5 )
 custom_fonts/bold_font = ExtResource( 2 )
 custom_fonts/normal_font = ExtResource( 6 )
 bbcode_enabled = true
-bbcode_text = "Wprowadź  swoje DDI:"
+bbcode_text = "[center]Wprowadź  swoje DDI:"
 text = "Wprowadź  swoje DDI:"
 fit_content_height = true
 custom_effects = [ null ]
@@ -158,48 +158,73 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Static1"]
-margin_top = 130.0
+margin_top = 136.0
 margin_right = 1072.0
-margin_bottom = 189.0
+margin_bottom = 195.0
 size_flags_stretch_ratio = 10.0
+alignment = 1
+
+[node name="Control" type="Control" parent="VBoxContainer/Static1/HBoxContainer"]
+margin_right = 252.0
+margin_bottom = 59.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="DDI" type="SpinBox" parent="VBoxContainer/Static1/HBoxContainer"]
-margin_top = 2.0
-margin_right = 136.0
-margin_bottom = 57.0
+margin_left = 256.0
+margin_right = 406.0
+margin_bottom = 59.0
+rect_min_size = Vector2( 150, 0 )
+hint_tooltip = "Twoje zapotrzebowanie insuliny na dzień"
 focus_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme = SubResource( 25 )
+step = 0.01
 value = 45.0
 align = 1
 __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="Control2" type="Control" parent="VBoxContainer/Static1/HBoxContainer"]
+margin_left = 410.0
+margin_right = 662.0
+margin_bottom = 59.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [node name="CalculateButton" type="Button" parent="VBoxContainer/Static1/HBoxContainer"]
-margin_left = 140.0
-margin_right = 290.0
+margin_left = 666.0
+margin_right = 816.0
 margin_bottom = 59.0
 rect_min_size = Vector2( 150, 0 )
 custom_fonts/font = ExtResource( 3 )
 text = "Oblicz"
 
-[node name="NewLine" type="VBoxContainer" parent="VBoxContainer/Static1"]
-margin_top = 193.0
+[node name="Control3" type="Control" parent="VBoxContainer/Static1/HBoxContainer"]
+margin_left = 820.0
 margin_right = 1072.0
-margin_bottom = 344.0
+margin_bottom = 59.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NewLine" type="VBoxContainer" parent="VBoxContainer/Static1"]
+visible = false
+margin_top = 199.0
+margin_right = 1072.0
+margin_bottom = 351.0
 size_flags_stretch_ratio = 10.0
 
 [node name="HSeparator4" type="HSeparator" parent="VBoxContainer/Static1/NewLine"]
 margin_right = 1072.0
-margin_bottom = 3.0
+margin_bottom = 4.0
 custom_styles/separator = SubResource( 24 )
 
 [node name="WWPer1InsLabel1" type="RichTextLabel" parent="VBoxContainer/Static1/NewLine"]
-margin_top = 7.0
+margin_top = 8.0
 margin_right = 1072.0
-margin_bottom = 63.0
+margin_bottom = 64.0
 size_flags_stretch_ratio = 0.9
 theme = SubResource( 4 )
 custom_fonts/mono_font = ExtResource( 4 )
@@ -216,9 +241,9 @@ __meta__ = {
 }
 
 [node name="InsPer1WWLabel1" type="RichTextLabel" parent="VBoxContainer/Static1/NewLine"]
-margin_top = 67.0
+margin_top = 68.0
 margin_right = 1072.0
-margin_bottom = 107.0
+margin_bottom = 108.0
 size_flags_stretch_ratio = 0.9
 theme = ExtResource( 9 )
 custom_fonts/mono_font = ExtResource( 4 )
@@ -235,9 +260,9 @@ __meta__ = {
 }
 
 [node name="JIPerGlucoseLabel1" type="RichTextLabel" parent="VBoxContainer/Static1/NewLine"]
-margin_top = 111.0
+margin_top = 112.0
 margin_right = 1072.0
-margin_bottom = 151.0
+margin_bottom = 152.0
 size_flags_stretch_ratio = 0.9
 theme = ExtResource( 9 )
 custom_fonts/mono_font = ExtResource( 4 )
@@ -286,31 +311,31 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.42
 
 [node name="HSeparator7" type="HSeparator" parent="VBoxContainer/Static1"]
-margin_top = 348.0
+margin_top = 199.0
 margin_right = 1072.0
-margin_bottom = 351.0
+margin_bottom = 203.0
 custom_styles/separator = SubResource( 24 )
 
 [node name="HSeparator8" type="HSeparator" parent="VBoxContainer/Static1"]
-margin_top = 355.0
+margin_top = 207.0
 margin_right = 1072.0
-margin_bottom = 358.0
+margin_bottom = 211.0
 custom_styles/separator = SubResource( 24 )
 
 [node name="HSeparator9" type="HSeparator" parent="VBoxContainer/Static1"]
-margin_top = 362.0
+margin_top = 215.0
 margin_right = 1072.0
-margin_bottom = 365.0
+margin_bottom = 219.0
 custom_styles/separator = SubResource( 24 )
 
 [node name="NewLine3" type="VBoxContainer" parent="VBoxContainer/Static1"]
-margin_top = 369.0
+margin_top = 223.0
 margin_right = 1072.0
-margin_bottom = 549.0
+margin_bottom = 340.0
 
 [node name="Static2Box" type="VBoxContainer" parent="VBoxContainer/Static1/NewLine3"]
 margin_right = 1072.0
-margin_bottom = 180.0
+margin_bottom = 117.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -347,16 +372,17 @@ margin_right = 220.0
 margin_bottom = 109.0
 
 [node name="Value1" type="SpinBox" parent="VBoxContainer/Static1/NewLine3/Static2Box/PelnyProces/VBoxContainer/CenterContainer"]
-margin_left = 42.0
-margin_right = 178.0
+margin_left = 40.0
+margin_right = 180.0
 margin_bottom = 65.0
 rect_min_size = Vector2( 0, 65 )
+hint_tooltip = "Węglowodany"
 focus_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme = SubResource( 25 )
 max_value = 1000.0
-step = -2.0
+step = 0.01
 align = 1
 suffix = "g"
 __meta__ = {
@@ -393,8 +419,8 @@ margin_right = 200.0
 margin_bottom = 109.0
 
 [node name="Value2" type="SpinBox" parent="VBoxContainer/Static1/NewLine3/Static2Box/PelnyProces/VBoxContainer2/CenterContainer"]
-margin_left = 32.0
-margin_right = 168.0
+margin_left = 30.0
+margin_right = 170.0
 margin_bottom = 65.0
 rect_min_size = Vector2( 0, 65 )
 focus_mode = 2
@@ -402,6 +428,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 theme = SubResource( 25 )
 max_value = 1000.0
+step = 0.01
 align = 1
 suffix = "g"
 __meta__ = {
@@ -438,8 +465,8 @@ margin_right = 200.0
 margin_bottom = 109.0
 
 [node name="Value3" type="SpinBox" parent="VBoxContainer/Static1/NewLine3/Static2Box/PelnyProces/VBoxContainer3/CenterContainer"]
-margin_left = 32.0
-margin_right = 168.0
+margin_left = 30.0
+margin_right = 170.0
 margin_bottom = 65.0
 rect_min_size = Vector2( 0, 65 )
 focus_mode = 2
@@ -447,6 +474,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 theme = SubResource( 25 )
 max_value = 1000.0
+step = 0.01
 align = 1
 suffix = "g"
 __meta__ = {
@@ -493,7 +521,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 theme = SubResource( 25 )
 max_value = 1000.0
-step = -2.0
+step = 0.01
 rounded = true
 align = 1
 suffix = "g"
@@ -604,6 +632,7 @@ __meta__ = {
 }
 
 [node name="JI_time_value_label" type="RichTextLabel" parent="VBoxContainer/Static1/NewLine3/Static2Box"]
+visible = false
 margin_top = 113.0
 margin_right = 1072.0
 margin_bottom = 173.0
@@ -624,16 +653,15 @@ __meta__ = {
 }
 
 [node name="HSeparator6" type="HSeparator" parent="VBoxContainer/Static1/NewLine3/Static2Box"]
-margin_top = 177.0
+margin_top = 113.0
 margin_right = 1072.0
-margin_bottom = 180.0
+margin_bottom = 117.0
 custom_styles/separator = SubResource( 22 )
 
 [node name="Calculate_meal" type="VBoxContainer" parent="VBoxContainer/Static1"]
-visible = false
-margin_top = 604.0
+margin_top = 344.0
 margin_right = 1072.0
-margin_bottom = 714.0
+margin_bottom = 454.0
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/Static1/Calculate_meal"]
 margin_right = 1072.0
@@ -694,6 +722,20 @@ margin_right = 1072.0
 margin_bottom = 110.0
 text = "test"
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer/Static1/Calculate_meal/MenuButton"]
-margin_right = 20.0
-margin_bottom = 20.0
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/Static1/Calculate_meal/MenuButton"]
+margin_left = 1.0
+margin_top = 23.0
+margin_right = 106.0
+margin_bottom = 41.0
+text = "option button"
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/Static1/Calculate_meal/MenuButton/OptionButton"]
+margin_left = 1.0
+margin_top = 19.0
+margin_right = 21.0
+margin_bottom = 39.0
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/Static1/Calculate_meal/MenuButton"]
+margin_top = 71.0
+margin_right = 68.0
+margin_bottom = 107.0
