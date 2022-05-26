@@ -3,8 +3,8 @@
 [ext_resource path="res://table_cell.tscn" type="PackedScene" id=1]
 
 [node name="Table_1" type="Control"]
-margin_right = 875.0
-margin_bottom = 602.0
+margin_right = 608.0
+margin_bottom = 266.0
 
 [node name="GridContainer" type="GridContainer" parent="."]
 margin_right = 604.0
