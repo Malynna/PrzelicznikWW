@@ -1,16 +1,15 @@
-extends OptionButton
+extends Node #"res://Przelicznik.gd"
 
 export (NodePath) onready var dropdown1 = get_node(dropdown1) as OptionButton
 export (NodePath) onready var dropdown2 = get_node(dropdown2) as OptionButton
 
-onready var Przelicznik = get_node("res://Przelicznik")
 
 func _ready():
 	add_items_to_dropdown()
-
+#	print (WW_morning_string)
 
 func add_items_to_dropdown():
-	dropdown1.add_item("Rano " + "1")
+	dropdown1.add_item("Rano ")
 	dropdown1.add_item("Popołudniu")
 	dropdown1.add_item("Wieczorem")
 	dropdown1.add_item("Rano/2")

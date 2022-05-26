@@ -1,4 +1,5 @@
 extends Node
+
 #tab1
 export (NodePath) onready var tabContainer = get_node(tabContainer) as TabContainer
 export (NodePath) onready var ddi = get_node(ddi) as SpinBox
@@ -44,7 +45,7 @@ export (int) var ddi_value
 export (int) var static_1 = 450
 export (int) var static_2 = 1500
 var i_1WW
-var WW_morning = 1 
+var WW_morning_string = 1
 
 func _ready():
 	ddi.get_line_edit().grab_focus()
@@ -92,7 +93,7 @@ func calculate_WW_per_1Insuline():
 	WWpopoludniu.bbcode_text+= "[color=#ef8522][b][i][u]%s[/u][/i][/b][/color] jednostki insuliny na 1 WW" %[str(WW_afternoon)]
 	WWwieczorne.bbcode_text = "[b]Wieczorem[/b]jest podwyższona oporność, należy podać 30% więcej insuliny więc:\n" 
 	WWwieczorne.bbcode_text+= "[b]%s[/b] * 1.3 = [color=#ef8522][b][i][u]%s[/u][/i][/b][/color] jednostki insuliny na 1 WW" %[str(WW_1i), str(WW_evening)]
-
+	return
 	
 func calculate_1JI_per_glucose():
 	var JI_glucose_result = stepify(static_2/ddi_value,0.0001)
