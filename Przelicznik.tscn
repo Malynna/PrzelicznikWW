@@ -4,8 +4,8 @@
 [ext_resource path="res://Kalkulator_tab.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Obliczenia_tab.tscn" type="PackedScene" id=3]
 [ext_resource path="res://background_ver_3.png" type="Texture" id=4]
+[ext_resource path="res://Themes/dropdown_THEME.tres" type="Theme" id=5]
 [ext_resource path="res://Fonts/Bold_45_colored.tres" type="DynamicFont" id=7]
-[ext_resource path="res://THEME.tres" type="Theme" id=11]
 [ext_resource path="res://Themes/H_Separator.tres" type="StyleBox" id=12]
 
 [sub_resource type="StyleBoxEmpty" id=23]
@@ -47,7 +47,7 @@ anchor_bottom = 1.0
 rect_min_size = Vector2( 1080, 500 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 11 )
+theme = ExtResource( 5 )
 texture = ExtResource( 4 )
 stretch_mode = 1
 script = ExtResource( 1 )
@@ -101,7 +101,7 @@ custom_constants/margin_left = 30
 margin_left = 30.0
 margin_right = 1050.0
 margin_bottom = 1540.0
-theme = ExtResource( 11 )
+theme = ExtResource( 5 )
 custom_styles/panel = SubResource( 23 )
 tab_align = 0
 use_hidden_tabs_for_min_size = true
@@ -110,21 +110,20 @@ use_hidden_tabs_for_min_size = true
 
 [node name="Static1" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer" index="0"]
 margin_right = 1036.0
-margin_bottom = 454.0
 
 [node name="HSeparator" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="0"]
 margin_right = 1036.0
-theme = ExtResource( 11 )
+theme = ExtResource( 5 )
 custom_styles/separator = ExtResource( 12 )
 
 [node name="HSeparator2" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="1"]
 margin_right = 1036.0
-theme = ExtResource( 11 )
+theme = ExtResource( 5 )
 custom_styles/separator = SubResource( 27 )
 
 [node name="HSeparator3" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="2"]
 margin_right = 1036.0
-theme = ExtResource( 11 )
+theme = ExtResource( 5 )
 custom_styles/separator = SubResource( 27 )
 
 [node name="TitleLabel" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="3"]
@@ -132,44 +131,43 @@ margin_right = 1036.0
 
 [node name="HSeparator4" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="4"]
 margin_right = 1036.0
-theme = ExtResource( 11 )
+theme = ExtResource( 5 )
 custom_styles/separator = SubResource( 27 )
 
 [node name="HSeparator5" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="5"]
 margin_right = 1036.0
-theme = ExtResource( 11 )
+theme = ExtResource( 5 )
 custom_styles/separator = SubResource( 27 )
 
 [node name="HSeparator6" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="6"]
 margin_right = 1036.0
-theme = ExtResource( 11 )
+theme = ExtResource( 5 )
 custom_styles/separator = SubResource( 27 )
 
 [node name="EnterDDILabel" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="7"]
 margin_right = 1036.0
-custom_effects = [ null ]
 
 [node name="HBoxContainer" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="8"]
 margin_right = 1036.0
 
 [node name="Control" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/HBoxContainer" index="0"]
-margin_right = 240.0
+margin_right = 228.0
 
 [node name="DDI" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/HBoxContainer" index="1"]
-margin_left = 244.0
-margin_right = 394.0
+margin_left = 232.0
+margin_right = 416.0
 theme = SubResource( 28 )
 
 [node name="Control2" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/HBoxContainer" index="2"]
-margin_left = 398.0
-margin_right = 638.0
+margin_left = 420.0
+margin_right = 649.0
 
 [node name="CalculateButton" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/HBoxContainer" index="3"]
-margin_left = 642.0
-margin_right = 792.0
+margin_left = 653.0
+margin_right = 803.0
 
 [node name="Control3" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/HBoxContainer" index="4"]
-margin_left = 796.0
+margin_left = 807.0
 margin_right = 1036.0
 
 [node name="NewLine" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="9"]
@@ -177,7 +175,7 @@ margin_right = 1036.0
 
 [node name="HSeparator4" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine" index="0"]
 margin_right = 1036.0
-theme = ExtResource( 11 )
+theme = ExtResource( 5 )
 custom_styles/separator = SubResource( 27 )
 
 [node name="WWPer1InsLabel1" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine" index="1"]
@@ -191,17 +189,17 @@ margin_right = 1036.0
 
 [node name="HSeparator7" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="11"]
 margin_right = 1036.0
-theme = ExtResource( 11 )
+theme = ExtResource( 5 )
 custom_styles/separator = SubResource( 27 )
 
 [node name="HSeparator8" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="12"]
 margin_right = 1036.0
-theme = ExtResource( 11 )
+theme = ExtResource( 5 )
 custom_styles/separator = SubResource( 27 )
 
 [node name="HSeparator9" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="13"]
 margin_right = 1036.0
-theme = ExtResource( 11 )
+theme = ExtResource( 5 )
 custom_styles/separator = SubResource( 27 )
 
 [node name="NewLine3" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="14"]
@@ -231,28 +229,25 @@ margin_right = 1036.0
 
 [node name="HSeparator6" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/NewLine3/Static2Box" index="3"]
 margin_right = 1036.0
-theme = ExtResource( 11 )
+theme = ExtResource( 5 )
 custom_styles/separator = ExtResource( 12 )
 
 [node name="Calculate_meal" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="15"]
-visible = true
-margin_top = 344.0
 margin_right = 1036.0
-margin_bottom = 454.0
 
 [node name="HSeparator" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal" index="0"]
 margin_right = 1036.0
-theme = ExtResource( 11 )
+theme = ExtResource( 5 )
 custom_styles/separator = SubResource( 29 )
 
 [node name="HSeparator2" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal" index="1"]
 margin_right = 1036.0
-theme = ExtResource( 11 )
+theme = ExtResource( 5 )
 custom_styles/separator = SubResource( 29 )
 
 [node name="HSeparator3" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal" index="2"]
 margin_right = 1036.0
-theme = ExtResource( 11 )
+theme = ExtResource( 5 )
 custom_styles/separator = SubResource( 29 )
 
 [node name="TitleLabel" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal" index="3"]
@@ -260,20 +255,20 @@ margin_right = 1036.0
 
 [node name="HSeparator4" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal" index="4"]
 margin_right = 1036.0
-theme = ExtResource( 11 )
+theme = ExtResource( 5 )
 custom_styles/separator = SubResource( 29 )
 
 [node name="HSeparator5" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal" index="5"]
 margin_right = 1036.0
-theme = ExtResource( 11 )
+theme = ExtResource( 5 )
 custom_styles/separator = SubResource( 29 )
 
 [node name="HSeparator6" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal" index="6"]
 margin_right = 1036.0
-theme = ExtResource( 11 )
+theme = ExtResource( 5 )
 custom_styles/separator = SubResource( 29 )
 
-[node name="MenuButton" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal" index="7"]
+[node name="Dropdown" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal" index="7"]
 margin_right = 1036.0
 
 [node name="Obliczenia" parent="MarginContainer/TabContainer" instance=ExtResource( 3 )]

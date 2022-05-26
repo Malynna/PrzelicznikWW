@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fonts/Normal_32.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Themes/button_group.tres" type="ButtonGroup" id=2]
+[ext_resource path="res://UI_Elements/png/grey_circle.png" type="Texture" id=3]
+[ext_resource path="res://THEME.tres" type="Theme" id=4]
+[ext_resource path="res://UI_Elements/png/grey_boxTick.png" type="Texture" id=5]
+
+[node name="CheckBox7" type="CheckBox"]
+margin_top = 448.0
+margin_right = 229.0
+margin_bottom = 508.0
+rect_min_size = Vector2( 120, 60 )
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 1 )
+custom_icons/radio_checked = ExtResource( 5 )
+custom_icons/radio_unchecked = ExtResource( 3 )
+group = ExtResource( 2 )
+text = "test 3"

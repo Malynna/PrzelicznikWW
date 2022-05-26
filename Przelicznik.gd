@@ -44,6 +44,7 @@ export (int) var ddi_value
 export (int) var static_1 = 450
 export (int) var static_2 = 1500
 var i_1WW
+var WW_morning = 1 
 
 func _ready():
 	ddi.get_line_edit().grab_focus()
