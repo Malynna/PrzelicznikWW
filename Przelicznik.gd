@@ -21,14 +21,13 @@ export (NodePath) onready var Math = get_node(Math) as RichTextLabel
 export (NodePath) onready var Day_time_calculations = get_node(Day_time_calculations) as RichTextLabel
 export (NodePath) onready var Math2 = get_node(Math2) as RichTextLabel
 export (NodePath) onready var JI_glucose_label = get_node(JI_glucose_label) as RichTextLabel
-#export (NodePath) onready var JI_morning_label = get_node(JI_morning_label) as RichTextLabel
-#export (NodePath) onready var JI_afternoon_label = get_node(JI_afternoon_label) as RichTextLabel
-#export (NodePath) onready var JI_evening_label = get_node(JI_evening_label) as RichTextLabel
+
 
 export (int) var ddi_value
 export (int) var static_1 = 450
 export (int) var static_2 = 1500
-
+var WW_morning : float  = 2
+var values_arrray = []
 
 func _ready():
 	ddi.get_line_edit().grab_focus()
@@ -44,7 +43,7 @@ func calculate_Insuline_and_WW():
 	var i_1W = stepify((static_1/ddi_value), 0.0001)
 	var i_1WW  = stepify(i_1W/10,0.01)
 	var WW_1i : float = stepify(1/i_1WW,0.0001)
-	var WW_morning : float = stepify(WW_1i*1.5,0.01)
+	WW_morning = stepify(WW_1i*1.5,0.01)
 	var WW_afternoon : float = stepify(WW_1i,0.01)
 	var WW_evening : float = stepify(WW_1i*1.3,0.01)
 	var JI_glucose_result = stepify(static_2/ddi_value,0.0001)
@@ -85,8 +84,10 @@ func calculate_Insuline_and_WW():
 	JI_glucose_label.bbcode_text+= "\n[b]Popołudniu[/b]  normalnie: [color=#ef8522][b]%s[/b][/color]" %JI_afternoon
 	JI_glucose_label.bbcode_text+= "\n[b]Wieczorem[/b] 30% mniej: "
 	JI_glucose_label.bbcode_text+= "%s/1.3 = [color=#ef8522][b]%s[/b][/color]" %[JI_glucose_result,JI_evening]
-
-
+	values_arrray = [WW_morning, WW_afternoon, WW_evening]
+	return WW_morning
+	
+	
 func _on_CalculateButton_pressed():
 	calculate_Insuline_and_WW()
 	tabContainer.set_tab_disabled(1, false)

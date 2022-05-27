@@ -65,8 +65,10 @@ thickness = 2
 
 [node name="Calculate_meal" type="Control"]
 script = ExtResource( 8 )
-dropdown1 = NodePath("VBoxContainer2/Dropboxes/JI_WW_box/Dropdown1")
-dropdown2 = NodePath("VBoxContainer2/Dropboxes/JI_WBT_box/Dropdown2")
+JI_WW_Value = NodePath("VBoxContainer2/Dropboxes/JI_WW_box/JI_WW_Value")
+Dropdown_WW = NodePath("VBoxContainer2/Dropboxes/JI_WW_box/Dropdown_WW")
+JI_WBT_Value = NodePath("VBoxContainer2/Dropboxes/JI_WBT_box/JI_WBT_Value")
+Dropdown_WBT = NodePath("VBoxContainer2/Dropboxes/JI_WBT_box/Dropdown_WBT")
 Meal_values_box = NodePath("VBoxContainer2/Meal_values_box")
 Carbohydrates_value = NodePath("VBoxContainer2/Meal_values_box/Meal_composition/Carbohydrates_box/CenterContainer/Carbohydrates_value")
 Fiber_value = NodePath("VBoxContainer2/Meal_values_box/Meal_composition/Fiber_box/CenterContainer/Fiber_value")
@@ -77,6 +79,7 @@ WW_value_label = NodePath("VBoxContainer2/Meal_values_box/WW_WBT_full_values_box
 WBT_value_label = NodePath("VBoxContainer2/Meal_values_box/WW_WBT_full_values_box/WW_WBT_kcal_valuse_box/WBT_value_label")
 kcal_value_label = NodePath("VBoxContainer2/Meal_values_box/WW_WBT_full_values_box/WW_WBT_kcal_valuse_box/kcal_value_label")
 JI_time_value_label = NodePath("VBoxContainer2/Meal_values_box/WW_WBT_full_values_box/JI_time_value_label")
+JI_value_label = NodePath("VBoxContainer2/Meal_values_box/WW_WBT_full_values_box/JI_value_label")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 margin_right = 1036.0
@@ -160,12 +163,11 @@ theme = SubResource( 25 )
 max_value = 1000.0
 step = 0.01
 align = 1
-editable = false
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Dropdown1" type="OptionButton" parent="VBoxContainer2/Dropboxes/JI_WW_box"]
+[node name="Dropdown_WW" type="OptionButton" parent="VBoxContainer2/Dropboxes/JI_WW_box"]
 margin_top = 69.0
 margin_right = 400.0
 margin_bottom = 129.0
@@ -195,12 +197,11 @@ theme = SubResource( 25 )
 max_value = 1000.0
 step = 0.01
 align = 1
-editable = false
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Dropdown2" type="OptionButton" parent="VBoxContainer2/Dropboxes/JI_WBT_box"]
+[node name="Dropdown_WBT" type="OptionButton" parent="VBoxContainer2/Dropboxes/JI_WBT_box"]
 margin_top = 69.0
 margin_right = 400.0
 margin_bottom = 129.0
@@ -547,6 +548,33 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="HSeparator10" type="HSeparator" parent="VBoxContainer2/Meal_values_box/WW_WBT_full_values_box"]
+margin_top = 8.0
+margin_right = 1036.0
+margin_bottom = 12.0
+theme = ExtResource( 9 )
+custom_styles/separator = SubResource( 22 )
+
+[node name="JI_value_label" type="RichTextLabel" parent="VBoxContainer2/Meal_values_box/WW_WBT_full_values_box"]
+margin_top = 64.0
+margin_right = 1036.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 500, 60 )
+size_flags_stretch_ratio = 0.9
+theme = SubResource( 9 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 5 )
+custom_fonts/italics_font = ExtResource( 3 )
+custom_fonts/bold_font = ExtResource( 4 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Kliknij [b][i]<Oblicz>[/i][/b] aby poznać WW, WBT i kcal posiłku"
+text = "Kliknij <Oblicz> aby poznać WW, WBT i kcal posiłku"
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
+
 [node name="HSeparator6" type="HSeparator" parent="VBoxContainer2/Meal_values_box"]
 margin_top = 137.0
 margin_right = 1036.0
@@ -554,4 +582,6 @@ margin_bottom = 141.0
 theme = ExtResource( 9 )
 custom_styles/separator = SubResource( 22 )
 
+[connection signal="item_selected" from="VBoxContainer2/Dropboxes/JI_WW_box/Dropdown_WW" to="." method="on_Dropdown_WW_item_selected"]
+[connection signal="item_selected" from="VBoxContainer2/Dropboxes/JI_WBT_box/Dropdown_WBT" to="." method="on_Dropdown_WBT_item_selected"]
 [connection signal="pressed" from="VBoxContainer2/Meal_values_box/Meal_composition/Calculate_meal_composition_box/CenterContainer/Calculate_meal_composition_button2" to="." method="calculate_WW_WBT_values"]
