@@ -1,5 +1,7 @@
 extends Control
 
+export (NodePath) onready var Hide_meal_button = get_node(JI_WW_Value) as CheckButton
+export (NodePath) onready var Dropboxes = get_node(Dropboxes) as HBoxContainer
 export (NodePath) onready var JI_WW_Value = get_node(JI_WW_Value) as SpinBox
 export (NodePath) onready var Dropdown_WW = get_node(Dropdown_WW) as OptionButton
 export (NodePath) onready var JI_WBT_Value = get_node(JI_WBT_Value) as SpinBox
@@ -25,7 +27,7 @@ export (NodePath) onready var WW_evening_cell = get_node(WW_evening_cell) as Ric
 
 func _ready():
 	add_items_to_dropdown()
-	choose_WW_WBT_values()
+	recalc()
 
 
 func add_items_to_dropdown():
@@ -47,8 +49,12 @@ func add_items_to_dropdown():
 	Dropdown_WBT.select(6)
 	
 
-func choose_WW_WBT_values():
-	pass
+func recalc():
+	Dropdown_WW.select(6)
+	JI_WW_Value.editable = true
+	Dropdown_WBT.select(6)
+	JI_WBT_Value.editable = true
+
 
 func calculate_WW_WBT_values():
 	var WW_value = (Carbohydrates_value.value - Fiber_value.value)/10
@@ -105,3 +111,12 @@ func on_Dropdown_WBT_item_selected(_index):
 			JI_WBT_Value.value = float(WW_afternoon_cell.text)/2
 		if Dropdown_WBT.get_selected_id() == 5:
 			JI_WBT_Value.value = float(WW_evening_cell.text)/2
+
+
+func _on_Hide_meal_button_toggled(button_pressed):
+	if button_pressed:
+		Dropboxes.visible = true
+		Meal_values_box.visible = true
+	else:
+		Dropboxes.visible = false
+		Meal_values_box.visible = false

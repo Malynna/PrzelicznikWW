@@ -65,6 +65,8 @@ thickness = 2
 
 [node name="Calculate_meal" type="Control"]
 script = ExtResource( 8 )
+Hide_meal_button = NodePath("VBoxContainer2/Title_box/HBoxContainer/Hide_meal_button")
+Dropboxes = NodePath("VBoxContainer2/Dropboxes")
 JI_WW_Value = NodePath("VBoxContainer2/Dropboxes/JI_WW_box/JI_WW_Value")
 Dropdown_WW = NodePath("VBoxContainer2/Dropboxes/JI_WW_box/Dropdown_WW")
 JI_WBT_Value = NodePath("VBoxContainer2/Dropboxes/JI_WBT_box/JI_WBT_Value")
@@ -82,34 +84,59 @@ JI_time_value_label = NodePath("VBoxContainer2/Meal_values_box/WW_WBT_full_value
 JI_value_label = NodePath("VBoxContainer2/Meal_values_box/WW_WBT_full_values_box/JI_value_label")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
-margin_right = 1036.0
+margin_right = 1082.0
 margin_bottom = 366.0
+rect_min_size = Vector2( 1070, 0 )
 
 [node name="Title_box" type="VBoxContainer" parent="VBoxContainer2"]
-margin_right = 1036.0
+margin_right = 1082.0
 margin_bottom = 88.0
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer2/Title_box"]
-margin_right = 1036.0
+margin_right = 1082.0
 margin_bottom = 4.0
+rect_min_size = Vector2( 1000, 0 )
 custom_styles/separator = SubResource( 24 )
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer2/Title_box"]
 margin_top = 8.0
-margin_right = 1036.0
+margin_right = 1082.0
 margin_bottom = 12.0
+rect_min_size = Vector2( 1000, 0 )
 custom_styles/separator = SubResource( 24 )
 
 [node name="HSeparator3" type="HSeparator" parent="VBoxContainer2/Title_box"]
 margin_top = 16.0
-margin_right = 1036.0
+margin_right = 1082.0
 margin_bottom = 20.0
+rect_min_size = Vector2( 1000, 0 )
 custom_styles/separator = SubResource( 24 )
 
-[node name="TitleLabel" type="RichTextLabel" parent="VBoxContainer2/Title_box"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2/Title_box"]
 margin_top = 24.0
-margin_right = 1036.0
+margin_right = 1082.0
 margin_bottom = 64.0
+rect_min_size = Vector2( 800, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Control" type="Control" parent="VBoxContainer2/Title_box/HBoxContainer"]
+margin_right = 68.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 68, 40 )
+
+[node name="Control2" type="Control" parent="VBoxContainer2/Title_box/HBoxContainer"]
+margin_left = 72.0
+margin_right = 140.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 68, 40 )
+
+[node name="TitleLabel" type="RichTextLabel" parent="VBoxContainer2/Title_box/HBoxContainer"]
+margin_left = 144.0
+margin_right = 930.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 600, 40 )
+size_flags_horizontal = 3
 theme = SubResource( 4 )
 custom_fonts/mono_font = ExtResource( 6 )
 custom_fonts/bold_italics_font = ExtResource( 1 )
@@ -124,31 +151,58 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="Hide_meal_button" type="CheckButton" parent="VBoxContainer2/Title_box/HBoxContainer"]
+margin_left = 934.0
+margin_right = 1010.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 68, 40 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+pressed = true
+
+[node name="Control3" type="Control" parent="VBoxContainer2/Title_box/HBoxContainer"]
+margin_left = 1014.0
+margin_right = 1082.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 68, 40 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
 [node name="HSeparator4" type="HSeparator" parent="VBoxContainer2/Title_box"]
 margin_top = 68.0
-margin_right = 1036.0
+margin_right = 1082.0
 margin_bottom = 72.0
+rect_min_size = Vector2( 1000, 0 )
 custom_styles/separator = SubResource( 24 )
 
 [node name="HSeparator5" type="HSeparator" parent="VBoxContainer2/Title_box"]
 margin_top = 76.0
-margin_right = 1036.0
+margin_right = 1082.0
 margin_bottom = 80.0
+rect_min_size = Vector2( 1000, 0 )
 custom_styles/separator = SubResource( 24 )
 
 [node name="HSeparator6" type="HSeparator" parent="VBoxContainer2/Title_box"]
 margin_top = 84.0
-margin_right = 1036.0
+margin_right = 1082.0
 margin_bottom = 88.0
+rect_min_size = Vector2( 1000, 0 )
 custom_styles/separator = SubResource( 24 )
 
 [node name="Dropboxes" type="HBoxContainer" parent="VBoxContainer2"]
 margin_top = 92.0
-margin_right = 1036.0
+margin_right = 1082.0
 margin_bottom = 221.0
+rect_min_size = Vector2( 1000, 0 )
+
+[node name="Control" type="Control" parent="VBoxContainer2/Dropboxes"]
+margin_right = 44.0
+margin_bottom = 129.0
+size_flags_horizontal = 3
 
 [node name="JI_WW_box" type="VBoxContainer" parent="VBoxContainer2/Dropboxes"]
-margin_right = 400.0
+margin_left = 48.0
+margin_right = 448.0
 margin_bottom = 129.0
 
 [node name="JI_WW_Value" type="SpinBox" parent="VBoxContainer2/Dropboxes/JI_WW_box"]
@@ -174,15 +228,19 @@ margin_bottom = 129.0
 rect_min_size = Vector2( 400, 60 )
 theme = ExtResource( 9 )
 
-[node name="Control" type="Control" parent="VBoxContainer2/Dropboxes"]
-margin_left = 404.0
-margin_right = 632.0
+[node name="Control2" type="Control" parent="VBoxContainer2/Dropboxes"]
+margin_left = 452.0
+margin_right = 629.0
 margin_bottom = 129.0
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+__meta__ = {
+"_editor_description_": "	"
+}
 
 [node name="JI_WBT_box" type="VBoxContainer" parent="VBoxContainer2/Dropboxes"]
-margin_left = 636.0
-margin_right = 1036.0
+margin_left = 633.0
+margin_right = 1033.0
 margin_bottom = 129.0
 
 [node name="JI_WBT_Value" type="SpinBox" parent="VBoxContainer2/Dropboxes/JI_WBT_box"]
@@ -208,33 +266,43 @@ margin_bottom = 129.0
 rect_min_size = Vector2( 400, 60 )
 theme = ExtResource( 9 )
 
+[node name="Control3" type="Control" parent="VBoxContainer2/Dropboxes"]
+margin_left = 1037.0
+margin_right = 1082.0
+margin_bottom = 129.0
+size_flags_horizontal = 3
+
 [node name="Meal_values_box" type="VBoxContainer" parent="VBoxContainer2"]
 margin_top = 225.0
-margin_right = 1036.0
+margin_right = 1082.0
 margin_bottom = 366.0
+rect_min_size = Vector2( 1000, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HSeparator7" type="HSeparator" parent="VBoxContainer2/Meal_values_box"]
-margin_right = 1036.0
+margin_right = 1082.0
 margin_bottom = 4.0
+rect_min_size = Vector2( 1000, 0 )
 custom_styles/separator = SubResource( 24 )
 
 [node name="HSeparator8" type="HSeparator" parent="VBoxContainer2/Meal_values_box"]
 margin_top = 8.0
-margin_right = 1036.0
+margin_right = 1082.0
 margin_bottom = 12.0
+rect_min_size = Vector2( 1000, 0 )
 custom_styles/separator = SubResource( 24 )
 
 [node name="HSeparator9" type="HSeparator" parent="VBoxContainer2/Meal_values_box"]
 margin_top = 16.0
-margin_right = 1036.0
+margin_right = 1082.0
 margin_bottom = 20.0
+rect_min_size = Vector2( 1000, 0 )
 custom_styles/separator = SubResource( 24 )
 
 [node name="Meal_composition" type="HBoxContainer" parent="VBoxContainer2/Meal_values_box"]
 margin_top = 24.0
-margin_right = 1036.0
+margin_right = 1082.0
 margin_bottom = 133.0
 
 [node name="Carbohydrates_box" type="VBoxContainer" parent="VBoxContainer2/Meal_values_box/Meal_composition"]
@@ -462,11 +530,11 @@ text = "Oblicz"
 [node name="WW_WBT_full_values_box" type="VBoxContainer" parent="VBoxContainer2/Meal_values_box"]
 visible = false
 margin_top = 137.0
-margin_right = 1036.0
-margin_bottom = 261.0
+margin_right = 1070.0
+margin_bottom = 333.0
 
 [node name="WW_WBT_kcal_valuse_box" type="HBoxContainer" parent="VBoxContainer2/Meal_values_box/WW_WBT_full_values_box"]
-margin_right = 1036.0
+margin_right = 1070.0
 margin_bottom = 60.0
 
 [node name="WW_value_label" type="RichTextLabel" parent="VBoxContainer2/Meal_values_box/WW_WBT_full_values_box/WW_WBT_kcal_valuse_box"]
@@ -530,7 +598,7 @@ __meta__ = {
 
 [node name="JI_time_value_label" type="RichTextLabel" parent="VBoxContainer2/Meal_values_box/WW_WBT_full_values_box"]
 margin_top = 64.0
-margin_right = 1036.0
+margin_right = 1070.0
 margin_bottom = 124.0
 rect_min_size = Vector2( 500, 60 )
 size_flags_stretch_ratio = 0.9
@@ -550,14 +618,14 @@ __meta__ = {
 
 [node name="HSeparator10" type="HSeparator" parent="VBoxContainer2/Meal_values_box/WW_WBT_full_values_box"]
 margin_top = 8.0
-margin_right = 1036.0
+margin_right = 1070.0
 margin_bottom = 12.0
 theme = ExtResource( 9 )
 custom_styles/separator = SubResource( 22 )
 
 [node name="JI_value_label" type="RichTextLabel" parent="VBoxContainer2/Meal_values_box/WW_WBT_full_values_box"]
 margin_top = 64.0
-margin_right = 1036.0
+margin_right = 1070.0
 margin_bottom = 124.0
 rect_min_size = Vector2( 500, 60 )
 size_flags_stretch_ratio = 0.9
@@ -577,11 +645,13 @@ __meta__ = {
 
 [node name="HSeparator6" type="HSeparator" parent="VBoxContainer2/Meal_values_box"]
 margin_top = 137.0
-margin_right = 1036.0
+margin_right = 1082.0
 margin_bottom = 141.0
+rect_min_size = Vector2( 1000, 0 )
 theme = ExtResource( 9 )
 custom_styles/separator = SubResource( 22 )
 
+[connection signal="toggled" from="VBoxContainer2/Title_box/HBoxContainer/Hide_meal_button" to="." method="_on_Hide_meal_button_toggled"]
 [connection signal="item_selected" from="VBoxContainer2/Dropboxes/JI_WW_box/Dropdown_WW" to="." method="on_Dropdown_WW_item_selected"]
 [connection signal="item_selected" from="VBoxContainer2/Dropboxes/JI_WBT_box/Dropdown_WBT" to="." method="on_Dropdown_WBT_item_selected"]
 [connection signal="pressed" from="VBoxContainer2/Meal_values_box/Meal_composition/Calculate_meal_composition_box/CenterContainer/Calculate_meal_composition_button2" to="." method="calculate_WW_WBT_values"]

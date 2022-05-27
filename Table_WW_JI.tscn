@@ -100,8 +100,8 @@ margin_right = 908.0
 margin_bottom = 124.0
 rect_min_size = Vector2( 300, 60 )
 bbcode_enabled = true
-bbcode_text = "[color=#d9d9d9][b][i][center]/50% glucose"
-text = "/50% glucose"
+bbcode_text = "0"
+text = "0"
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/Glucose_morning_cell"]
 show_behind_parent = true
@@ -150,8 +150,8 @@ margin_right = 908.0
 margin_bottom = 188.0
 rect_min_size = Vector2( 300, 60 )
 bbcode_enabled = true
-bbcode_text = "[color=#d9d9d9][b][i][center]100% glucose"
-text = "100% glucose"
+bbcode_text = "0"
+text = "0"
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/Glucose_afternoon_cell"]
 show_behind_parent = true
@@ -200,8 +200,8 @@ margin_right = 908.0
 margin_bottom = 252.0
 rect_min_size = Vector2( 300, 60 )
 bbcode_enabled = true
-bbcode_text = "[color=#d9d9d9][b][i][center]/30% glucose"
-text = "/30% glucose"
+bbcode_text = "0"
+text = "0"
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/Glucose_evening_cell"]
 show_behind_parent = true

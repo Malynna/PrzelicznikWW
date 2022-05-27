@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Themes/H_Separator2.tres" type="StyleBox" id=1]
 [ext_resource path="res://Fonts/Bold_32.tres" type="DynamicFont" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Table_WW_JI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Themes/dropdown_THEME.tres" type="Theme" id=9]
 [ext_resource path="res://Calculate_meal.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Themes/THEME.tres" type="Theme" id=11]
 
 [sub_resource type="StyleBoxTexture" id=13]
 
@@ -22,14 +23,14 @@ thickness = 3
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Gruppo-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=26]
 font_data = SubResource( 1 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=27]
 
 [sub_resource type="Theme" id=4]
-Fonts/fonts/large = SubResource( 10 )
-Fonts/fonts/normal = SubResource( 11 )
+Fonts/fonts/large = SubResource( 26 )
+Fonts/fonts/normal = SubResource( 27 )
 HSeparator/colors/color = Color( 0.780392, 0.0745098, 0.0745098, 1 )
 HSeparator/constants/separation = 4
 HSeparator/styles/separator = ExtResource( 1 )
@@ -67,6 +68,7 @@ __meta__ = {
 [node name="Static1" type="VBoxContainer" parent="VBoxContainer"]
 margin_right = 1072.0
 margin_bottom = 199.0
+rect_min_size = Vector2( 900, 0 )
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/Static1"]
 margin_right = 1072.0
@@ -85,10 +87,33 @@ margin_right = 1072.0
 margin_bottom = 20.0
 custom_styles/separator = SubResource( 24 )
 
-[node name="TitleLabel" type="RichTextLabel" parent="VBoxContainer/Static1"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Static1"]
 margin_top = 24.0
 margin_right = 1072.0
 margin_bottom = 64.0
+rect_min_size = Vector2( 800, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Control" type="Control" parent="VBoxContainer/Static1/HBoxContainer"]
+margin_right = 68.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 68, 40 )
+
+[node name="Control2" type="Control" parent="VBoxContainer/Static1/HBoxContainer"]
+margin_left = 72.0
+margin_right = 140.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 68, 40 )
+
+[node name="TitleLabel" type="RichTextLabel" parent="VBoxContainer/Static1/HBoxContainer"]
+margin_left = 144.0
+margin_right = 928.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 700, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 5
+size_flags_stretch_ratio = 2.0
 theme = SubResource( 4 )
 custom_fonts/mono_font = ExtResource( 4 )
 custom_fonts/bold_italics_font = ExtResource( 7 )
@@ -102,6 +127,22 @@ fit_content_height = true
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="Hide_table_button" type="CheckButton" parent="VBoxContainer/Static1/HBoxContainer"]
+margin_left = 932.0
+margin_right = 1000.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 68, 40 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Control3" type="Control" parent="VBoxContainer/Static1/HBoxContainer"]
+margin_left = 1004.0
+margin_right = 1072.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 68, 40 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="HSeparator4" type="HSeparator" parent="VBoxContainer/Static1"]
 margin_top = 68.0
@@ -208,10 +249,9 @@ custom_styles/separator = SubResource( 24 )
 margin_top = 8.0
 margin_right = 1072.0
 margin_bottom = 64.0
-hint_tooltip = "WW - Wymiennik Węglowodanowy
-JI - Jednostki Insuliny"
+hint_tooltip = "JI - Jednostki Insuliny"
 size_flags_stretch_ratio = 0.9
-theme = SubResource( 4 )
+theme = ExtResource( 11 )
 custom_fonts/mono_font = ExtResource( 4 )
 custom_fonts/bold_italics_font = ExtResource( 3 )
 custom_fonts/italics_font = ExtResource( 5 )
