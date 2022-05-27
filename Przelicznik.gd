@@ -3,26 +3,21 @@ extends Node
 #tab1
 export (NodePath) onready var tabContainer = get_node(tabContainer) as TabContainer
 export (NodePath) onready var ddi = get_node(ddi) as SpinBox
-export (NodePath) onready var new_line = get_node(new_line) as VBoxContainer
-export (NodePath) onready var WWPer1InsLabel1 = get_node(WWPer1InsLabel1) as RichTextLabel
-export (NodePath) onready var InsPer1WWLabel1 = get_node(InsPer1WWLabel1) as RichTextLabel
-export (NodePath) onready var JIPerGlucoseLabel1 = get_node(JIPerGlucoseLabel1) as RichTextLabel
-export (NodePath) onready var new_line2 = get_node(new_line2) as HBoxContainer
+export (NodePath) onready var WW_glucose_box = get_node(WW_glucose_box) as VBoxContainer
+export (NodePath) onready var Values_label = get_node(Values_label) as RichTextLabel
 export (NodePath) onready var WW_morning_cell = get_node(WW_morning_cell) as RichTextLabel
+export (NodePath) onready var Glucose_morning_cell = get_node(Glucose_morning_cell) as RichTextLabel
 export (NodePath) onready var WW_afternoon_cell = get_node(WW_afternoon_cell) as RichTextLabel
+export (NodePath) onready var Glucose_afternoon_cell = get_node(Glucose_afternoon_cell) as RichTextLabel
 export (NodePath) onready var WW_evening_cell = get_node(WW_evening_cell) as RichTextLabel
-export (NodePath) onready var JI_morning_cell = get_node(JI_morning_cell) as RichTextLabel
-export (NodePath) onready var JI_afternoon_cell = get_node(JI_afternoon_cell) as RichTextLabel
-export (NodePath) onready var JI_evening_cell = get_node(JI_evening_cell) as RichTextLabel
-export (NodePath) onready var new_line3 = get_node(new_line3) as VBoxContainer
-#nodes
+export (NodePath) onready var Glucose_evening_cell = get_node(Glucose_evening_cell) as RichTextLabel
 export (NodePath) onready var calculate_meal = get_node(calculate_meal) as Control
 
 
 #tab2
+export (NodePath) onready var enteredDDI = get_node(enteredDDI) as RichTextLabel
 export (NodePath) onready var WWPer1InsLabel2 = get_node(WWPer1InsLabel2) as RichTextLabel
 export (NodePath) onready var WWPer1InsResultLabel2 = get_node(WWPer1InsResultLabel2) as RichTextLabel
-export (NodePath) onready var enteredDDI = get_node(enteredDDI) as RichTextLabel
 export (NodePath) onready var proporcja = get_node(proporcja) as RichTextLabel
 export (NodePath) onready var dzialanie = get_node(dzialanie) as RichTextLabel
 export (NodePath) onready var WWrano = get_node(WWrano) as RichTextLabel
@@ -37,11 +32,6 @@ export (NodePath) onready var JI_evening_label = get_node(JI_evening_label) as R
 export (int) var ddi_value
 export (int) var static_1 = 450
 export (int) var static_2 = 1500
-var i_1WW : float
-var WW_1i : float
-var WW_morning : float
-var WW_afternoon : float
-var WW_evening : float
 
 
 func _ready():
@@ -51,16 +41,17 @@ func _ready():
 	print("----------------------")
 	print("Przelicznik WW")
 	tabContainer.set_tab_disabled(1, true)
-		
+
+
 func calculate_Insuline_and_WW():
 	ddi_value = ddi.value
 	var i_1W = stepify((static_1/ddi_value), 0.0001)
-	i_1WW = stepify(i_1W/10,0.1)
+	var i_1WW  = stepify(i_1W/10,0.01)
 	var i_1WW_text = "%s : %s = %s ==>> Czyli 1 jednostka insuliny zbija %s Węglowodanów"
-	WW_1i = stepify(1/i_1WW,0.0001)
-	WW_morning = stepify(WW_1i*1.5,0.01)
-	WW_afternoon = stepify(WW_1i,0.01)
-	WW_evening = stepify(WW_1i*1.3,0.01)
+	var WW_1i : float = stepify(1/i_1WW,0.0001)
+	var WW_morning : float = stepify(WW_1i*1.5,0.01)
+	var WW_afternoon : float = stepify(WW_1i,0.01)
+	var WW_evening : float = stepify(WW_1i*1.3,0.01)
 	var JI_glucose_result = stepify(static_2/ddi_value,0.0001)
 	var JI_morning = stepify(JI_glucose_result/1.5,0.01)
 	var JI_afternoon = stepify(JI_glucose_result,0.01)
@@ -68,16 +59,16 @@ func calculate_Insuline_and_WW():
 		
 	
 	#tab1
-	WWPer1InsLabel1.bbcode_text = "[b][u][i]%s WW[/i][/u][/b]  <-- w przybliżeniu tyle WW " %i_1WW
-	WWPer1InsLabel1.bbcode_text += "zbija 1 jednostka insuliny przy zerowej oporności"
-	InsPer1WWLabel1.bbcode_text = "[b][u][i]%s[/i][/u][/b]  <--  w przybliżeniu tyle jednostek insuliny należy podać na 1WW" %[WW_1i]
+	Values_label.bbcode_text = "[b][u]%s WW[/u][/b] <-- tyle zbija 1 JI" %i_1WW
+	Values_label.bbcode_text += "\n[b][u]%s[/u][/b] <-- tyle JI należy podać na 1 WW" %[WW_1i]
+	Values_label.bbcode_text += "\n[b][u]%s[/u][/b] <-- tyle cukru zbija 1 JI" %[JI_glucose_result]
+	Values_label.bbcode_text += "\n(wartości w przybliżeniu przy zerowej oporności)"
 	WW_morning_cell.bbcode_text = "[color=#ef8522][b][i][center]%s[/center][/i][/b][/color]" %WW_morning
 	WW_afternoon_cell.bbcode_text = "[color=#ef8522][b][i][center]%s[/center][/i][/b][/color]" %WW_afternoon
 	WW_evening_cell.bbcode_text = "[color=#ef8522][b][i][center]%s[/center][/i][/b][/color]" %WW_evening
-	JIPerGlucoseLabel1.bbcode_text = "[b][u][i]%s[/i][/u][/b]  <--  w przybliżeniu tyle cukru zbija 1JI" %[JI_glucose_result]
-	JI_morning_cell.bbcode_text = "[color=#ef8522][b][i][center]%s[/center][/i][/b][/color]" %JI_morning
-	JI_afternoon_cell.bbcode_text = "[color=#ef8522][b][i][center]%s[/center][/i][/b][/color]" %JI_afternoon
-	JI_evening_cell.bbcode_text = "[color=#ef8522][b][i][center]%s[/center][/i][/b][/color]" %JI_evening
+	Glucose_morning_cell.bbcode_text = "[color=#ef8522][b][i][center]%s[/center][/i][/b][/color]" %JI_morning
+	Glucose_afternoon_cell.bbcode_text = "[color=#ef8522][b][i][center]%s[/center][/i][/b][/color]" %JI_afternoon
+	Glucose_evening_cell.bbcode_text = "[color=#ef8522][b][i][center]%s[/center][/i][/b][/color]" %JI_evening
 	
 	#tab2
 	WWPer1InsLabel2.bbcode_text = i_1WW_text % [str(static_1),str(ddi_value),str(i_1W), str(i_1W)]
@@ -103,6 +94,5 @@ func calculate_Insuline_and_WW():
 func _on_CalculateButton_pressed():
 	calculate_Insuline_and_WW()
 	tabContainer.set_tab_disabled(1, false)
-	new_line.visible = true
-	new_line2.visible = true
-	new_line3.visible = true
+	WW_glucose_box.visible = true
+	calculate_meal.visible = true

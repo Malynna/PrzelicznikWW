@@ -6,7 +6,7 @@
 [ext_resource path="res://Themes/button_group.tres" type="ButtonGroup" id=4]
 [ext_resource path="res://UI_Elements/png/grey_boxTick.png" type="Texture" id=5]
 [ext_resource path="res://UI_Elements/png/grey_circle.png" type="Texture" id=6]
-[ext_resource path="res://THEME.tres" type="Theme" id=7]
+[ext_resource path="res://Themes/THEME.tres" type="Theme" id=7]
 
 [node name="Radiobutton" type="Node2D"]
 script = ExtResource( 1 )

@@ -1,10 +1,11 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://THEME.tres" type="Theme" id=1]
+[ext_resource path="res://Themes/THEME.tres" type="Theme" id=1]
 
 [node name="Table_WW_JI" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_right = 908.0
+margin_bottom = 63.0
+rect_min_size = Vector2( 0, 250 )
 theme = ExtResource( 1 )
 
 [node name="GridContainer" type="GridContainer" parent="."]
@@ -12,7 +13,7 @@ margin_right = 908.0
 margin_bottom = 252.0
 columns = 3
 
-[node name="time_of_day" type="RichTextLabel" parent="GridContainer"]
+[node name="Time_of_day" type="RichTextLabel" parent="GridContainer"]
 margin_right = 300.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 300, 60 )
@@ -20,191 +21,191 @@ bbcode_enabled = true
 bbcode_text = "[color=#d9d9d9][b][i]Pora dnia"
 text = "Pora dnia"
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/time_of_day"]
+[node name="ColorRect" type="ColorRect" parent="GridContainer/Time_of_day"]
 show_behind_parent = true
 margin_right = 300.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 300, 60 )
 color = Color( 0.937255, 0.521569, 0.133333, 1 )
 
-[node name="time_of_day2" type="RichTextLabel" parent="GridContainer"]
+[node name="JI_WW" type="RichTextLabel" parent="GridContainer"]
 margin_left = 304.0
 margin_right = 604.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 300, 60 )
 bbcode_enabled = true
-bbcode_text = "[color=#d9d9d9][b][i]Pora dnia"
-text = "Pora dnia"
+bbcode_text = "[color=#d9d9d9][b][i][center]Ile JI/1WW"
+text = "Ile JI/1WW"
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/time_of_day2"]
+[node name="ColorRect" type="ColorRect" parent="GridContainer/JI_WW"]
 show_behind_parent = true
 margin_right = 300.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 300, 60 )
 color = Color( 0.937255, 0.521569, 0.133333, 1 )
 
-[node name="time_of_day3" type="RichTextLabel" parent="GridContainer"]
+[node name="JI_glucose" type="RichTextLabel" parent="GridContainer"]
 margin_left = 608.0
 margin_right = 908.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 300, 60 )
 bbcode_enabled = true
-bbcode_text = "[color=#d9d9d9][b][i]Pora dnia"
-text = "Pora dnia"
+bbcode_text = "[color=#d9d9d9][b][i][center]1JI/ile cukru"
+text = "1JI/ile cukru"
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/time_of_day3"]
+[node name="ColorRect" type="ColorRect" parent="GridContainer/JI_glucose"]
 show_behind_parent = true
 margin_right = 300.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 300, 60 )
 color = Color( 0.937255, 0.521569, 0.133333, 1 )
 
-[node name="time_of_day4" type="RichTextLabel" parent="GridContainer"]
+[node name="Morning_cell" type="RichTextLabel" parent="GridContainer"]
 margin_top = 64.0
 margin_right = 300.0
 margin_bottom = 124.0
 rect_min_size = Vector2( 300, 60 )
 bbcode_enabled = true
-bbcode_text = "[color=#d9d9d9][b][i]Pora dnia"
-text = "Pora dnia"
+bbcode_text = "[color=#d9d9d9][b][i]Rano"
+text = "Rano"
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/time_of_day4"]
+[node name="ColorRect" type="ColorRect" parent="GridContainer/Morning_cell"]
 show_behind_parent = true
 margin_right = 300.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 300, 60 )
 color = Color( 0.937255, 0.521569, 0.133333, 1 )
 
-[node name="time_of_day5" type="RichTextLabel" parent="GridContainer"]
+[node name="WW_morning_cell" type="RichTextLabel" parent="GridContainer"]
 margin_left = 304.0
 margin_top = 64.0
 margin_right = 604.0
 margin_bottom = 124.0
 rect_min_size = Vector2( 300, 60 )
 bbcode_enabled = true
-bbcode_text = "[color=#d9d9d9][b][i]Pora dnia"
-text = "Pora dnia"
+bbcode_text = "[color=#d9d9d9][b][i][center]1,5 WW"
+text = "1,5 WW"
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/time_of_day5"]
+[node name="ColorRect" type="ColorRect" parent="GridContainer/WW_morning_cell"]
 show_behind_parent = true
 margin_right = 300.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 300, 60 )
-color = Color( 0.937255, 0.521569, 0.133333, 1 )
+color = Color( 0.431373, 0.435294, 0.447059, 1 )
 
-[node name="time_of_day6" type="RichTextLabel" parent="GridContainer"]
+[node name="Glucose_morning_cell" type="RichTextLabel" parent="GridContainer"]
 margin_left = 608.0
 margin_top = 64.0
 margin_right = 908.0
 margin_bottom = 124.0
 rect_min_size = Vector2( 300, 60 )
 bbcode_enabled = true
-bbcode_text = "[color=#d9d9d9][b][i]Pora dnia"
-text = "Pora dnia"
+bbcode_text = "[color=#d9d9d9][b][i][center]/50% glucose"
+text = "/50% glucose"
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/time_of_day6"]
+[node name="ColorRect" type="ColorRect" parent="GridContainer/Glucose_morning_cell"]
 show_behind_parent = true
 margin_right = 300.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 300, 60 )
-color = Color( 0.937255, 0.521569, 0.133333, 1 )
+color = Color( 0.431373, 0.435294, 0.447059, 1 )
 
-[node name="time_of_day7" type="RichTextLabel" parent="GridContainer"]
+[node name="Afternoon_cell" type="RichTextLabel" parent="GridContainer"]
 margin_top = 128.0
 margin_right = 300.0
 margin_bottom = 188.0
 rect_min_size = Vector2( 300, 60 )
 bbcode_enabled = true
-bbcode_text = "[color=#d9d9d9][b][i]Pora dnia"
-text = "Pora dnia"
+bbcode_text = "[color=#d9d9d9][b][i]Popołudnie"
+text = "Popołudnie"
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/time_of_day7"]
+[node name="ColorRect" type="ColorRect" parent="GridContainer/Afternoon_cell"]
 show_behind_parent = true
 margin_right = 300.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 300, 60 )
 color = Color( 0.937255, 0.521569, 0.133333, 1 )
 
-[node name="time_of_day8" type="RichTextLabel" parent="GridContainer"]
+[node name="WW_afternoon_cell" type="RichTextLabel" parent="GridContainer"]
 margin_left = 304.0
 margin_top = 128.0
 margin_right = 604.0
 margin_bottom = 188.0
 rect_min_size = Vector2( 300, 60 )
 bbcode_enabled = true
-bbcode_text = "[color=#d9d9d9][b][i]Pora dnia"
-text = "Pora dnia"
+bbcode_text = "[color=#d9d9d9][b][i][center]1,0 WW"
+text = "1,0 WW"
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/time_of_day8"]
+[node name="ColorRect" type="ColorRect" parent="GridContainer/WW_afternoon_cell"]
 show_behind_parent = true
 margin_right = 300.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 300, 60 )
-color = Color( 0.937255, 0.521569, 0.133333, 1 )
+color = Color( 0.431373, 0.435294, 0.447059, 1 )
 
-[node name="time_of_day9" type="RichTextLabel" parent="GridContainer"]
+[node name="Glucose_afternoon_cell" type="RichTextLabel" parent="GridContainer"]
 margin_left = 608.0
 margin_top = 128.0
 margin_right = 908.0
 margin_bottom = 188.0
 rect_min_size = Vector2( 300, 60 )
 bbcode_enabled = true
-bbcode_text = "[color=#d9d9d9][b][i]Pora dnia"
-text = "Pora dnia"
+bbcode_text = "[color=#d9d9d9][b][i][center]100% glucose"
+text = "100% glucose"
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/time_of_day9"]
+[node name="ColorRect" type="ColorRect" parent="GridContainer/Glucose_afternoon_cell"]
 show_behind_parent = true
 margin_right = 300.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 300, 60 )
-color = Color( 0.937255, 0.521569, 0.133333, 1 )
+color = Color( 0.431373, 0.435294, 0.447059, 1 )
 
-[node name="time_of_day10" type="RichTextLabel" parent="GridContainer"]
+[node name="Evening_cell" type="RichTextLabel" parent="GridContainer"]
 margin_top = 192.0
 margin_right = 300.0
 margin_bottom = 252.0
 rect_min_size = Vector2( 300, 60 )
 bbcode_enabled = true
-bbcode_text = "[color=#d9d9d9][b][i]Pora dnia"
-text = "Pora dnia"
+bbcode_text = "[color=#d9d9d9][b][i]Wieczór"
+text = "Wieczór"
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/time_of_day10"]
+[node name="ColorRect" type="ColorRect" parent="GridContainer/Evening_cell"]
 show_behind_parent = true
 margin_right = 300.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 300, 60 )
 color = Color( 0.937255, 0.521569, 0.133333, 1 )
 
-[node name="time_of_day11" type="RichTextLabel" parent="GridContainer"]
+[node name="WW_evening_cell" type="RichTextLabel" parent="GridContainer"]
 margin_left = 304.0
 margin_top = 192.0
 margin_right = 604.0
 margin_bottom = 252.0
 rect_min_size = Vector2( 300, 60 )
 bbcode_enabled = true
-bbcode_text = "[color=#d9d9d9][b][i]Pora dnia"
-text = "Pora dnia"
+bbcode_text = "[color=#d9d9d9][b][i][center]1,3 WW"
+text = "1,3 WW"
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/time_of_day11"]
+[node name="ColorRect" type="ColorRect" parent="GridContainer/WW_evening_cell"]
 show_behind_parent = true
 margin_right = 300.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 300, 60 )
-color = Color( 0.937255, 0.521569, 0.133333, 1 )
+color = Color( 0.431373, 0.435294, 0.447059, 1 )
 
-[node name="time_of_day12" type="RichTextLabel" parent="GridContainer"]
+[node name="Glucose_evening_cell" type="RichTextLabel" parent="GridContainer"]
 margin_left = 608.0
 margin_top = 192.0
 margin_right = 908.0
 margin_bottom = 252.0
 rect_min_size = Vector2( 300, 60 )
 bbcode_enabled = true
-bbcode_text = "[color=#d9d9d9][b][i]Pora dnia"
-text = "Pora dnia"
+bbcode_text = "[color=#d9d9d9][b][i][center]/30% glucose"
+text = "/30% glucose"
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/time_of_day12"]
+[node name="ColorRect" type="ColorRect" parent="GridContainer/Glucose_evening_cell"]
 show_behind_parent = true
 margin_right = 300.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 300, 60 )
-color = Color( 0.937255, 0.521569, 0.133333, 1 )
+color = Color( 0.431373, 0.435294, 0.447059, 1 )
