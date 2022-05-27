@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Przelicznik.gd" type="Script" id=1]
 [ext_resource path="res://Calculator_tab.tscn" type="PackedScene" id=2]
@@ -36,6 +36,30 @@ resource_local_to_scene = true
 default_font = ExtResource( 7 )
 SpinBox/icons/updown = null
 
+[sub_resource type="StyleBoxLine" id=31]
+resource_local_to_scene = true
+resource_name = "HSeparator_theme"
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+color = Color( 0.431373, 0.435294, 0.447059, 1 )
+grow_begin = 0.0
+grow_end = -35.0
+thickness = 3
+
+[sub_resource type="StyleBoxLine" id=32]
+resource_local_to_scene = true
+resource_name = "HSeparator_theme"
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+color = Color( 0.431373, 0.435294, 0.447059, 1 )
+grow_begin = 0.0
+grow_end = -35.0
+thickness = 3
+
 [sub_resource type="StyleBoxLine" id=28]
 resource_local_to_scene = true
 resource_name = "HSeparator_theme"
@@ -59,29 +83,22 @@ texture = ExtResource( 4 )
 stretch_mode = 1
 script = ExtResource( 1 )
 tabContainer = NodePath("MarginContainer/TabContainer")
-ddi = NodePath("MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/DDI_box/DDI")
-WW_glucose_box = NodePath("MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/WW_glucose_box")
-Values_label = NodePath("MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/WW_glucose_box/Values_label")
-WW_morning_cell = NodePath("MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer/WW_morning_cell")
-Glucose_morning_cell = NodePath("MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer/Glucose_morning_cell")
-WW_afternoon_cell = NodePath("MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer/WW_afternoon_cell")
-Glucose_afternoon_cell = NodePath("MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer/Glucose_afternoon_cell")
-WW_evening_cell = NodePath("MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer/WW_evening_cell")
-Glucose_evening_cell = NodePath("MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer/Glucose_evening_cell")
-calculate_meal = NodePath("MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/Calculate_meal")
-enteredDDI = NodePath("MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static1/EnteredDDILabel")
-WWPer1InsLabel2 = NodePath("MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static1/NewLine/WWPer1InsLabel2")
-WWPer1InsResultLabel2 = NodePath("MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static1/NewLine/WWPer1InsResultLabel2")
-proporcja = NodePath("MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static1/NewLine2/Proporcja")
-dzialanie = NodePath("MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static1/NewLine2/Działanie")
-WWrano = NodePath("MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static1/NewLine2/Rano")
-WWpopoludniu = NodePath("MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static1/NewLine2/Popołudniu")
-WWwieczorne = NodePath("MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static1/NewLine2/Wieczorem")
-dzialanie2 = NodePath("MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static2Box/Działanie2")
-JIPerGlucoseLabel2 = NodePath("MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static2Box/JIPerGlucoseLabel2")
-JI_morning_label = NodePath("MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static2Box/JI_morning_label")
-JI_afternoon_label = NodePath("MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static2Box/JI_afternoon_label")
-JI_evening_label = NodePath("MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static2Box/JI_evening_label")
+ddi = NodePath("MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/DDI_box/DDI")
+WW_glucose_box = NodePath("MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box")
+Values_label = NodePath("MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Values_label")
+WW_morning_cell = NodePath("MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer/WW_morning_cell")
+Glucose_morning_cell = NodePath("MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer/Glucose_morning_cell")
+WW_afternoon_cell = NodePath("MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer/WW_afternoon_cell")
+Glucose_afternoon_cell = NodePath("MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer/Glucose_afternoon_cell")
+WW_evening_cell = NodePath("MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer/WW_evening_cell")
+Glucose_evening_cell = NodePath("MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer/Glucose_evening_cell")
+calculate_meal = NodePath("MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal")
+enteredDDI = NodePath("MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static1/Titile_Description/EnteredDDILabel")
+WW_insuline_label = NodePath("MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static1/WW_insuline_label")
+Math = NodePath("MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static1/Math")
+Day_time_calculations = NodePath("MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static1/Day_time_calculations")
+Math2 = NodePath("MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static2Box/Math2")
+JI_glucose_label = NodePath("MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static2Box/JI_glucose_label")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -101,200 +118,189 @@ custom_styles/panel = SubResource( 23 )
 tab_align = 0
 use_hidden_tabs_for_min_size = true
 
-[node name="Calculator_tab" parent="MarginContainer/TabContainer" instance=ExtResource( 2 )]
+[node name="Kalkulator" parent="MarginContainer/TabContainer" instance=ExtResource( 2 )]
 
-[node name="Static1" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer" index="0"]
+[node name="Static1" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer" index="0"]
 margin_right = 1064.0
 
-[node name="HSeparator" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1" index="0"]
-margin_right = 1064.0
-custom_styles/separator = SubResource( 24 )
-
-[node name="HSeparator2" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1" index="1"]
+[node name="HSeparator" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="0"]
 margin_right = 1064.0
 custom_styles/separator = SubResource( 24 )
 
-[node name="HSeparator3" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1" index="2"]
+[node name="HSeparator2" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="1"]
 margin_right = 1064.0
 custom_styles/separator = SubResource( 24 )
 
-[node name="TitleLabel" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1" index="3"]
-margin_right = 1064.0
-
-[node name="HSeparator4" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1" index="4"]
+[node name="HSeparator3" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="2"]
 margin_right = 1064.0
 custom_styles/separator = SubResource( 24 )
 
-[node name="HSeparator5" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1" index="5"]
+[node name="TitleLabel" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="3"]
+margin_right = 1064.0
+
+[node name="HSeparator4" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="4"]
 margin_right = 1064.0
 custom_styles/separator = SubResource( 24 )
 
-[node name="HSeparator6" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1" index="6"]
+[node name="HSeparator5" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="5"]
 margin_right = 1064.0
 custom_styles/separator = SubResource( 24 )
 
-[node name="EnterDDILabel" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1" index="7"]
+[node name="HSeparator6" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="6"]
+margin_right = 1064.0
+custom_styles/separator = SubResource( 24 )
+
+[node name="EnterDDILabel" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="7"]
 margin_right = 1064.0
 
-[node name="DDI_box" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1" index="8"]
+[node name="DDI_box" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="8"]
 margin_right = 1064.0
 
-[node name="Control" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/DDI_box" index="0"]
+[node name="Control" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/DDI_box" index="0"]
 margin_right = 238.0
 
-[node name="DDI" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/DDI_box" index="1"]
+[node name="DDI" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/DDI_box" index="1"]
 margin_left = 242.0
 margin_right = 426.0
 theme = SubResource( 25 )
 
-[node name="Control2" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/DDI_box" index="2"]
+[node name="Control2" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/DDI_box" index="2"]
 margin_left = 430.0
 margin_right = 668.0
 
-[node name="CalculateButton" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/DDI_box" index="3"]
+[node name="CalculateButton" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/DDI_box" index="3"]
 margin_left = 672.0
 margin_right = 822.0
 
-[node name="Control3" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/DDI_box" index="4"]
+[node name="Control3" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/DDI_box" index="4"]
 margin_left = 826.0
 margin_right = 1064.0
 
-[node name="HSeparator4" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/WW_glucose_box" index="0"]
+[node name="HSeparator4" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box" index="0"]
 custom_styles/separator = SubResource( 24 )
 
-[node name="Calculate_meal" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1" index="10"]
+[node name="Calculate_meal" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="10"]
 margin_right = 1064.0
 przelicznik = NodePath("../../../../../..")
 
-[node name="HSeparator" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Title_box" index="0"]
+[node name="HSeparator" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Title_box" index="0"]
 custom_styles/separator = SubResource( 29 )
 
-[node name="HSeparator2" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Title_box" index="1"]
+[node name="HSeparator2" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Title_box" index="1"]
 custom_styles/separator = SubResource( 29 )
 
-[node name="HSeparator3" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Title_box" index="2"]
+[node name="HSeparator3" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Title_box" index="2"]
 custom_styles/separator = SubResource( 29 )
 
-[node name="HSeparator4" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Title_box" index="4"]
+[node name="HSeparator4" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Title_box" index="4"]
 custom_styles/separator = SubResource( 29 )
 
-[node name="HSeparator5" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Title_box" index="5"]
+[node name="HSeparator5" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Title_box" index="5"]
 custom_styles/separator = SubResource( 29 )
 
-[node name="HSeparator6" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Title_box" index="6"]
+[node name="HSeparator6" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Title_box" index="6"]
 custom_styles/separator = SubResource( 29 )
 
-[node name="JI_WW_Value" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Dropboxes/JI_WW_box" index="0"]
+[node name="JI_WW_Value" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Dropboxes/JI_WW_box" index="0"]
 margin_left = 108.0
 margin_right = 292.0
 theme = SubResource( 27 )
 
-[node name="JI_WBT_Value" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Dropboxes/JI_WBT_box" index="0"]
+[node name="JI_WBT_Value" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Dropboxes/JI_WBT_box" index="0"]
 margin_left = 108.0
 margin_right = 292.0
 theme = SubResource( 27 )
 
-[node name="HSeparator7" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Meal_values_box" index="0"]
+[node name="HSeparator7" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Meal_values_box" index="0"]
 custom_styles/separator = SubResource( 29 )
 
-[node name="HSeparator8" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Meal_values_box" index="1"]
+[node name="HSeparator8" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Meal_values_box" index="1"]
 custom_styles/separator = SubResource( 29 )
 
-[node name="HSeparator9" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Meal_values_box" index="2"]
+[node name="HSeparator9" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Meal_values_box" index="2"]
 custom_styles/separator = SubResource( 29 )
 
-[node name="Carbohydrates_value" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Meal_values_box/Meal_composition/Carbohydrates_box/CenterContainer" index="0"]
+[node name="Carbohydrates_value" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Meal_values_box/Meal_composition/Carbohydrates_box/CenterContainer" index="0"]
 margin_left = 18.0
 margin_right = 202.0
 theme = SubResource( 30 )
 
-[node name="Fiber_value" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Meal_values_box/Meal_composition/Fiber_box/CenterContainer" index="0"]
+[node name="Fiber_value" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Meal_values_box/Meal_composition/Fiber_box/CenterContainer" index="0"]
 margin_left = 8.0
 margin_right = 192.0
 theme = SubResource( 30 )
 
-[node name="Protein_value" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Meal_values_box/Meal_composition/Protein_box/CenterContainer" index="0"]
+[node name="Protein_value" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Meal_values_box/Meal_composition/Protein_box/CenterContainer" index="0"]
 margin_left = 8.0
 margin_right = 192.0
 theme = SubResource( 30 )
 
-[node name="Fat_value" parent="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Meal_values_box/Meal_composition/Fat_box/CenterContainer" index="0"]
+[node name="Fat_value" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Meal_values_box/Meal_composition/Fat_box/CenterContainer" index="0"]
 margin_left = 8.0
 margin_right = 192.0
 theme = SubResource( 30 )
 
-[node name="Calculations_tab" parent="MarginContainer/TabContainer" instance=ExtResource( 3 )]
+[node name="Obliczenia" parent="MarginContainer/TabContainer" instance=ExtResource( 3 )]
 visible = false
 
-[node name="HSeparator" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static1" index="0"]
+[node name="HSeparator" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static1/Titile_Description" index="0"]
+custom_styles/separator = SubResource( 31 )
+
+[node name="HSeparator2" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static1/Titile_Description" index="1"]
+custom_styles/separator = SubResource( 31 )
+
+[node name="HSeparator4" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static1/Titile_Description" index="2"]
+custom_styles/separator = SubResource( 31 )
+
+[node name="HSeparator5" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static1/Titile_Description" index="4"]
+custom_styles/separator = SubResource( 31 )
+
+[node name="HSeparator6" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static1/Titile_Description" index="5"]
+custom_styles/separator = SubResource( 31 )
+
+[node name="HSeparator7" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static1/Titile_Description" index="6"]
+custom_styles/separator = SubResource( 31 )
+
+[node name="HSeparator3" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static1/Titile_Description" index="9"]
+visible = true
+custom_styles/separator = SubResource( 31 )
+
+[node name="HSeparator2" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static1" index="3"]
+custom_styles/separator = SubResource( 32 )
+
+[node name="HSeparator" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static2Box/Title_Description2" index="0"]
+custom_styles/separator = SubResource( 32 )
+
+[node name="HSeparator2" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static2Box/Title_Description2" index="1"]
+custom_styles/separator = SubResource( 32 )
+
+[node name="HSeparator4" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static2Box/Title_Description2" index="2"]
+custom_styles/separator = SubResource( 32 )
+
+[node name="HSeparator5" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static2Box/Title_Description2" index="4"]
+custom_styles/separator = SubResource( 32 )
+
+[node name="HSeparator6" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static2Box/Title_Description2" index="5"]
+custom_styles/separator = SubResource( 32 )
+
+[node name="HSeparator7" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static2Box/Title_Description2" index="6"]
+custom_styles/separator = SubResource( 32 )
+
+[node name="HSeparator3" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static2Box" index="2"]
 custom_styles/separator = SubResource( 28 )
 
-[node name="HSeparator2" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static1" index="1"]
+[node name="HSeparator8" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static2Box" index="5"]
 custom_styles/separator = SubResource( 28 )
 
-[node name="HSeparator4" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static1" index="2"]
+[node name="HSeparator9" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static2Box" index="7"]
 custom_styles/separator = SubResource( 28 )
 
-[node name="HSeparator5" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static1" index="4"]
+[node name="HSeparator10" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static2Box" index="9"]
 custom_styles/separator = SubResource( 28 )
 
-[node name="HSeparator6" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static1" index="5"]
-custom_styles/separator = SubResource( 28 )
+[connection signal="pressed" from="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/DDI_box/CalculateButton" to="." method="_on_CalculateButton_pressed"]
 
-[node name="HSeparator7" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static1" index="6"]
-custom_styles/separator = SubResource( 28 )
-
-[node name="HSeparator3" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static1" index="9"]
-custom_styles/separator = SubResource( 28 )
-
-[node name="HSeparator1" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static1" index="11"]
-custom_styles/separator = SubResource( 28 )
-
-[node name="HSeparator2" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static1/NewLine2" index="2"]
-custom_styles/separator = SubResource( 28 )
-
-[node name="HSeparator3" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static1/NewLine2" index="4"]
-custom_styles/separator = SubResource( 28 )
-
-[node name="HSeparator4" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static1/NewLine2" index="6"]
-custom_styles/separator = SubResource( 28 )
-
-[node name="HSeparator5" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static1/NewLine2" index="8"]
-custom_styles/separator = SubResource( 28 )
-
-[node name="HSeparator" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static2Box" index="0"]
-custom_styles/separator = SubResource( 28 )
-
-[node name="HSeparator2" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static2Box" index="1"]
-custom_styles/separator = SubResource( 28 )
-
-[node name="HSeparator4" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static2Box" index="2"]
-custom_styles/separator = SubResource( 28 )
-
-[node name="HSeparator5" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static2Box" index="4"]
-custom_styles/separator = SubResource( 28 )
-
-[node name="HSeparator6" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static2Box" index="5"]
-custom_styles/separator = SubResource( 28 )
-
-[node name="HSeparator7" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static2Box" index="6"]
-custom_styles/separator = SubResource( 28 )
-
-[node name="HSeparator3" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static2Box" index="10"]
-custom_styles/separator = SubResource( 28 )
-
-[node name="HSeparator8" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static2Box" index="12"]
-custom_styles/separator = SubResource( 28 )
-
-[node name="HSeparator9" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static2Box" index="14"]
-custom_styles/separator = SubResource( 28 )
-
-[node name="HSeparator10" parent="MarginContainer/TabContainer/Calculations_tab/MarginContainer/VBoxContainer/Static2Box" index="16"]
-custom_styles/separator = SubResource( 28 )
-
-[connection signal="pressed" from="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/DDI_box/CalculateButton" to="." method="_on_CalculateButton_pressed"]
-
-[editable path="MarginContainer/TabContainer/Calculator_tab"]
-[editable path="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI"]
-[editable path="MarginContainer/TabContainer/Calculator_tab/VBoxContainer/Static1/Calculate_meal"]
-[editable path="MarginContainer/TabContainer/Calculations_tab"]
+[editable path="MarginContainer/TabContainer/Kalkulator"]
+[editable path="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI"]
+[editable path="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal"]
+[editable path="MarginContainer/TabContainer/Obliczenia"]
