@@ -120,3 +120,11 @@ func _on_Hide_meal_button_toggled(button_pressed):
 	else:
 		Dropboxes.visible = false
 		Meal_values_box.visible = false
+
+
+func _on_Carbohydrates_value_focus_entered():
+	Carbohydrates_value.get_line_edit().clear()
+
+
+func _on_Fiber_value_mouse_entered():
+	Fiber_value.get_line_edit().clear()

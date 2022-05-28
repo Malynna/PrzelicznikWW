@@ -654,4 +654,6 @@ custom_styles/separator = SubResource( 22 )
 [connection signal="toggled" from="VBoxContainer2/Title_box/HBoxContainer/Hide_meal_button" to="." method="_on_Hide_meal_button_toggled"]
 [connection signal="item_selected" from="VBoxContainer2/Dropboxes/JI_WW_box/Dropdown_WW" to="." method="on_Dropdown_WW_item_selected"]
 [connection signal="item_selected" from="VBoxContainer2/Dropboxes/JI_WBT_box/Dropdown_WBT" to="." method="on_Dropdown_WBT_item_selected"]
+[connection signal="focus_entered" from="VBoxContainer2/Meal_values_box/Meal_composition/Carbohydrates_box/CenterContainer/Carbohydrates_value" to="." method="_on_Carbohydrates_value_focus_entered"]
+[connection signal="mouse_entered" from="VBoxContainer2/Meal_values_box/Meal_composition/Fiber_box/CenterContainer/Fiber_value" to="." method="_on_Fiber_value_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer2/Meal_values_box/Meal_composition/Calculate_meal_composition_box/CenterContainer/Calculate_meal_composition_button2" to="." method="calculate_WW_WBT_values"]

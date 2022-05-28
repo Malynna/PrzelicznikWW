@@ -123,6 +123,7 @@ custom_styles/separator = SubResource( 24 )
 
 [node name="EnterDDILabel" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="7"]
 margin_right = 1064.0
+custom_effects = [ null ]
 
 [node name="DDI_box" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="8"]
 margin_right = 1064.0
@@ -315,6 +316,9 @@ custom_styles/separator = SubResource( 31 )
 
 [node name="HSeparator7" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Titile_Box" index="6"]
 custom_styles/separator = SubResource( 31 )
+
+[node name="EnteredDDILabel" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Titile_Box" index="8"]
+custom_effects = [ null ]
 
 [node name="HSeparator3" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static1_Box" index="0"]
 custom_styles/separator = SubResource( 31 )
