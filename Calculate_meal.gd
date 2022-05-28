@@ -128,3 +128,7 @@ func _on_Carbohydrates_value_focus_entered():
 
 func _on_Fiber_value_mouse_entered():
 	Fiber_value.get_line_edit().clear()
+
+
+func _on_Protein_value_gui_input(event):
+	Protein_value.get_line_edit().clear()

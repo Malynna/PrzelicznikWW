@@ -25,13 +25,15 @@ export (NodePath) onready var Math2 = get_node(Math2) as RichTextLabel
 export (NodePath) onready var JI_glucose_label = get_node(JI_glucose_label) as RichTextLabel
 
 
-export (int) var ddi_value = 45
+var ddi_value
 export (int) var static_1 = 450
 export (int) var static_2 = 1500
 
 
 func _ready():
+	ddi.value = DatabaseOperations.read_user_DDI()["DDI_value"]
 	ddi.get_line_edit().grab_focus()
+	calculate_Insuline_and_WW()
 	print("----------------------")
 	print("----------------------")
 	print("----------------------")
@@ -85,7 +87,7 @@ func calculate_Insuline_and_WW():
 	JI_glucose_label.bbcode_text+= "\n[b]Popołudniu[/b]  normalnie: [color=#ef8522][b]%s[/b][/color]" %JI_afternoon
 	JI_glucose_label.bbcode_text+= "\n[b]Wieczorem[/b] 30% mniej: "
 	JI_glucose_label.bbcode_text+= "%s/1.3 = [color=#ef8522][b]%s[/b][/color]" %[JI_glucose_result,JI_evening]
-	
+	DatabaseOperations.update_user_DDI(ddi_value)
 	
 func _on_CalculateButton_pressed():
 	calculate_Insuline_and_WW()

@@ -135,6 +135,7 @@ margin_right = 238.0
 margin_left = 242.0
 margin_right = 426.0
 theme = SubResource( 25 )
+value = 0.0
 
 [node name="Control2" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/DDI_box" index="2"]
 margin_left = 430.0
