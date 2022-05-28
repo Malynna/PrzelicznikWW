@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Przelicznik.gd" type="Script" id=1]
 [ext_resource path="res://Calculator_tab.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Themes/dropdown_THEME.tres" type="Theme" id=5]
 [ext_resource path="res://Calculations_tab.gd" type="Script" id=6]
 [ext_resource path="res://Fonts/Bold_45_colored.tres" type="DynamicFont" id=7]
+[ext_resource path="res://UI_Elements/png/grey_boxCross.png" type="Texture" id=8]
 
 [sub_resource type="StyleBoxEmpty" id=23]
 
@@ -351,10 +352,21 @@ custom_styles/separator = SubResource( 31 )
 [node name="HSeparator10" parent="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Static2_Box" index="4"]
 custom_styles/separator = SubResource( 31 )
 
+[node name="ExitButton" type="ToolButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -38.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = 34.0
+icon = ExtResource( 8 )
+expand_icon = true
+
 [connection signal="toggled" from="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/HBoxContainer/Hide_table_button" to="MarginContainer/TabContainer/Obliczenia" method="_on_Hide_table_button_toggled"]
 [connection signal="pressed" from="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/DDI_box/CalculateButton" to="MarginContainer/TabContainer/Obliczenia" method="_on_CalculateButton_pressed"]
 [connection signal="toggled" from="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Titile_Box/HBoxContainer/Hide_tab2_1_button" to="MarginContainer/TabContainer/Obliczenia" method="_on_Hide_tab2_1_button_toggled"]
 [connection signal="toggled" from="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Title_Box2/HBoxContainer/Hide_tab2_2_button" to="MarginContainer/TabContainer/Obliczenia" method="_on_Hide_tab2_2_button_toggled"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
 
 [editable path="MarginContainer/TabContainer/Kalkulator"]
 [editable path="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI"]

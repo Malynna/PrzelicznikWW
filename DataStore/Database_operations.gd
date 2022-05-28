@@ -28,17 +28,16 @@ func read_user_DDI():
 	var where = ("WHERE user_id = '%s';" % 1)
 	var selected_array = _sql_select(select+from+where)
 	db.close_db()
-	print (selected_array[0])
 	return selected_array[0]	
 	
 	
 func read_user_last_meal(user_id):
-	var select = "SELECT Carbohydrates_value, Fiber_value, Protein_value, Fat_value " 
+	var select = "SELECT Carbohydrates_value, Fiber_value, Protein_value, " 
+	select += "Fat_value, JI_WW_Value, JI_WBT_Value "
 	var from = "FROM main "
 	var where = ("WHERE user_id = '%s';" % user_id)
 	var selected_array = _sql_select(select+from+where)
 	db.close_db()
-	print (selected_array[0])
 	return selected_array[0]	
 	
 	
@@ -49,7 +48,16 @@ func update_user_DDI(value):
 	db.update_rows("main", condition, columns)
 	db.close_db()
 	
-	
+
+func update_user_last_meal(JI_WW_Value, JI_WBT_Value, Carbohydrates_value, 
+						Fiber_value, Protein_value, Fat_value):
+	_read_from_SQL()
+	var condition = ("user_id = '%s'" % 1)
+	var columns = {"JI_WW_Value":JI_WW_Value,"JI_WBT_Value":JI_WBT_Value,
+	"Carbohydrates_value":Carbohydrates_value,"Fiber_value":Fiber_value,
+	"Protein_value":Protein_value,"Fat_value":Fat_value}
+	db.update_rows("main", condition, columns)
+	db.close_db()
 	
 
 func _datetime_to_string(date):
