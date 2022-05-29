@@ -153,27 +153,6 @@ margin_right = 1064.0
 [node name="HSeparator4" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box" index="0"]
 custom_styles/separator = SubResource( 24 )
 
-[node name="Values_label" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box" index="1"]
-text = "Kliknij [b][i]<Oblicz>[/i][/b] "
-
-[node name="Time_of_day" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer" index="0"]
-text = "[color=#d9d9d9][b][i]Pora dnia"
-
-[node name="JI_WW" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer" index="1"]
-text = "[color=#d9d9d9][b][i][center]Ile JI/1WW"
-
-[node name="JI_glucose" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer" index="2"]
-text = "[color=#d9d9d9][b][i][center]1JI/ile cukru"
-
-[node name="Morning_cell" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer" index="3"]
-text = "[color=#d9d9d9][b][i]Rano"
-
-[node name="Afternoon_cell" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer" index="6"]
-text = "[color=#d9d9d9][b][i]Popołudnie"
-
-[node name="Evening_cell" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer" index="9"]
-text = "[color=#d9d9d9][b][i]Wieczór"
-
 [node name="Calculate_meal" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="10"]
 margin_right = 1064.0
 przelicznik = NodePath("../../../../../..")

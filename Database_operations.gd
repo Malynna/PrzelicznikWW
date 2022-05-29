@@ -3,31 +3,68 @@ extends Node
 const SQLite = preload("res://addons/godot-sqlite/bin/gdsqlite.gdns")
 var db
 var sysdate = _datetime_to_string(OS.get_datetime())
-var db_name = "user://KDD_database.db" 
-#var db_name = "res://KDD_database.db" 
+var db_name = "res://KDD_database.db" 
+var packaged_db_name := "res://data_to_be_packaged"
+var json_name := "res://test_backup.json"
 
 
 func _ready():
-#	var dir = Directory.new() 
-#	dir.copy("res://KDD_database.gd", "user://KDD_database.db")
-	if Directory.new().file_exists(db_name):
-		print("pass")
+	create_new_database_file()
+	if OS.get_name() in ["Android", "iOS", "HTML5"]:  #in ["Android", "iOS", "HTML5", "Windows"]:
+		copy_data_to_user()
+		db_name = "user://KDD_database.db"
+		json_name = "user://KDD_database.json"
+		create_new_database_file()
 	else:
+		db_name = "user://KDD_database.db"
+		json_name = "user://KDD_database.json"
+		copy_data_to_user()
+	
+func copy_data_to_user() -> void:
+	var data_path := "res://data"
+	var copy_path := "user://data"
+	var dir = Directory.new()
+	dir.make_dir(copy_path)
+	if dir.open(data_path) == OK:
+		dir.list_dir_begin();
+		var file_name = dir.get_next()
+		while (file_name != ""):
+			if dir.current_is_dir():
+				pass
+			else:
+				print("Copying " + file_name + " to /user-folder")
+				dir.copy(data_path + "/" + file_name, copy_path + "/" + file_name)
+			file_name = dir.get_next()
+	else:
+		print("An error occurred when trying to access the path.")
+	
+func create_new_database_file():
+	if Directory.new().file_exists(db_name):
+		print("File exists")
+	else:
+		var table_dict : Dictionary = Dictionary()
+		var table_name := "main"
 		db = SQLite.new()
 		db.path = db_name
+#		db.verbosity_level = verbosity_level
 		db.open_db()
-		var ct = "CREATE TABLE main (user_id integer PRIMARY KEY AUTOINCREMENT,user_name text, "
-		ct += "DDI_value float,JI_WW_Value float,JI_WBT_Value float,Carbohydrates_value float, "
-		ct += "Fiber_value float,Protein_value float,Fat_value float,created_date datetime,updated_date datetime); "
-		db.query(ct)
-		insert_into_player_info()
-
-func insert_into_player_info():
-	_read_from_SQL()
-	var columns = {"DDI_value" : 66, "JI_WW_Value":0.32, "JI_WBT_Value":0.32, "Carbohydrates_value":20,"Fiber_value":3, "Fat_value":9, "Protein_value":9}
-	db.insert_rows("main", [columns])
-	db.close_db()
-
+		table_dict["user_id"] = {"data_type":"int", "primary_key": true, "not_null": true}
+		table_dict["DDI_value"] = {"data_type":"float", "not_null": true}
+		table_dict["JI_WW_Value"] = {"data_type":"float", "not_null": true}
+		table_dict["JI_WBT_Value"] = {"data_type":"float", "not_null": true}
+		table_dict["Carbohydrates_value"] = {"data_type":"float", "not_null": true}
+		table_dict["Fiber_value"] = {"data_type":"float", "not_null": true}
+		table_dict["Fat_value"] = {"data_type":"float", "not_null": true}
+		table_dict["Protein_value"] = {"data_type":"float", "not_null": true}
+		table_dict["created_date"] = {"data_type":"datetime"}
+		table_dict["updated_date"] = {"data_type":"datetime"}
+		db.create_table(table_name, table_dict)
+		var columns = {"DDI_value" : 66, "JI_WW_Value":0.32, "JI_WBT_Value":0.32, "Carbohydrates_value":20,"Fiber_value":3, "Fat_value":9, "Protein_value":9}
+		db.insert_rows("main", [columns])
+		db.export_to_json("user://test_backup_new")
+#		db.export_to_json(json_name + "_new")
+		db.close_db()
+	
 
 func _read_from_SQL():
 	db = SQLite.new()
