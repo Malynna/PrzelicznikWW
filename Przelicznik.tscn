@@ -136,7 +136,7 @@ margin_right = 238.0
 margin_left = 242.0
 margin_right = 426.0
 theme = SubResource( 25 )
-value = 0.0
+value = 25.0
 
 [node name="Control2" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/DDI_box" index="2"]
 margin_left = 430.0
@@ -152,6 +152,27 @@ margin_right = 1064.0
 
 [node name="HSeparator4" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box" index="0"]
 custom_styles/separator = SubResource( 24 )
+
+[node name="Values_label" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box" index="1"]
+text = "Kliknij [b][i]<Oblicz>[/i][/b] "
+
+[node name="Time_of_day" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer" index="0"]
+text = "[color=#d9d9d9][b][i]Pora dnia"
+
+[node name="JI_WW" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer" index="1"]
+text = "[color=#d9d9d9][b][i][center]Ile JI/1WW"
+
+[node name="JI_glucose" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer" index="2"]
+text = "[color=#d9d9d9][b][i][center]1JI/ile cukru"
+
+[node name="Morning_cell" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer" index="3"]
+text = "[color=#d9d9d9][b][i]Rano"
+
+[node name="Afternoon_cell" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer" index="6"]
+text = "[color=#d9d9d9][b][i]Popołudnie"
+
+[node name="Evening_cell" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/WW_glucose_box/Table_Box/Table_WW_JI/GridContainer" index="9"]
+text = "[color=#d9d9d9][b][i]Wieczór"
 
 [node name="Calculate_meal" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1" index="10"]
 margin_right = 1064.0
@@ -214,10 +235,11 @@ margin_right = 42.0
 margin_left = 46.0
 margin_right = 446.0
 
-[node name="JI_WW_Value" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Dropboxes/JI_WW_box" index="0"]
+[node name="JI_WW_Value" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Dropboxes/JI_WW_box" index="1"]
 margin_left = 108.0
 margin_right = 292.0
 theme = SubResource( 27 )
+value = 0.56
 
 [node name="Control2" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Dropboxes" index="2"]
 margin_left = 450.0
@@ -227,10 +249,11 @@ margin_right = 619.0
 margin_left = 623.0
 margin_right = 1023.0
 
-[node name="JI_WBT_Value" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Dropboxes/JI_WBT_box" index="0"]
+[node name="JI_WBT_Value" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Dropboxes/JI_WBT_box" index="1"]
 margin_left = 108.0
 margin_right = 292.0
 theme = SubResource( 27 )
+value = 0.56
 
 [node name="Control3" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Dropboxes" index="4"]
 margin_left = 1027.0
@@ -255,8 +278,8 @@ custom_styles/separator = SubResource( 29 )
 margin_right = 1070.0
 
 [node name="Carbohydrates_value" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Meal_values_box/Meal_composition/Carbohydrates_box/CenterContainer" index="0"]
-margin_left = 18.0
-margin_right = 202.0
+margin_left = 23.0
+margin_right = 207.0
 theme = SubResource( 30 )
 
 [node name="Fiber_value" parent="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Meal_values_box/Meal_composition/Fiber_box/CenterContainer" index="0"]

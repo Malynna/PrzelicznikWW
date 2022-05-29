@@ -9,6 +9,7 @@
 [ext_resource path="res://Themes/H_Separator2.tres" type="StyleBox" id=7]
 [ext_resource path="res://Calculate_meal.gd" type="Script" id=8]
 [ext_resource path="res://Themes/THEME.tres" type="Theme" id=9]
+[ext_resource path="res://Themes/spin_box_theme.tres" type="Theme" id=10]
 
 [sub_resource type="StyleBoxLine" id=24]
 resource_local_to_scene = true
@@ -39,11 +40,6 @@ RichTextLabel/fonts/italics_font = ExtResource( 3 )
 RichTextLabel/fonts/mono_font = ExtResource( 6 )
 RichTextLabel/fonts/normal_font = ExtResource( 2 )
 RichTextLabel/fonts/test = ExtResource( 5 )
-
-[sub_resource type="Theme" id=25]
-resource_local_to_scene = true
-default_font = ExtResource( 5 )
-SpinBox/icons/updown = null
 
 [sub_resource type="DynamicFontData" id=6]
 font_path = "res://Gruppo-Regular.ttf"
@@ -144,8 +140,8 @@ custom_fonts/italics_font = ExtResource( 3 )
 custom_fonts/bold_font = ExtResource( 4 )
 custom_fonts/normal_font = ExtResource( 2 )
 bbcode_enabled = true
-bbcode_text = "[b][center]Jak wyliczyć JI do posiłku?"
-text = "Jak wyliczyć JI do posiłku?"
+bbcode_text = "[b][center]Wybierz przelicznik JI/1WW oraz JI/1WBT?"
+text = "Wybierz przelicznik JI/1WW oraz JI/1WBT?"
 fit_content_height = true
 __meta__ = {
 "_editor_description_": ""
@@ -192,28 +188,53 @@ custom_styles/separator = SubResource( 24 )
 [node name="Dropboxes" type="HBoxContainer" parent="VBoxContainer2"]
 margin_top = 92.0
 margin_right = 1082.0
-margin_bottom = 221.0
+margin_bottom = 265.0
 rect_min_size = Vector2( 1000, 0 )
 
 [node name="Control" type="Control" parent="VBoxContainer2/Dropboxes"]
 margin_right = 44.0
-margin_bottom = 129.0
+margin_bottom = 173.0
 size_flags_horizontal = 3
 
 [node name="JI_WW_box" type="VBoxContainer" parent="VBoxContainer2/Dropboxes"]
 margin_left = 48.0
 margin_right = 448.0
-margin_bottom = 129.0
+margin_bottom = 173.0
+
+[node name="JI_WW_label" type="RichTextLabel" parent="VBoxContainer2/Dropboxes/JI_WW_box"]
+margin_right = 400.0
+margin_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 140, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 5 )
+custom_fonts/italics_font = ExtResource( 3 )
+custom_fonts/bold_font = ExtResource( 4 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]JI/1WW:"
+text = "JI/1WW:"
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="JI_WW_Value" type="SpinBox" parent="VBoxContainer2/Dropboxes/JI_WW_box"]
 margin_left = 127.0
+margin_top = 44.0
 margin_right = 273.0
-margin_bottom = 65.0
+margin_bottom = 109.0
 rect_min_size = Vector2( 0, 65 )
 focus_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = SubResource( 25 )
+size_flags_stretch_ratio = 4.0
+theme = ExtResource( 10 )
 max_value = 1000.0
 step = 0.01
 align = 1
@@ -222,16 +243,16 @@ __meta__ = {
 }
 
 [node name="Dropdown_WW" type="OptionButton" parent="VBoxContainer2/Dropboxes/JI_WW_box"]
-margin_top = 69.0
+margin_top = 113.0
 margin_right = 400.0
-margin_bottom = 129.0
+margin_bottom = 173.0
 rect_min_size = Vector2( 400, 60 )
 theme = ExtResource( 9 )
 
 [node name="Control2" type="Control" parent="VBoxContainer2/Dropboxes"]
 margin_left = 452.0
 margin_right = 629.0
-margin_bottom = 129.0
+margin_bottom = 173.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
 __meta__ = {
@@ -241,17 +262,41 @@ __meta__ = {
 [node name="JI_WBT_box" type="VBoxContainer" parent="VBoxContainer2/Dropboxes"]
 margin_left = 633.0
 margin_right = 1033.0
-margin_bottom = 129.0
+margin_bottom = 173.0
+
+[node name="JI_WW_label" type="RichTextLabel" parent="VBoxContainer2/Dropboxes/JI_WBT_box"]
+margin_right = 400.0
+margin_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 150, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+theme = SubResource( 4 )
+custom_fonts/mono_font = ExtResource( 6 )
+custom_fonts/bold_italics_font = ExtResource( 5 )
+custom_fonts/italics_font = ExtResource( 3 )
+custom_fonts/bold_font = ExtResource( 4 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]JI/1WBT:"
+text = "JI/1WBT:"
+fit_content_height = true
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="JI_WBT_Value" type="SpinBox" parent="VBoxContainer2/Dropboxes/JI_WBT_box"]
 margin_left = 127.0
+margin_top = 44.0
 margin_right = 273.0
-margin_bottom = 65.0
+margin_bottom = 109.0
 rect_min_size = Vector2( 0, 65 )
 focus_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = SubResource( 25 )
+theme = ExtResource( 10 )
 max_value = 1000.0
 step = 0.01
 align = 1
@@ -260,22 +305,22 @@ __meta__ = {
 }
 
 [node name="Dropdown_WBT" type="OptionButton" parent="VBoxContainer2/Dropboxes/JI_WBT_box"]
-margin_top = 69.0
+margin_top = 113.0
 margin_right = 400.0
-margin_bottom = 129.0
+margin_bottom = 173.0
 rect_min_size = Vector2( 400, 60 )
 theme = ExtResource( 9 )
 
 [node name="Control3" type="Control" parent="VBoxContainer2/Dropboxes"]
 margin_left = 1037.0
 margin_right = 1082.0
-margin_bottom = 129.0
+margin_bottom = 173.0
 size_flags_horizontal = 3
 
 [node name="Meal_values_box" type="VBoxContainer" parent="VBoxContainer2"]
-margin_top = 225.0
+margin_top = 269.0
 margin_right = 1082.0
-margin_bottom = 366.0
+margin_bottom = 410.0
 rect_min_size = Vector2( 1000, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -306,13 +351,13 @@ margin_right = 1082.0
 margin_bottom = 133.0
 
 [node name="Carbohydrates_box" type="VBoxContainer" parent="VBoxContainer2/Meal_values_box/Meal_composition"]
-margin_right = 220.0
+margin_right = 230.0
 margin_bottom = 109.0
 
 [node name="Carbohydrates_label" type="RichTextLabel" parent="VBoxContainer2/Meal_values_box/Meal_composition/Carbohydrates_box"]
-margin_right = 220.0
+margin_right = 230.0
 margin_bottom = 40.0
-rect_min_size = Vector2( 220, 0 )
+rect_min_size = Vector2( 230, 0 )
 size_flags_stretch_ratio = 0.35
 theme = SubResource( 4 )
 custom_fonts/mono_font = ExtResource( 6 )
@@ -330,18 +375,18 @@ __meta__ = {
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer2/Meal_values_box/Meal_composition/Carbohydrates_box"]
 margin_top = 44.0
-margin_right = 220.0
+margin_right = 230.0
 margin_bottom = 109.0
 
 [node name="Carbohydrates_value" type="SpinBox" parent="VBoxContainer2/Meal_values_box/Meal_composition/Carbohydrates_box/CenterContainer"]
-margin_left = 37.0
-margin_right = 183.0
+margin_left = 42.0
+margin_right = 188.0
 margin_bottom = 65.0
 rect_min_size = Vector2( 0, 65 )
 focus_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-theme = SubResource( 25 )
+theme = ExtResource( 10 )
 max_value = 1000.0
 step = 0.01
 align = 1
@@ -351,8 +396,8 @@ __meta__ = {
 }
 
 [node name="Fiber_box" type="VBoxContainer" parent="VBoxContainer2/Meal_values_box/Meal_composition"]
-margin_left = 224.0
-margin_right = 424.0
+margin_left = 234.0
+margin_right = 434.0
 margin_bottom = 109.0
 
 [node name="Fiber_label" type="RichTextLabel" parent="VBoxContainer2/Meal_values_box/Meal_composition/Fiber_box"]
@@ -385,9 +430,9 @@ margin_right = 173.0
 margin_bottom = 65.0
 rect_min_size = Vector2( 0, 65 )
 focus_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = SubResource( 25 )
+theme = ExtResource( 10 )
 max_value = 1000.0
 step = 0.01
 align = 1
@@ -397,8 +442,8 @@ __meta__ = {
 }
 
 [node name="Protein_box" type="VBoxContainer" parent="VBoxContainer2/Meal_values_box/Meal_composition"]
-margin_left = 428.0
-margin_right = 628.0
+margin_left = 438.0
+margin_right = 638.0
 margin_bottom = 109.0
 
 [node name="Protein_label" type="RichTextLabel" parent="VBoxContainer2/Meal_values_box/Meal_composition/Protein_box"]
@@ -433,7 +478,7 @@ rect_min_size = Vector2( 0, 65 )
 focus_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-theme = SubResource( 25 )
+theme = ExtResource( 10 )
 max_value = 1000.0
 step = 0.01
 align = 1
@@ -443,8 +488,8 @@ __meta__ = {
 }
 
 [node name="Fat_box" type="VBoxContainer" parent="VBoxContainer2/Meal_values_box/Meal_composition"]
-margin_left = 632.0
-margin_right = 832.0
+margin_left = 642.0
+margin_right = 842.0
 margin_bottom = 109.0
 
 [node name="Fat_label" type="RichTextLabel" parent="VBoxContainer2/Meal_values_box/Meal_composition/Fat_box"]
@@ -480,7 +525,7 @@ rect_min_size = Vector2( 150, 65 )
 focus_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-theme = SubResource( 25 )
+theme = ExtResource( 10 )
 max_value = 1000.0
 step = 0.01
 rounded = true
@@ -491,8 +536,8 @@ __meta__ = {
 }
 
 [node name="Calculate_meal_composition_box" type="VBoxContainer" parent="VBoxContainer2/Meal_values_box/Meal_composition"]
-margin_left = 836.0
-margin_right = 1036.0
+margin_left = 846.0
+margin_right = 1046.0
 margin_bottom = 109.0
 
 [node name="Calculate_meal_composition_label" type="RichTextLabel" parent="VBoxContainer2/Meal_values_box/Meal_composition/Calculate_meal_composition_box"]

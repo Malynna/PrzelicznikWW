@@ -33,6 +33,8 @@ export (int) var static_2 = 1500
 func _ready():
 	ddi.value = DatabaseOperations.read_user_DDI()["DDI_value"]
 	ddi.get_line_edit().grab_focus()
+	ddi.get_line_edit().caret_blink = true
+	ddi.get_line_edit().set_cursor_position(3)
 	calculate_Insuline_and_WW()
 	print("----------------------")
 	print("----------------------")

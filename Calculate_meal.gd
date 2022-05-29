@@ -37,7 +37,7 @@ func add_items_to_dropdown():
 	Dropdown_WW.add_item("Rano/2")
 	Dropdown_WW.add_item("Popołudniu/2")
 	Dropdown_WW.add_item("Wieczorem/2")
-	Dropdown_WW.add_item("Wpisz ręcznie")
+	Dropdown_WW.add_item("Wpisz lub wybierz z listy")
 	Dropdown_WW.select(6)
 	Dropdown_WBT.add_item("Rano")
 	Dropdown_WBT.add_item("Popołudniu")
@@ -45,7 +45,7 @@ func add_items_to_dropdown():
 	Dropdown_WBT.add_item("Rano/2")
 	Dropdown_WBT.add_item("Popołudniu/2")
 	Dropdown_WBT.add_item("Wieczorem/2")
-	Dropdown_WBT.add_item("Wpisz ręcznie")
+	Dropdown_WBT.add_item("Wpisz lub wybierz z listy")
 	Dropdown_WBT.select(6)
 	
 
@@ -65,6 +65,7 @@ func recalc():
 
 
 func calculate_WW_WBT_values():
+	JI_WW_Value.get_line_edit().get_menu() 
 	var WW_value = (Carbohydrates_value.value - Fiber_value.value)/10
 	var kcal_value = (Carbohydrates_value.value*4 + Protein_value.value*4 + Fat_value.value*9)
 	var WBT_value = (Fat_value.value*9 + Protein_value.value*4)/100
@@ -143,6 +144,7 @@ func _on_JI_WBT_Value_gui_input(_event):
 
 func _on_Carbohydrates_value_gui_input(_event):
 	Carbohydrates_value.get_line_edit().clear()
+	Carbohydrates_value.get_line_edit().virtual_keyboard_enabled = true
 
 
 func _on_Fiber_value_gui_input(_event):
@@ -155,4 +157,3 @@ func _on_Protein_value_gui_input(_event):
 
 func _on_Fat_value_gui_input(_event):
 	Fat_value.get_line_edit().clear()
-

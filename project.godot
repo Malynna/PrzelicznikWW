@@ -16,7 +16,7 @@ config/icon="res://UI_Elements/png/icon.png"
 
 [autoload]
 
-DatabaseOperations="*res://DataStore/Database_operations.gd"
+DatabaseOperations="*res://Database_operations.gd"
 
 [display]
 
