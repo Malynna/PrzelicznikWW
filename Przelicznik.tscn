@@ -366,6 +366,7 @@ expand_icon = true
 
 [connection signal="toggled" from="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/HBoxContainer/Hide_table_button" to="MarginContainer/TabContainer/Obliczenia" method="_on_Hide_table_button_toggled"]
 [connection signal="pressed" from="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/DDI_box/CalculateButton" to="MarginContainer/TabContainer/Obliczenia" method="_on_CalculateButton_pressed"]
+[connection signal="pressed" from="MarginContainer/TabContainer/Kalkulator/VBoxContainer/Static1/Calculate_meal/VBoxContainer2/Meal_values_box/Meal_composition/Calculate_meal_composition_box/CenterContainer/Calculate_meal_composition_button2" to="MarginContainer/TabContainer/Obliczenia" method="_on_Calculate_meal_composition_button2_pressed"]
 [connection signal="toggled" from="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Titile_Box/HBoxContainer/Hide_tab2_1_button" to="MarginContainer/TabContainer/Obliczenia" method="_on_Hide_tab2_1_button_toggled"]
 [connection signal="toggled" from="MarginContainer/TabContainer/Obliczenia/MarginContainer/VBoxContainer/Title_Box2/HBoxContainer/Hide_tab2_2_button" to="MarginContainer/TabContainer/Obliczenia" method="_on_Hide_tab2_2_button_toggled"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]

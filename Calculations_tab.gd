@@ -94,9 +94,13 @@ func calculate_Insuline_and_WW():
 func _on_CalculateButton_pressed():
 	calculate_Insuline_and_WW()
 	tabContainer.set_tab_disabled(1, false)
-	calculate_meal.visible = true
-	calculate_meal.recalc()
+#	calculate_meal.visible = true
+#	calculate_meal.recalc()
 	Hide_table_button.pressed = true
+
+
+func _on_Calculate_meal_composition_button2_pressed():
+	tabContainer.set_tab_disabled(1, false)
 
 
 func _on_Hide_table_button_toggled(button_pressed):

@@ -10,34 +10,15 @@ var json_name := "res://test_backup.json"
 
 func _ready():
 	create_new_database_file()
-	if OS.get_name() in ["Android", "iOS", "HTML5"]:  #in ["Android", "iOS", "HTML5", "Windows"]:
-		copy_data_to_user()
+	if OS.get_name() in ["Android", "iOS", "HTML5"]:
 		db_name = "user://KDD_database.db"
 		json_name = "user://KDD_database.json"
 		create_new_database_file()
 	else:
-		db_name = "user://KDD_database.db"
-		json_name = "user://KDD_database.json"
-		copy_data_to_user()
-	
-func copy_data_to_user() -> void:
-	var data_path := "res://data"
-	var copy_path := "user://data"
-	var dir = Directory.new()
-	dir.make_dir(copy_path)
-	if dir.open(data_path) == OK:
-		dir.list_dir_begin();
-		var file_name = dir.get_next()
-		while (file_name != ""):
-			if dir.current_is_dir():
-				pass
-			else:
-				print("Copying " + file_name + " to /user-folder")
-				dir.copy(data_path + "/" + file_name, copy_path + "/" + file_name)
-			file_name = dir.get_next()
-	else:
-		print("An error occurred when trying to access the path.")
-	
+		create_new_database_file()
+		print(db_name)
+
+
 func create_new_database_file():
 	if Directory.new().file_exists(db_name):
 		print("File exists")
@@ -46,7 +27,6 @@ func create_new_database_file():
 		var table_name := "main"
 		db = SQLite.new()
 		db.path = db_name
-#		db.verbosity_level = verbosity_level
 		db.open_db()
 		table_dict["user_id"] = {"data_type":"int", "primary_key": true, "not_null": true}
 		table_dict["DDI_value"] = {"data_type":"float", "not_null": true}

@@ -61,7 +61,6 @@ func recalc():
 	Fiber_value.value = last_meal["Fiber_value"]
 	Protein_value.value = last_meal["Protein_value"]
 	Fat_value.value = last_meal["Fat_value"]
-	
 
 
 func calculate_WW_WBT_values():
@@ -75,7 +74,6 @@ func calculate_WW_WBT_values():
 	var JI_value = stepify(JI_WW + JI_WBT,0.01)
 	
 	WW_WBT_full_values_box.visible = true
-
 	WW_value_label.bbcode_text = "[color=#ef8522][b][i][center]WW = %s"  %WW_value
 	WBT_value_label.bbcode_text = "[color=#ef8522][b][i][center]WBT = %s" %WBT_value
 	kcal_value_label.bbcode_text = "[color=#ef8522][b][i][center]kcal = %s" %kcal_value
