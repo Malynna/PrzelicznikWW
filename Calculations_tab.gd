@@ -73,7 +73,7 @@ func calculate_Insuline_and_WW():
 	#tab2
 	enteredDDI.bbcode_text = "Twoje DDI: [color=#ef8522][b]%s[/b][/color]" %ddi_value
 	WW_insuline_label.bbcode_text = i_1WW_text % [str(static_1),str(ddi_value),str(i_1W), str(i_1W)]
-	WW_insuline_label.bbcode_text += "czyli około: [b][u]%s WW[/u][/b]" %i_1WW
+	WW_insuline_label.bbcode_text += "\nczyli około: [b][u]%s WW[/u][/b]" %i_1WW
 	Math.bbcode_text = "Następnie obliczamy z proporcji: \n1j --> %s WW \nx -> 1 WW" %i_1WW
 	Math.bbcode_text += "\nx = (1WW * 1j) / %s = [b][u]%s[/u][/b] <-- tyle jednostek insuliny należy podać na 1WW" %[i_1WW, WW_1i]
 	Day_time_calculations.bbcode_text = "[b]Rano[/b] jest największa oporność, należy podać 50% więcej JI:\n" 
@@ -90,12 +90,12 @@ func calculate_Insuline_and_WW():
 	JI_glucose_label.bbcode_text+= "\n[b]Wieczorem[/b] 30% mniej: "
 	JI_glucose_label.bbcode_text+= "%s/1.3 = [color=#ef8522][b]%s[/b][/color]" %[JI_glucose_result,JI_evening]
 	DatabaseOperations.update_user_DDI(ddi_value)
+
 	
 func _on_CalculateButton_pressed():
 	calculate_Insuline_and_WW()
 	tabContainer.set_tab_disabled(1, false)
-#	calculate_meal.visible = true
-#	calculate_meal.recalc()
+	calculate_meal.reposition_dropdowns_selections()
 	Hide_table_button.pressed = true
 
 
@@ -122,3 +122,8 @@ func _on_Hide_tab2_2_button_toggled(button_pressed):
 		Static2_Box.visible = true
 	else:
 		Static2_Box.visible = false
+
+
+func _on_DDI_gui_input(_event):
+	if OS.get_name() in ["Android", "iOS", "HTML5"]:
+		ddi.get_line_edit().clear()

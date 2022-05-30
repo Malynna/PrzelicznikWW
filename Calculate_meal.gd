@@ -51,10 +51,6 @@ func add_items_to_dropdown():
 
 func recalc():
 	var last_meal = DatabaseOperations.read_user_last_meal(1)
-	Dropdown_WW.select(6)
-	JI_WW_Value.editable = true
-	Dropdown_WBT.select(6)
-	JI_WBT_Value.editable = true
 	JI_WW_Value.value = last_meal["JI_WW_Value"]
 	JI_WBT_Value.value = last_meal["JI_WBT_Value"] 
 	Carbohydrates_value.value = last_meal["Carbohydrates_value"] 
@@ -64,7 +60,7 @@ func recalc():
 
 
 func calculate_WW_WBT_values():
-	JI_WW_Value.get_line_edit().get_menu() 
+#	JI_WW_Value.get_line_edit().set_process_unhandled_key_input()
 	var WW_value = (Carbohydrates_value.value - Fiber_value.value)/10
 	var kcal_value = (Carbohydrates_value.value*4 + Protein_value.value*4 + Fat_value.value*9)
 	var WBT_value = (Fat_value.value*9 + Protein_value.value*4)/100
@@ -130,28 +126,41 @@ func _on_Hide_meal_button_toggled(button_pressed):
 		Meal_values_box.visible = false
 
 
+func reposition_dropdowns_selections():
+	Dropdown_WW.select(6)
+	Dropdown_WBT.select(6)
+	JI_WW_Value.editable = true
+	JI_WBT_Value.editable = true
+
+
 func _on_JI_WW_Value_gui_input(_event):
-	if Dropdown_WW.get_selected_id() == 6:
-		JI_WW_Value.get_line_edit().clear()
+	if OS.get_name() in ["Android", "iOS", "HTML5"]:
+		if Dropdown_WW.get_selected_id() == 6:
+			JI_WW_Value.get_line_edit().clear()
 	
 
 func _on_JI_WBT_Value_gui_input(_event):
-	if Dropdown_WBT.get_selected_id() == 6:
-		JI_WBT_Value.get_line_edit().clear()
+	if OS.get_name() in ["Android", "iOS", "HTML5"]:
+		if Dropdown_WBT.get_selected_id() == 6:	
+			JI_WBT_Value.get_line_edit().clear()
 	
 
 func _on_Carbohydrates_value_gui_input(_event):
-	Carbohydrates_value.get_line_edit().clear()
-	Carbohydrates_value.get_line_edit().virtual_keyboard_enabled = true
+	if OS.get_name() in ["Android", "iOS", "HTML5"]:
+		Carbohydrates_value.get_line_edit().clear()
+		Carbohydrates_value.get_line_edit().virtual_keyboard_enabled = true
 
 
 func _on_Fiber_value_gui_input(_event):
-	Fiber_value.get_line_edit().clear()
+	if OS.get_name() in ["Android", "iOS", "HTML5"]:
+		Fiber_value.get_line_edit().clear()
 
 
 func _on_Protein_value_gui_input(_event):
-	Protein_value.get_line_edit().clear()
+	if OS.get_name() in ["Android", "iOS", "HTML5"]:
+		Protein_value.get_line_edit().clear()
 
 
 func _on_Fat_value_gui_input(_event):
-	Fat_value.get_line_edit().clear()
+	if OS.get_name() in ["Android", "iOS", "HTML5"]:
+		Fat_value.get_line_edit().clear()

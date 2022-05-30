@@ -1,8 +1,10 @@
-[gd_resource type="Theme" load_steps=2 format=2]
+[gd_resource type="Theme" load_steps=3 format=2]
 
 [ext_resource path="res://Fonts/Bold_45_colored.tres" type="DynamicFont" id=1]
+
+[sub_resource type="AnimatedTexture" id=29]
 
 [resource]
 resource_local_to_scene = true
 default_font = ExtResource( 1 )
-SpinBox/icons/updown = null
+SpinBox/icons/updown = SubResource( 29 )
