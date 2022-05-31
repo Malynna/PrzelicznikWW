@@ -84,15 +84,13 @@ tab_align = 0
 use_hidden_tabs_for_min_size = true
 
 [node name="Kalkulator" parent="TabContainer" instance=ExtResource( 2 )]
-margin_left = 20.0
+visible = false
+margin_left = 0.0
 margin_right = 0.0
 size_flags_horizontal = 3
 
 [node name="VBoxContainer" parent="TabContainer/Kalkulator/ScrollContainer" index="0"]
-margin_bottom = 1505.0
-
-[node name="Static1" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer" index="0"]
-margin_bottom = 1505.0
+margin_bottom = 1800.0
 
 [node name="HSeparator7" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1" index="0"]
 custom_styles/separator = SubResource( 41 )
@@ -111,6 +109,9 @@ custom_styles/separator = SubResource( 39 )
 
 [node name="HSeparator6" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1" index="6"]
 custom_styles/separator = SubResource( 39 )
+
+[node name="EnterDDILabel" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1" index="7"]
+custom_effects = [ null ]
 
 [node name="Control" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/DDI_box" index="0"]
 margin_right = 222.0
@@ -135,7 +136,6 @@ margin_left = 777.0
 custom_styles/separator = SubResource( 39 )
 
 [node name="Calculate_meal" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1" index="10"]
-margin_bottom = 1505.0
 przelicznik = NodePath("../../../../../..")
 calculations_tab = NodePath("../../../../../Obliczenia")
 
@@ -185,7 +185,6 @@ theme = SubResource( 43 )
 theme = SubResource( 43 )
 
 [node name="Obliczenia" parent="TabContainer" instance=ExtResource( 3 )]
-visible = false
 margin_left = 20.0
 margin_right = 0.0
 tabContainer = NodePath("..")
@@ -216,92 +215,220 @@ JI_meal = NodePath("ScrollContainer/VBoxContainer/Calculate_meal_Box/JI_meal")
 [node name="VBoxContainer" parent="TabContainer/Obliczenia/ScrollContainer" index="0"]
 margin_right = 980.0
 
+[node name="Titile_Box" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer" index="0"]
+margin_right = 980.0
+
 [node name="HSeparator10" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Titile_Box" index="0"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
 
 [node name="HSeparator12" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Titile_Box" index="1"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
 
 [node name="HSeparator11" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Titile_Box" index="2"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
 
+[node name="HBoxContainer" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Titile_Box" index="3"]
+margin_right = 980.0
+
+[node name="TitleLabel" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Titile_Box/HBoxContainer" index="2"]
+margin_right = 812.0
+
+[node name="Hide_tab2_1_button" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Titile_Box/HBoxContainer" index="3"]
+margin_left = 816.0
+margin_right = 896.0
+
+[node name="Control3" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Titile_Box/HBoxContainer" index="4"]
+margin_left = 900.0
+margin_right = 980.0
+
 [node name="HSeparator3" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Titile_Box" index="4"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
 
 [node name="HSeparator8" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Titile_Box" index="5"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
 
 [node name="HSeparator9" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Titile_Box" index="6"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
+
+[node name="DescriptionLabel" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Titile_Box" index="7"]
+margin_right = 980.0
+
+[node name="EnteredDDILabel" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Titile_Box" index="8"]
+margin_right = 980.0
+custom_effects = [ null ]
+
+[node name="Static1_Box" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer" index="1"]
+margin_right = 980.0
 
 [node name="HSeparator12" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Static1_Box" index="0"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
 
+[node name="WW_insuline_label" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Static1_Box" index="1"]
+margin_right = 980.0
+
+[node name="Math" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Static1_Box" index="2"]
+margin_right = 980.0
+
 [node name="HSeparator13" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Static1_Box" index="3"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
+
+[node name="Day_time_calculations" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Static1_Box" index="4"]
+margin_right = 980.0
+
+[node name="Title_Box2" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer" index="2"]
+margin_right = 980.0
 
 [node name="HSeparator4" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box2" index="0"]
 custom_styles/separator = SubResource( 44 )
 
 [node name="HSeparator10" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box2" index="1"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
 
 [node name="HSeparator12" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box2" index="2"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
 
 [node name="HSeparator11" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box2" index="3"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
 
+[node name="HBoxContainer" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box2" index="4"]
+margin_right = 980.0
+
+[node name="TitleLabel" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box2/HBoxContainer" index="2"]
+margin_right = 812.0
+
+[node name="Hide_tab2_2_button" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box2/HBoxContainer" index="3"]
+margin_left = 816.0
+margin_right = 896.0
+
+[node name="Control3" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box2/HBoxContainer" index="4"]
+margin_left = 900.0
+margin_right = 980.0
+
 [node name="HSeparator3" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box2" index="5"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
 
 [node name="HSeparator8" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box2" index="6"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
 
 [node name="HSeparator9" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box2" index="7"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
+
+[node name="Description2Label" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box2" index="8"]
+margin_right = 980.0
+
+[node name="Static2_Box" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer" index="3"]
+margin_right = 980.0
+
+[node name="Math2" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Static2_Box" index="0"]
+margin_right = 980.0
 
 [node name="HSeparator12" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Static2_Box" index="1"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
 
+[node name="JI_glucose_label" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Static2_Box" index="2"]
+margin_right = 980.0
+
 [node name="HSeparator13" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Static2_Box" index="3"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
 
 [node name="HSeparator10" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Static2_Box" index="4"]
 custom_styles/separator = SubResource( 45 )
 
+[node name="Title_Box3" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer" index="4"]
+margin_right = 980.0
+
 [node name="HSeparator4" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box3" index="0"]
 custom_styles/separator = SubResource( 44 )
 
 [node name="HSeparator10" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box3" index="1"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
 
 [node name="HSeparator12" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box3" index="2"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
 
 [node name="HSeparator11" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box3" index="3"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
 
+[node name="HBoxContainer" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box3" index="4"]
+margin_right = 980.0
+
+[node name="TitleLabel" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box3/HBoxContainer" index="2"]
+margin_right = 812.0
+
+[node name="Hide_tab2_3_button" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box3/HBoxContainer" index="3"]
+margin_left = 816.0
+margin_right = 896.0
+
+[node name="Control3" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box3/HBoxContainer" index="4"]
+margin_left = 900.0
+margin_right = 980.0
+
 [node name="HSeparator3" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box3" index="5"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
 
 [node name="HSeparator8" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box3" index="6"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
 
 [node name="HSeparator9" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box3" index="7"]
+margin_right = 980.0
 custom_styles/separator = SubResource( 44 )
+
+[node name="Calculate_meal_Box" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer" index="5"]
+margin_top = 608.0
+margin_right = 980.0
+margin_bottom = 1032.0
+
+[node name="Description2Label" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Calculate_meal_Box" index="0"]
+margin_right = 980.0
+margin_bottom = 320.0
+
+[node name="Math3" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Calculate_meal_Box" index="1"]
+margin_top = 324.0
+margin_right = 980.0
+margin_bottom = 364.0
 
 [node name="HSeparator12" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Calculate_meal_Box" index="2"]
+margin_top = 368.0
+margin_right = 980.0
+margin_bottom = 372.0
 custom_styles/separator = SubResource( 44 )
 
+[node name="JI_meal" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Calculate_meal_Box" index="3"]
+margin_top = 376.0
+margin_right = 980.0
+margin_bottom = 416.0
+
 [node name="HSeparator13" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Calculate_meal_Box" index="4"]
+margin_top = 420.0
+margin_right = 980.0
+margin_bottom = 424.0
 custom_styles/separator = SubResource( 44 )
 
 [node name="HSeparator10" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Calculate_meal_Box" index="5"]
 custom_styles/separator = SubResource( 45 )
 
 [node name="ExitButton" type="ToolButton" parent="."]
-visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -39.0
@@ -314,6 +441,7 @@ expand_icon = true
 [connection signal="toggled" from="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/HBoxContainer/Hide_table_button" to="TabContainer/Obliczenia" method="_on_Hide_table_button_toggled"]
 [connection signal="pressed" from="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/DDI_box/CalculateButton" to="TabContainer/Obliczenia" method="_on_CalculateButton_pressed"]
 [connection signal="pressed" from="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/Calculate_meal/VBoxContainer/Meal_values_box/Meal_composition/Calculate_meal_composition_box/CenterContainer/Calculate_meal_composition_button2" to="TabContainer/Obliczenia" method="_on_Calculate_meal_composition_button2_pressed"]
+[connection signal="toggled" from="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Title_Box3/HBoxContainer/Hide_tab2_3_button" to="TabContainer/Obliczenia" method="_on_Hide_tab2_3_button_toggled"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
 
 [editable path="TabContainer/Kalkulator"]
