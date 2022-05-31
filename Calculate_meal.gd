@@ -19,10 +19,7 @@ export (NodePath) onready var JI_time_value_label = get_node(JI_time_value_label
 export (NodePath) onready var JI_value_label = get_node(JI_value_label) as RichTextLabel
 #scenes
 export (NodePath) onready var przelicznik = get_node(przelicznik) as Control
-#
-export (NodePath) onready var WW_morning_cell = get_node(WW_morning_cell) as RichTextLabel
-export (NodePath) onready var WW_afternoon_cell = get_node(WW_afternoon_cell) as RichTextLabel
-export (NodePath) onready var WW_evening_cell = get_node(WW_evening_cell) as RichTextLabel
+export (NodePath) onready var calculations_tab = get_node(calculations_tab) as Tabs
 
 
 func _ready():
@@ -60,10 +57,10 @@ func recalc():
 
 
 func calculate_WW_WBT_values():
-#	JI_WW_Value.get_line_edit().set_process_unhandled_key_input()
 	var WW_value = (Carbohydrates_value.value - Fiber_value.value)/10
 	var kcal_value = (Carbohydrates_value.value*4 + Protein_value.value*4 + Fat_value.value*9)
-	var WBT_value = (Fat_value.value*9 + Protein_value.value*4)/100
+	var WBT_kcal_value = (Fat_value.value*9 + Protein_value.value*4)
+	var WBT_value = WBT_kcal_value/100
 	var JI_time = (stepify(WBT_value,0.5))+2
 	var JI_WW = WW_value * JI_WW_Value.value
 	var JI_WBT = WBT_value * JI_WBT_Value.value
@@ -73,11 +70,43 @@ func calculate_WW_WBT_values():
 	WW_value_label.bbcode_text = "[color=#ef8522][b][i][center]WW = %s"  %WW_value
 	WBT_value_label.bbcode_text = "[color=#ef8522][b][i][center]WBT = %s" %WBT_value
 	kcal_value_label.bbcode_text = "[color=#ef8522][b][i][center]kcal = %s" %kcal_value
-	JI_time_value_label.bbcode_text = "[color=#ef8522][b]posiłek będzie rozkładał się %s h" %JI_time
 	JI_value_label.bbcode_text = "[color=#ef8522][b][i][u]Należy podać %s JI[/u][/i][/b][/color]" %JI_value
 	JI_value_label.bbcode_text+= "\nw tym [color=#ef8522][b][i]%s[/i][/b][/color] JI na WW " %JI_WW
 	JI_value_label.bbcode_text+= "i [color=#ef8522][b][i]%s[/i][/b][/color] JI na WBT" %JI_WBT
+	if JI_time <= 2: 
+		JI_time_value_label.bbcode_text = "posiłek nie zawiera WBT, więc rozkładać się bedzie poniżej 2h"
+	if JI_time > 2 and JI_time < 5:
+		JI_time_value_label.bbcode_text = "Posiłek będzie rozkładał się %sh" %JI_time
+	if JI_time > 5:
+		JI_time_value_label.bbcode_text = "Posiłek będzie rozkładał się %sh" %JI_time
+		JI_time_value_label.bbcode_text+= "\nW zależności od wykresu i czasu działania insuliny, należy zastanowić się "
+		JI_time_value_label.bbcode_text+= "nad podaniem mniejszej ilości insuliny na WBT i korekcie po czasie"
+	JI_time_value_label.bbcode_text+= "\nW ostatecznej dawce insuliny należy uwzględnić jeszcze redukcję 10-50% na wysiłek fizyczny"
 	DatabaseOperations.update_user_last_meal(JI_WW_Value.value, JI_WBT_Value.value, Carbohydrates_value.value, Fiber_value.value, Protein_value.value, Fat_value.value  )
+
+
+	#tab2
+	var Math3 = calculations_tab.Math3
+	var JI_meal = calculations_tab.JI_meal
+	Math3.bbcode_text = "[color=#ef8522][b]%s WW[/b][/color] = (%s" %[WW_value, Carbohydrates_value.value]
+	Math3.bbcode_text+= "-%s)/10 (węglowodany - błonnik)/10" %[Fiber_value.value]
+	Math3.bbcode_text+= "\n%s kcal białkowo-tłuszczowych = (%s*4 +" %[WBT_kcal_value, Protein_value.value]
+	Math3.bbcode_text+= " %s*9) (białko*4 + tłuszcz*9)" %Fat_value.value
+	Math3.bbcode_text+= "\n[color=#ef8522][b]%s WBT[/b][/color] = "%WBT_value
+	Math3.bbcode_text+= "(%s)/100 (kcal białkowotłuszczowe)/100" %WBT_kcal_value
+	Math3.bbcode_text+= "\n%s*%s (WW * JI/WW) =>> należy podać JI na WW w posiłku" %[WW_value, JI_WW]
+	Math3.bbcode_text+= "\n%s*%s (WBT * JI/WBT) =>> należy podać JI na WBT w posiłku" %[WBT_value, JI_WBT]
+	JI_meal.bbcode_text = "WBT rozkładają się po 2h od spożycia posiłku, 1WBT/1h"
+	if JI_time <= 2: 
+		JI_meal.bbcode_text+= "\nposiłek nie zawiera WBT, więc rozkładać się bedzie poniżej 2h"
+	if JI_time > 2 and JI_time < 5:
+		JI_meal.bbcode_text+= "\nPosiłek będzie rozkładał się %sh" %JI_time
+	if JI_time > 5:
+		JI_meal.bbcode_text+= "\nPosiłek będzie rozkładał się %sh" %JI_time
+		JI_meal.bbcode_text+= "\nW zależności od wykresu i czasu działania insuliny, należy zastanowić się "
+		JI_meal.bbcode_text+= "nad podaniem mniejszej ilości insuliny na WBT i korekcie po czasie"
+	JI_meal.bbcode_text+= "\nW ostatecznej dawce insuliny należy uwzględnić jeszcze redukcję 10-50% na wysiłek fizyczny"
+
 
 func on_Dropdown_WW_item_selected(_index):
 	if Dropdown_WW.get_selected_id() == 6:
@@ -85,17 +114,17 @@ func on_Dropdown_WW_item_selected(_index):
 	else:
 		JI_WW_Value.editable = false
 		if Dropdown_WW.get_selected_id() == 0:
-			JI_WW_Value.value = float(WW_morning_cell.text)
+			JI_WW_Value.value = float(calculations_tab.WW_morning_cell.text)
 		if Dropdown_WW.get_selected_id() == 1:
-			JI_WW_Value.value = float(WW_afternoon_cell.text)
+			JI_WW_Value.value = float(calculations_tab.WW_afternoon_cell.text)
 		if Dropdown_WW.get_selected_id() == 2:
-			JI_WW_Value.value = float(WW_evening_cell.text)
+			JI_WW_Value.value = float(calculations_tab.WW_evening_cell.text)
 		if Dropdown_WW.get_selected_id() == 3:
-			JI_WW_Value.value = float(WW_morning_cell.text)/2
+			JI_WW_Value.value = float(calculations_tab.WW_morning_cell.text)/2
 		if Dropdown_WW.get_selected_id() == 4:
-			JI_WW_Value.value = float(WW_afternoon_cell.text)/2
+			JI_WW_Value.value = float(calculations_tab.WW_afternoon_cell.text)/2
 		if Dropdown_WW.get_selected_id() == 5:
-			JI_WW_Value.value = float(WW_evening_cell.text)/2
+			JI_WW_Value.value = float(calculations_tab.WW_evening_cell.text)/2
 
 
 func on_Dropdown_WBT_item_selected(_index):
@@ -104,17 +133,17 @@ func on_Dropdown_WBT_item_selected(_index):
 	else:
 		JI_WBT_Value.editable = false
 		if Dropdown_WBT.get_selected_id() == 0:
-			JI_WBT_Value.value = float(WW_morning_cell.text)
+			JI_WBT_Value.value = float(calculations_tab.WW_morning_cell.text)
 		if Dropdown_WBT.get_selected_id() == 1:
-			JI_WBT_Value.value = float(WW_afternoon_cell.text)
+			JI_WBT_Value.value = float(calculations_tab.WW_afternoon_cell.text)
 		if Dropdown_WBT.get_selected_id() == 2:
-			JI_WBT_Value.value = float(WW_evening_cell.text)
+			JI_WBT_Value.value = float(calculations_tab.WW_evening_cell.text)
 		if Dropdown_WBT.get_selected_id() == 3:
-			JI_WBT_Value.value = float(WW_morning_cell.text)/2
+			JI_WBT_Value.value = float(calculations_tab.WW_morning_cell.text)/2
 		if Dropdown_WBT.get_selected_id() == 4:
-			JI_WBT_Value.value = float(WW_afternoon_cell.text)/2
+			JI_WBT_Value.value = float(calculations_tab.WW_afternoon_cell.text)/2
 		if Dropdown_WBT.get_selected_id() == 5:
-			JI_WBT_Value.value = float(WW_evening_cell.text)/2
+			JI_WBT_Value.value = float(calculations_tab.WW_evening_cell.text)/2
 
 
 func _on_Hide_meal_button_toggled(button_pressed):

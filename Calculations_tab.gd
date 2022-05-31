@@ -23,6 +23,11 @@ export (NodePath) onready var Day_time_calculations = get_node(Day_time_calculat
 export (NodePath) onready var Static2_Box = get_node(Static2_Box) as VBoxContainer
 export (NodePath) onready var Math2 = get_node(Math2) as RichTextLabel
 export (NodePath) onready var JI_glucose_label = get_node(JI_glucose_label) as RichTextLabel
+export (NodePath) onready var Title_Box3 = get_node(Title_Box3) as VBoxContainer
+export (NodePath) onready var Calculate_meal_Box = get_node(Calculate_meal_Box) as VBoxContainer
+export (NodePath) onready var Math3 = get_node(Math3) as RichTextLabel
+export (NodePath) onready var JI_meal = get_node(JI_meal) as RichTextLabel
+
 
 
 var ddi_value
@@ -101,6 +106,8 @@ func _on_CalculateButton_pressed():
 
 func _on_Calculate_meal_composition_button2_pressed():
 	tabContainer.set_tab_disabled(1, false)
+	Calculate_meal_Box.visible = true
+	Title_Box3.visible = true
 
 
 func _on_Hide_table_button_toggled(button_pressed):
@@ -122,6 +129,13 @@ func _on_Hide_tab2_2_button_toggled(button_pressed):
 		Static2_Box.visible = true
 	else:
 		Static2_Box.visible = false
+
+
+func _on_Hide_tab2_3_button_toggled(button_pressed):
+	if button_pressed:
+		Calculate_meal_Box.visible = true
+	else:
+		Calculate_meal_Box.visible = false
 
 
 func _on_DDI_gui_input(_event):
