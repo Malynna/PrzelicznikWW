@@ -84,7 +84,6 @@ tab_align = 0
 use_hidden_tabs_for_min_size = true
 
 [node name="Kalkulator" parent="TabContainer" instance=ExtResource( 2 )]
-visible = false
 margin_left = 0.0
 margin_right = 0.0
 size_flags_horizontal = 3
@@ -185,6 +184,7 @@ theme = SubResource( 43 )
 theme = SubResource( 43 )
 
 [node name="Obliczenia" parent="TabContainer" instance=ExtResource( 3 )]
+visible = false
 margin_left = 20.0
 margin_right = 0.0
 tabContainer = NodePath("..")
@@ -261,7 +261,6 @@ margin_right = 980.0
 
 [node name="EnteredDDILabel" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Titile_Box" index="8"]
 margin_right = 980.0
-custom_effects = [ null ]
 
 [node name="Static1_Box" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer" index="1"]
 margin_right = 980.0

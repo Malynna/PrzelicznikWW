@@ -77,7 +77,7 @@ func calculate_WW_WBT_values():
 		JI_time_value_label.bbcode_text = "posiłek nie zawiera WBT, więc rozkładać się bedzie poniżej 2h"
 	if JI_time > 2 and JI_time < 5:
 		JI_time_value_label.bbcode_text = "Posiłek będzie rozkładał się %sh" %JI_time
-	if JI_time > 5:
+	if JI_time >= 5:
 		JI_time_value_label.bbcode_text = "Posiłek będzie rozkładał się %sh" %JI_time
 		JI_time_value_label.bbcode_text+= "\nW zależności od wykresu i czasu działania insuliny, należy zastanowić się "
 		JI_time_value_label.bbcode_text+= "nad podaniem mniejszej ilości insuliny na WBT i korekcie po czasie"
