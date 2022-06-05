@@ -1,14 +1,15 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Przelicznik.gd" type="Script" id=1]
 [ext_resource path="res://Calculator_tab.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Calculations_tab.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI_Elements/png/background_ver_3.png" type="Texture" id=4]
-[ext_resource path="res://Themes/dropdown_THEME.tres" type="Theme" id=5]
+[ext_resource path="res://Themes/THEME2.tres" type="Theme" id=5]
 [ext_resource path="res://Fonts/Ita_32.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Fonts/Bold_45_colored.tres" type="DynamicFont" id=7]
 [ext_resource path="res://UI_Elements/png/grey_boxCross.png" type="Texture" id=8]
 [ext_resource path="res://Themes/THEME.tres" type="Theme" id=9]
+[ext_resource path="res://addons/Godot-Onscreen-Keyboard/onscreen_keyboard.gd" type="Script" id=10]
 
 [sub_resource type="StyleBoxEmpty" id=23]
 
@@ -42,6 +43,12 @@ resource_local_to_scene = true
 default_font = ExtResource( 7 )
 SpinBox/icons/updown = SubResource( 29 )
 
+[sub_resource type="StyleBoxLine" id=46]
+resource_local_to_scene = true
+resource_name = "HSeparator_theme"
+color = Color( 0.431373, 0.435294, 0.447059, 1 )
+thickness = 3
+
 [sub_resource type="StyleBoxLine" id=44]
 resource_local_to_scene = true
 resource_name = "HSeparator_theme"
@@ -60,13 +67,15 @@ grow_begin = 0.0
 grow_end = -35.0
 thickness = 3
 
+[sub_resource type="StyleBoxFlat" id=47]
+bg_color = Color( 0.431373, 0.435294, 0.447059, 1 )
+
 [node name="Przelicznik" type="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1080, 500 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 5 )
 texture = ExtResource( 4 )
 stretch_mode = 1
 script = ExtResource( 1 )
@@ -84,8 +93,7 @@ tab_align = 0
 use_hidden_tabs_for_min_size = true
 
 [node name="Kalkulator" parent="TabContainer" instance=ExtResource( 2 )]
-margin_left = 0.0
-margin_right = 0.0
+margin_top = 49.0
 size_flags_horizontal = 3
 
 [node name="VBoxContainer" parent="TabContainer/Kalkulator/ScrollContainer" index="0"]
@@ -109,27 +117,8 @@ custom_styles/separator = SubResource( 39 )
 [node name="HSeparator6" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1" index="6"]
 custom_styles/separator = SubResource( 39 )
 
-[node name="EnterDDILabel" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1" index="7"]
-custom_effects = [ null ]
-
-[node name="Control" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/DDI_box" index="0"]
-margin_right = 222.0
-
 [node name="DDI" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/DDI_box" index="1"]
-margin_left = 226.0
-margin_right = 410.0
 theme = SubResource( 40 )
-
-[node name="Control2" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/DDI_box" index="2"]
-margin_left = 414.0
-margin_right = 636.0
-
-[node name="CalculateButton" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/DDI_box" index="3"]
-margin_left = 640.0
-margin_right = 773.0
-
-[node name="Control3" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/DDI_box" index="4"]
-margin_left = 777.0
 
 [node name="HSeparator4" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/WW_glucose_box" index="0"]
 custom_styles/separator = SubResource( 39 )
@@ -162,17 +151,28 @@ theme = SubResource( 43 )
 [node name="JI_WBT_Value" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/Calculate_meal/VBoxContainer/Dropboxes/JI_WBT_box" index="1"]
 theme = SubResource( 43 )
 
-[node name="HSeparator7" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/Calculate_meal/VBoxContainer/Meal_values_box" index="0"]
-custom_styles/separator = SubResource( 42 )
+[node name="HSeparator" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/Calculate_meal/VBoxContainer/Title_box2" index="0"]
+custom_styles/separator = SubResource( 46 )
 
-[node name="HSeparator8" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/Calculate_meal/VBoxContainer/Meal_values_box" index="1"]
-custom_styles/separator = SubResource( 42 )
+[node name="HSeparator2" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/Calculate_meal/VBoxContainer/Title_box2" index="1"]
+custom_styles/separator = SubResource( 46 )
 
-[node name="HSeparator9" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/Calculate_meal/VBoxContainer/Meal_values_box" index="2"]
-custom_styles/separator = SubResource( 42 )
+[node name="HSeparator3" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/Calculate_meal/VBoxContainer/Title_box2" index="2"]
+custom_styles/separator = SubResource( 46 )
+
+[node name="HSeparator4" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/Calculate_meal/VBoxContainer/Title_box2" index="4"]
+custom_styles/separator = SubResource( 46 )
+
+[node name="HSeparator5" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/Calculate_meal/VBoxContainer/Title_box2" index="5"]
+custom_styles/separator = SubResource( 46 )
+
+[node name="HSeparator6" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/Calculate_meal/VBoxContainer/Title_box2" index="6"]
+custom_styles/separator = SubResource( 46 )
 
 [node name="Carbohydrates_value" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/Calculate_meal/VBoxContainer/Meal_values_box/Meal_composition/Carbohydrates_box/CenterContainer" index="0"]
 theme = SubResource( 43 )
+max_value = 1000.0
+step = 0.01
 
 [node name="Fiber_value" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/Calculate_meal/VBoxContainer/Meal_values_box/Meal_composition/Fiber_box/CenterContainer" index="0"]
 theme = SubResource( 43 )
@@ -182,6 +182,7 @@ theme = SubResource( 43 )
 
 [node name="Fat_value" parent="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/Calculate_meal/VBoxContainer/Meal_values_box/Meal_composition/Fat_box/CenterContainer" index="0"]
 theme = SubResource( 43 )
+rounded = false
 
 [node name="Obliczenia" parent="TabContainer" instance=ExtResource( 3 )]
 visible = false
@@ -261,6 +262,7 @@ margin_right = 980.0
 
 [node name="EnteredDDILabel" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer/Titile_Box" index="8"]
 margin_right = 980.0
+custom_effects = [ null ]
 
 [node name="Static1_Box" parent="TabContainer/Obliczenia/ScrollContainer/VBoxContainer" index="1"]
 margin_right = 980.0
@@ -436,6 +438,18 @@ margin_right = 17.0
 margin_bottom = 37.0
 icon = ExtResource( 8 )
 expand_icon = true
+
+[node name="OnscreenKeyboard" type="PanelContainer" parent="."]
+margin_left = 360.0
+margin_top = 1930.0
+margin_right = 716.0
+margin_bottom = 2192.0
+size_flags_horizontal = 3
+theme = ExtResource( 5 )
+script = ExtResource( 10 )
+customLayoutFile = "res://addons/Godot-Onscreen-Keyboard/customize/keyboardLayouts/keyboard_layout_num.json"
+styleNormal = SubResource( 47 )
+font = ExtResource( 7 )
 
 [connection signal="toggled" from="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/HBoxContainer/Hide_table_button" to="TabContainer/Obliczenia" method="_on_Hide_table_button_toggled"]
 [connection signal="pressed" from="TabContainer/Kalkulator/ScrollContainer/VBoxContainer/Static1/DDI_box/CalculateButton" to="TabContainer/Obliczenia" method="_on_CalculateButton_pressed"]

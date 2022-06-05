@@ -1,0 +1,201 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Fonts/Bold_45_colored.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Virtual_keyboard.gd" type="Script" id=2]
+
+[node name="Virtual_keyboard" type="Control"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -520.0
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1080.0
+margin_bottom = 127.0
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer"]
+margin_right = 304.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Button_1" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 308.0
+margin_right = 460.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/hseparation = 3
+custom_fonts/font = ExtResource( 1 )
+text = "1"
+
+[node name="Button_2" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 464.0
+margin_right = 616.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "2"
+
+[node name="Button_3" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 620.0
+margin_right = 772.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "3"
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer"]
+margin_left = 776.0
+margin_right = 1080.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 131.0
+margin_right = 1080.0
+margin_bottom = 258.0
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer2"]
+margin_right = 304.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Button_4" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 308.0
+margin_right = 460.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "4"
+
+[node name="Button_5" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 464.0
+margin_right = 616.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "5"
+
+[node name="Button_6" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 620.0
+margin_right = 772.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "6"
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 776.0
+margin_right = 1080.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 262.0
+margin_right = 1080.0
+margin_bottom = 389.0
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer3"]
+margin_right = 304.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Button_7" type="Button" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 308.0
+margin_right = 460.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "7"
+
+[node name="Button_8" type="Button" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 464.0
+margin_right = 616.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "8"
+
+[node name="Button_9" type="Button" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 620.0
+margin_right = 772.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "9"
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 776.0
+margin_right = 1080.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 393.0
+margin_right = 1080.0
+margin_bottom = 520.0
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer4"]
+margin_right = 304.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Button_dot" type="Button" parent="VBoxContainer/HBoxContainer4"]
+margin_left = 308.0
+margin_right = 460.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "."
+
+[node name="Button_0" type="Button" parent="VBoxContainer/HBoxContainer4"]
+margin_left = 464.0
+margin_right = 616.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+
+[node name="Button_backspace" type="Button" parent="VBoxContainer/HBoxContainer4"]
+margin_left = 620.0
+margin_right = 772.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "<=="
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer4"]
+margin_left = 776.0
+margin_right = 1080.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button_1" to="." method="_on_Button_1_pressed"]

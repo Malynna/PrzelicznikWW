@@ -105,6 +105,7 @@ func _on_CalculateButton_pressed():
 
 
 func _on_Calculate_meal_composition_button2_pressed():
+#	_initKeyboard()
 	tabContainer.set_tab_disabled(1, false)
 	Calculate_meal_Box.visible = true
 	Title_Box3.visible = true

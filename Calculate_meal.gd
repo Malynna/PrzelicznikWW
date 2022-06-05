@@ -74,13 +74,11 @@ func calculate_WW_WBT_values():
 	JI_value_label.bbcode_text+= "\nw tym [color=#ef8522][b][i]%s[/i][/b][/color] JI na WW " %JI_WW
 	JI_value_label.bbcode_text+= "i [color=#ef8522][b][i]%s[/i][/b][/color] JI na WBT" %JI_WBT
 	if JI_time <= 2: 
-		JI_time_value_label.bbcode_text = "posiłek nie zawiera WBT, więc rozkładać się bedzie poniżej 2h"
+		JI_time_value_label.bbcode_text = "[color=#ef8522]Posiłek nie zawiera WBT, więc rozkładać się bedzie poniżej 2h"
 	if JI_time > 2 and JI_time < 5:
-		JI_time_value_label.bbcode_text = "Posiłek będzie rozkładał się %sh" %JI_time
+		JI_time_value_label.bbcode_text = "[color=#ef8522]Posiłek będzie rozkładał się %sh" %JI_time
 	if JI_time >= 5:
-		JI_time_value_label.bbcode_text = "Posiłek będzie rozkładał się %sh" %JI_time
-		JI_time_value_label.bbcode_text+= "\nW zależności od wykresu i czasu działania insuliny, należy zastanowić się "
-		JI_time_value_label.bbcode_text+= "nad podaniem mniejszej ilości insuliny na WBT i korekcie po czasie"
+		JI_time_value_label.bbcode_text = "[color=#ef8522]Posiłek będzie rozkładał się %sh[/color]" %JI_time
 	JI_time_value_label.bbcode_text+= "\nW ostatecznej dawce insuliny należy uwzględnić jeszcze redukcję 10-50% na wysiłek fizyczny"
 	DatabaseOperations.update_user_last_meal(JI_WW_Value.value, JI_WBT_Value.value, Carbohydrates_value.value, Fiber_value.value, Protein_value.value, Fat_value.value  )
 
@@ -101,7 +99,7 @@ func calculate_WW_WBT_values():
 		JI_meal.bbcode_text+= "\nposiłek nie zawiera WBT, więc rozkładać się bedzie poniżej 2h"
 	if JI_time > 2 and JI_time < 5:
 		JI_meal.bbcode_text+= "\nPosiłek będzie rozkładał się %sh" %JI_time
-	if JI_time > 5:
+	if JI_time >= 5:
 		JI_meal.bbcode_text+= "\nPosiłek będzie rozkładał się %sh" %JI_time
 		JI_meal.bbcode_text+= "\nW zależności od wykresu i czasu działania insuliny, należy zastanowić się "
 		JI_meal.bbcode_text+= "nad podaniem mniejszej ilości insuliny na WBT i korekcie po czasie"
@@ -148,10 +146,10 @@ func on_Dropdown_WBT_item_selected(_index):
 
 func _on_Hide_meal_button_toggled(button_pressed):
 	if button_pressed:
-		Dropboxes.visible = true
+#		Dropboxes.visible = true
 		Meal_values_box.visible = true
 	else:
-		Dropboxes.visible = false
+#		Dropboxes.visible = false
 		Meal_values_box.visible = false
 
 
