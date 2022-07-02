@@ -63,37 +63,55 @@ func calculate_WW_WBT_values():
 	var WBT_value = WBT_kcal_value/100
 	var JI_time = (stepify(WBT_value,0.5))+2
 	var JI_WW = WW_value * JI_WW_Value.value
-	var JI_WBT = WBT_value * JI_WBT_Value.value
+	var JI_WBT = stepify(WBT_value * JI_WBT_Value.value,0.01)
 	var JI_value = stepify(JI_WW + JI_WBT,0.01)
 	
 	WW_WBT_full_values_box.visible = true
-	WW_value_label.bbcode_text = "[color=#ef8522][b][i][center]WW = %s"  %WW_value
-	WBT_value_label.bbcode_text = "[color=#ef8522][b][i][center]WBT = %s" %WBT_value
-	kcal_value_label.bbcode_text = "[color=#ef8522][b][i][center]kcal = %s" %kcal_value
-	JI_value_label.bbcode_text = "[color=#ef8522][b][i][u]Należy podać %s JI[/u][/i][/b][/color]" %JI_value
-	JI_value_label.bbcode_text+= "\nw tym [color=#ef8522][b][i]%s[/i][/b][/color] JI na WW " %JI_WW
-	JI_value_label.bbcode_text+= "i [color=#ef8522][b][i]%s[/i][/b][/color] JI na WBT" %JI_WBT
 	if JI_time <= 2: 
 		JI_time_value_label.bbcode_text = "[color=#ef8522]Posiłek nie zawiera WBT, więc rozkładać się bedzie poniżej 2h"
-	if JI_time > 2 and JI_time < 5:
-		JI_time_value_label.bbcode_text = "[color=#ef8522]Posiłek będzie rozkładał się %sh" %JI_time
 	if JI_time >= 5:
 		JI_time_value_label.bbcode_text = "[color=#ef8522]Posiłek będzie rozkładał się %sh[/color]" %JI_time
+	else: #if JI_time > 2 and JI_time < 5:
+		JI_time_value_label.bbcode_text = "[color=#ef8522]Posiłek będzie rozkładał się %sh" %JI_time
 	JI_time_value_label.bbcode_text+= "\nW ostatecznej dawce insuliny należy uwzględnić jeszcze redukcję 10-50% na wysiłek fizyczny"
+	if WW_value > 0:
+		WW_value_label.bbcode_text = "[color=#ef8522][b][i][center]WW = %s"  %WW_value
+		JI_value_label.bbcode_text = "[color=#ef8522][b][i][u]Należy podać %s JI[/u][/i][/b][/color]" %JI_value
+		JI_value_label.bbcode_text+= "\nw tym [color=#ef8522][b][i]%s[/i][/b][/color] JI na WW " %JI_WW
+		JI_value_label.bbcode_text+= "i [color=#ef8522][b][i]%s[/i][/b][/color] JI na WBT" %JI_WBT
+	else:
+		JI_time_value_label.bbcode_text += "\n[color=#ef8522]Brak WW, insulinę należy podać po około 2h[/color]"
+		WW_value_label.bbcode_text = "[color=#ef8522][b][i][center]WW = 0"  	
+		JI_value_label.bbcode_text = "[color=#ef8522][b][i][u]Należy podać %s JI[/u][/i][/b][/color]" %JI_WBT
+		JI_value_label.bbcode_text+= "\nw tym [color=#ef8522][b][i]0[/i][/b][/color] JI na WW "
+		JI_value_label.bbcode_text+= "i [color=#ef8522][b][i]%s[/i][/b][/color] JI na WBT" %JI_WBT
+	WBT_value_label.bbcode_text = "[color=#ef8522][b][i][center]WBT = %s" %WBT_value
+	kcal_value_label.bbcode_text = "[color=#ef8522][b][i][center]kcal = %s" %kcal_value
 	DatabaseOperations.update_user_last_meal(JI_WW_Value.value, JI_WBT_Value.value, Carbohydrates_value.value, Fiber_value.value, Protein_value.value, Fat_value.value  )
 
 
 	#tab2
 	var Math3 = calculations_tab.Math3
 	var JI_meal = calculations_tab.JI_meal
-	Math3.bbcode_text = "[color=#ef8522][b]%s WW[/b][/color] = (%s" %[WW_value, Carbohydrates_value.value]
-	Math3.bbcode_text+= "-%s)/10 (węglowodany - błonnik)/10" %[Fiber_value.value]
+	if WW_value > 0:
+		Math3.bbcode_text = "[color=#ef8522][b]%s WW[/b][/color] = (%s" %[WW_value, Carbohydrates_value.value]
+		Math3.bbcode_text+= "-%s)/10 (węglowodany - błonnik)/10 " %[Fiber_value.value]
+		Math3.bbcode_text+= "\n[color=#ef8522][b]%s JI[/b][/color] = %s*%s (WW * JI/WW) =>> należy podać JI na WW w posiłku" %[JI_WW, WW_value, JI_WW_Value.value]
+	if WW_value < 0:
+		Math3.bbcode_text = "[color=#ef8522][b]0 WW[/b][/color] = (%s" %Carbohydrates_value.value
+		Math3.bbcode_text+= "-%s)/10 (węglowodany - błonnik)/10 " %[Fiber_value.value]
+		Math3.bbcode_text+= "\n%s = %s*%s (WW * JI/WW) =>> Wartość ujemna może oznaczać błędne dane (Więcej błonnika od Węglowodanów)" %[JI_WW, WW_value, JI_WW_Value.value]
+		Math3.bbcode_text+= "\nGdy Wartość WW jest niska, insulinę należy podać około 2h po posiłku"
+	else:
+		Math3.bbcode_text = "[color=#ef8522][b]0 WW[/b][/color] = (%s" %Carbohydrates_value.value
+		Math3.bbcode_text+= "-%s)/10 (węglowodany - błonnik)/10 " %[Fiber_value.value]
+		Math3.bbcode_text+= "\n[color=#ef8522][b]%s[/b][/color] = %s*%s (WW * JI/WW) =>> należałoby podać JI na WW w posiłku" %[JI_WW, WW_value, JI_WW_Value.value]
+		Math3.bbcode_text+= "\nGdy Wartość WW jest niska, insulinę należy podać około 2h po posiłku"
 	Math3.bbcode_text+= "\n%s kcal białkowo-tłuszczowych = (%s*4 +" %[WBT_kcal_value, Protein_value.value]
 	Math3.bbcode_text+= " %s*9) (białko*4 + tłuszcz*9)" %Fat_value.value
 	Math3.bbcode_text+= "\n[color=#ef8522][b]%s WBT[/b][/color] = "%WBT_value
 	Math3.bbcode_text+= "(%s)/100 (kcal białkowotłuszczowe)/100" %WBT_kcal_value
-	Math3.bbcode_text+= "\n%s*%s (WW * JI/WW) =>> należy podać JI na WW w posiłku" %[WW_value, JI_WW]
-	Math3.bbcode_text+= "\n%s*%s (WBT * JI/WBT) =>> należy podać JI na WBT w posiłku" %[WBT_value, JI_WBT]
+	Math3.bbcode_text+= "\n[color=#ef8522][b]%s JI[/b][/color] = %s*%s (WBT * JI/WBT) =>> należy podać JI na WBT w posiłku" %[JI_WBT, WBT_value, JI_WBT_Value.value]		
 	JI_meal.bbcode_text = "WBT rozkładają się po 2h od spożycia posiłku, 1WBT/1h"
 	if JI_time <= 2: 
 		JI_meal.bbcode_text+= "\nposiłek nie zawiera WBT, więc rozkładać się bedzie poniżej 2h"
@@ -161,12 +179,14 @@ func reposition_dropdowns_selections():
 
 
 func _on_JI_WW_Value_gui_input(_event):
+	OS.show_virtual_keyboard("number", true)
 	if OS.get_name() in ["Android", "iOS", "HTML5"]:
 		if Dropdown_WW.get_selected_id() == 6:
 			JI_WW_Value.get_line_edit().clear()
 	
 
 func _on_JI_WBT_Value_gui_input(_event):
+	OS.show_virtual_keyboard("1,2,3,4,5,6,7,8,9,0,.", true)
 	if OS.get_name() in ["Android", "iOS", "HTML5"]:
 		if Dropdown_WBT.get_selected_id() == 6:	
 			JI_WBT_Value.get_line_edit().clear()
